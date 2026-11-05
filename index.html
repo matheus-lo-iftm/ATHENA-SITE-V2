@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.T.H.E.N.A</title>
+
+  <link rel="icon" href="src/media/favicon/ATHENA-favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Redaction+35:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/style.css"><link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/interacoes-main.css"> <link rel="stylesheet" href="src/css/memorias-inicio.css">
+
+
+</head>
+
+<body class="is-locked" data-bs-spy="scroll" data-bs-target="#header-links" data-bs-root-margin="0px 0px -40%">
+
+  <div class="cursor-customizado"></div>
+
+  <!-- Camada 0: Vídeo Background -->
+
+  <div class="environment" aria-hidden="true">
+
+    <video id="backgroundVideo" class="background-video" muted loop playsinline preload="none" hidden></video>
+
+    <div class="background-shade"></div>
+    <div class="grid"></div>
+  </div>
+
+  <!-- Camada 1: Site -->
+
+  <div id="site" class="site" inert aria-hidden="true">
+
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <div class="terminal-layout">
+
+      <aside class="header-menu" aria-label="Painel A.T.H.E.N.A.">
+        <div class="header-menu-interior">
+          <button class="header-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#header-painel"
+            aria-expanded="false" aria-controls="header-painel">Menu</button>
+
+          <div class="header-marca">
+            <img src="src/media/image/ATHENA.png" alt="" width="114" height="114">
+            <strong>A.T.H.E.N.A.</strong>
+            <small>TERMINAL DE ARQUIVOS</small>
+          </div>
+
+          <div id="header-painel" class="header-painel collapse">
+            <nav class="nav header-links" id="header-links" aria-label="Seções do terminal">
+
+
+              <a class="nav-link" href="#terminal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-terminal preview-icon">
+                  <path d="m7 11 2-2-2-2" />
+                  <path d="M11 13h4" />
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                </svg>Terminal</a>
+
+              <a class="nav-link" href="memorias.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-folder-clock preview-icon">
+                  <path d="M16 14v2.2l1.6 1" />
+                  <path
+                    d="M7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2" />
+                  <circle cx="16" cy="16" r="6" />
+                </svg>Memórias</a>
+
+              <a class="nav-link" href="acervo.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-library preview-icon">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M7 7v10" />
+                  <path d="M11 7v10" />
+                  <path d="m15 7 2 10" />
+                </svg>Acervo</a>
+              <a class="nav-link" href="simulacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-gamepad-2 preview-icon">
+                  <line x1="6" x2="10" y1="11" y2="11" />
+                  <line x1="8" x2="8" y1="9" y2="13" />
+                  <line x1="15" x2="15.01" y1="12" y2="12" />
+                  <line x1="18" x2="18.01" y1="10" y2="10" />
+                  <path
+                    d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                </svg>Simulação</a>
+              <a class="nav-link" href="investigacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                  height="24" viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-newspaper preview-icon">
+                  <path d="M15 18h-5" />
+                  <path d="M18 14h-8" />
+                  <path
+                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+                  <rect width="8" height="4" x="10" y="6" rx="1" />
+                </svg>Investigação</a>
+              <a class="nav-link" href="ecossistema.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-globe-code preview-icon">
+                  <path d="M15.5 10 13 7.5 15.5 5" />
+                  <path d="M15.861 14A14.5 14.5 0 0112 22a14.48 14.48 0 010-20 10 10 0 109.888 11.5" />
+                  <path d="M19.5 5 22 7.5 19.5 10" />
+                  <path d="M2 12h8.5" />
+                </svg>Ecossistema</a>
+
+
+              <a class="nav-link" href="projeto.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-user-group preview-icon">
+                  <path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1" />
+                  <path d="M19 10h1a2 2 0 012 2v1" />
+                  <path d="M5 10H4a2 2 0 00-2 2v1" />
+                  <circle cx="12" cy="11" r="3" />
+                  <circle cx="18" cy="4" r="2" />
+                  <circle cx="6" cy="4" r="2" />
+                </svg>Projeto 950</a>
+
+
+            </nav>
+            <div class="header-telemetria">
+
+              <img src="src/media/video/gif/earth.gif" alt="" loading="lazy">
+              <div class="header-telemetria-text">
+                <p class="header-telemetria-text-status">
+                  SETOR 109<br><span class="status-dot"></span><b>CONEXÃO ESTÁVEL</b>
+                </p>
+                <div class="menu-preferencias">
+
+                  <div class="controles-audio">
+                    <div class="controles-audio-div">
+                      <p>MÚSICA:</p>
+
+
+                      <div class="background-sound-eff-button-container musica">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="controles-audio-div">
+
+                      <p>SONS:</p>
+
+
+                      <div class="background-sound-eff-button-container efeitos">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="button-turn-on-effect-text">
+                    <p>
+                      EFEITOS:
+                    </p>
+                  </div>
+                  <div class="turn-on-effect-toggle-cont">
+                    <!-- O input agora carrega a ID do seu botão antigo e inicia ligado -->
+                    <input class="turn-on-effect-toggle-input" id="effectsButton" name="toggle" type="checkbox"
+                      checked />
+                    <label class="turn-on-effect-toggle-label" for="effectsButton">
+                      <div class="turn-on-effect-cont-icon">
+                        <!-- Seus spans de sparkle originais -->
+                        <span style="--width: 2; --deg: 25; --duration: 11" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 100; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 280; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 200; --duration: 3" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 30; --duration: 20" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 300; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 250; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 210; --duration: 8" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 100; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 15; --duration: 13" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 75; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 6" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 50; --duration: 7" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 320; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 220; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 215; --duration: 2" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 135; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 45; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 78; --duration: 16" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 89; --duration: 19" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 14" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 97; --duration: 1" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 174; --duration: 10" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 236; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30"
+                          class="turn-on-effect-icon">
+                          <path
+                            d="M0.96233 28.61C1.36043 29.0081 1.96007 29.1255 2.47555 28.8971L10.4256 25.3552C13.2236 24.11 16.4254 24.1425 19.2107 25.4401L27.4152 29.2747C27.476 29.3044 27.5418 29.3023 27.6047 29.32C27.6563 29.3348 27.7079 29.3497 27.761 29.3574C27.843 29.3687 27.9194 29.3758 28 29.3688C28.1273 29.3617 28.2531 29.3405 28.3726 29.2945C28.4447 29.262 28.5162 29.2287 28.5749 29.1842C28.6399 29.1446 28.6993 29.0994 28.7509 29.0477L28.9008 28.8582C28.9468 28.7995 28.9793 28.7274 29.0112 28.656C29.0599 28.5322 29.0811 28.4036 29.0882 28.2734C29.0939 28.1957 29.0868 28.1207 29.0769 28.0415C29.0705 27.9955 29.0585 27.9524 29.0472 27.9072C29.0295 27.8343 29.0302 27.7601 28.9984 27.6901L25.1638 19.4855C23.8592 16.7073 23.8273 13.5048 25.0726 10.7068L28.6145 2.75679C28.8429 2.24131 28.7318 1.63531 28.3337 1.2372C27.9165 0.820011 27.271 0.721743 26.7491 0.9961L19.8357 4.59596C16.8418 6.15442 13.2879 6.18696 10.2615 4.70062L1.80308 0.520214C1.7055 0.474959 1.60722 0.441742 1.50964 0.421943C1.44459 0.409215 1.37882 0.395769 1.3074 0.402133C1.14406 0.395769 0.981436 0.428275 0.818095 0.499692C0.77284 0.519491 0.719805 0.545671 0.67455 0.578198C0.596061 0.617088 0.524653 0.675786 0.4596 0.74084C0.394546 0.805894 0.335843 0.877306 0.296245 0.956502C0.263718 1.00176 0.237561 1.05477 0.217762 1.10003C0.152708 1.24286 0.126545 1.40058 0.120181 1.54978C0.120181 1.61483 0.126527 1.6735 0.132891 1.73219C0.15269 1.85664 0.178881 1.97332 0.237571 2.08434L4.41798 10.5427C5.91139 13.5621 5.8725 17.1238 4.3204 20.1099L0.720514 27.0233C0.440499 27.5536 0.545137 28.1928 0.96233 28.61Z">
+                          </path>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="menu-libras">
+                    <p>ACESSIBILIDADE</p>
+                    <button id="menu-vlibras" type="button" disabled>Carregando VLibras…</button>
+                    <small id="menu-vlibras-status" role="status">Tradução para Libras</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="header-conteudo">
+
+
+        <main id="main" tabindex="-1">
+
+          <section id="terminal" class="hero" aria-labelledby="heroTitle">
+
+            <div class="hero-copy">
+              <p class="eyebrow"><span class="status-dot"></span> CONEXÃO ESTABELECIDA / SETOR 109</p>
+              <h1 id="heroTitle">A memória<br>merece um<br><em>novo futuro.</em></h1>
+              <p class="description">Bem-vindo ao terminal A.T.H.E.N.A. Explore os registros de <strong
+                  style="color: #ff5ce9;">Elas no
+                  Controle:
+                  Além do Tempo.</strong></p>
+              <a href="#memorias" class="primary-link">EXPLORAR O SISTEMA <svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in preview-icon">
+                  <path d="m10 17 5-5-5-5" />
+                  <path d="M15 12H3" />
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                </svg></a>
+              <p class="coordinates">PROJETO 950 <span>/</span> MTEC 2026 <span>/</span> SALA 109</p>
+            </div>
+
+            <div class="core-scene" role="group" aria-label="Mapa orbital do terminal">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="orbit orbit-three"></div>
+              <svg class="orb-rays" viewBox="0 0 100 100" aria-hidden="true">
+                <g transform="translate(50 50) matrix(1 -.15 0 1 0 0)" fill="none">
+                  <ellipse rx="40" ry="31" stroke="#62dcf9" stroke-width=".28" opacity=".7" />
+                  <ellipse rx="41" ry="32" stroke="#bbaaff" stroke-width=".35" stroke-dasharray=".3 1.6"
+                    opacity=".55" />
+                </g>
+                <line x2="50" y2="50" stroke="#44f4ff" stroke-dasharray="2 2" />
+                <line x2="50" y2="50" stroke="#f49bcf" stroke-dasharray="3 2" />
+                <line x2="50" y2="50" stroke="#afc2ff" stroke-dasharray="4 2" />
+                <line x2="50" y2="50" stroke="#6ff6cb" stroke-dasharray="2 2" />
+                <line x2="50" y2="50" stroke="#ffca8d" stroke-dasharray="3 2" />
+                <line x2="50" y2="50" stroke="#cd9eff" stroke-dasharray="4 2" />
+
+                <line x2="50" y2="50" stroke="#b3efa4" stroke-dasharray="3 2" />
+              </svg>
+              <a class="orb-node" href="#terminal" style="--ink:#44f4ff"
+                data-description="Volte ao núcleo de navegação da A.T.H.E.N.A."
+                aria-label="Terminal. Volte ao núcleo de navegação da A.T.H.E.N.A."><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#24e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-square-terminal preview-icon">
+                  <path d="m7 11 2-2-2-2" />
+                  <path d="M11 13h4" />
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                </svg><span>Terminal</span></a>
+              <a class="orb-node" href="#memorias" style="--ink:#f49bcf"
+                data-description="Acompanhe os registros da vida de Taty Lutz."
+                aria-label="Memórias. Acompanhe os registros da vida de Taty Lutz."><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#24e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-folder-clock preview-icon">
+                  <path d="M16 14v2.2l1.6 1" />
+                  <path
+                    d="M7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2" />
+                  <circle cx="16" cy="16" r="6" />
+                </svg><span>Memórias</span></a>
+              <a class="orb-node" href="#acervo" style="--ink:#afc2ff"
+                data-description="Conheça as cientistas que inspiram os arquivos do jogo."
+                aria-label="Acervo. Conheça as cientistas que inspiram os arquivos do jogo."><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#24e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-square-library preview-icon">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M7 7v10" />
+                  <path d="M11 7v10" />
+                  <path d="m15 7 2 10" />
+                </svg><span>Acervo</span></a>
+              <a class="orb-node" href="#simulacao" style="--ink:#6ff6cb"
+                data-description="Descubra sua missão dentro do banco de dados."
+                aria-label="Simulação. Descubra sua missão dentro do banco de dados."><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#24e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-gamepad-2 preview-icon">
+                  <line x1="6" x2="10" y1="11" y2="11" />
+                  <line x1="8" x2="8" y1="9" y2="13" />
+                  <line x1="15" x2="15.01" y1="12" y2="12" />
+                  <line x1="18" x2="18.01" y1="10" y2="10" />
+                  <path
+                    d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                </svg><span>Simulação</span></a>
+              <a class="orb-node" href="#investigacao" style="--ink:#ffca8d"
+                data-description="Investigue quem recebe o crédito por uma descoberta."
+                aria-label="Investigação. Investigue quem recebe o crédito por uma descoberta."><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#24e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-newspaper preview-icon">
+                  <path d="M15 18h-5" />
+                  <path d="M18 14h-8" />
+                  <path
+                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+                  <rect width="8" height="4" x="10" y="6" rx="1" />
+                </svg><span>Investigação</span></a>
+              <a class="orb-node" href="#ecossistema" style="--ink:#cd9eff"
+                data-description="Sintonize os três canais do Projeto 950."
+                aria-label="Ecossistema. Sintonize os três canais do Projeto 950."><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#24e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-globe-code preview-icon">
+                  <path d="M15.5 10 13 7.5 15.5 5" />
+                  <path d="M15.861 14A14.5 14.5 0 0112 22a14.48 14.48 0 010-20 10 10 0 109.888 11.5" />
+                  <path d="M19.5 5 22 7.5 19.5 10" />
+                  <path d="M2 12h8.5" />
+                </svg><span>Ecossistema</span></a>
+
+              <a class="orb-node" href="#projeto-950" style="--ink:#b3efa4"
+                data-description="Conheça os três criadores do projeto."
+                aria-label="Projeto 950. Conheça os três criadores do projeto."><svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-group preview-icon">
+                  <path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1" />
+                  <path d="M19 10h1a2 2 0 012 2v1" />
+                  <path d="M5 10H4a2 2 0 00-2 2v1" />
+                  <circle cx="12" cy="11" r="3" />
+                  <circle cx="18" cy="4" r="2" />
+                  <circle cx="6" cy="4" r="2" />
+                </svg><span>Projeto 950</span></a>
+              <div class="core-glow"></div>
+              <img class="core-logo" src="src/media/image/athena-orb.png" alt="Logo do A.T.H.E.N.A.">
+              <span class="core-label label-top">NÚCLEO DE MEMÓRIA</span><span
+                class="core-label label-bottom">A.T.H.E.N.A. / 2075</span>
+            </div>
+
+            <div class="orb-readout-container">
+              <p id="orb-readout" class="orb-readout">Selecione uma órbita para explorar.</p>
+            </div>
+            <div class="hero-bottom">
+              <span>ARQUIVOS • MEMÓRIAS • CIÊNCIA</span>
+              <a href="#memorias">DESLIZE PARA EXPLORAR ↓</a>
+            </div>
+
+          </section>
+
+          <section class="archive-panel" id="memorias">
+            <p class="eyebrow">02 / MEMÓRIAS</p>
+            <h2>Os registros de Taty</h2>
+
+
+
+
+            <div class="memorias-grid">
+              <div class="memorias-main-card" id="inicio-memoria-visor">
+                <div class="memorias-badge">2075 / REGISTRO CENTRAL</div>
+                <h2 class="memorias-main-title"><span>/</span> O dia em que a<br>cidade apagou.</h2>
+                <p class="memorias-main-desc">Ao cruzar os arquivos da ciência, A.T.H.E.N.A. encontra lacunas que sua
+                  utopia não consegue explicar.
+                  O blecaute leva Taty ao núcleo da rede.</p>
+              </div>
+
+              <div class="memorias-side-cards">
+                <div class="memorias-small-card" style="background-image: url('src/media/o-bullying.png')">
+                  <div class="memorias-small-card-title"><span>/</span> A infância</div>
+                </div>
+                <div class="memorias-small-card" style="background-image: url('src/media/o-vr.png')">
+                  <div class="memorias-small-card-title"><span>/</span> A decisão</div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <aside class="memoria-page-rolo" aria-label="Seleção de capítulos">
+              <div class="memoria-page-rolo-cabecalho"><span>SEQUÊNCIA DE
+                  REGISTROS</span><span>20</span></div>
+              <button type="button" id="memoria-page-rolo-anterior" class="memoria-page-botao memoria-page-rolo-seta"
+                aria-label="Selecionar memória anterior" aria-controls="memoria-page-trilho" disabled="">↑</button>
+              <div class="memoria-page-rolo-janela">
+                <div class="memoria-page-trilho" id="memoria-page-trilho"><button type="button"
+                    class="memoria-page-capitulo" data-memoria-page-index="0" aria-controls="memoria-page-visor"
+                    aria-pressed="true" aria-label="1. O primeiro apagamento"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/1.png"><span
+                        class="memoria-page-miniatura-numero">01</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>O primeiro
+                        apagamento</strong><small>PRÓLOGO</small></span></button><button type="button"
+                    class="memoria-page-capitulo" data-memoria-page-index="1" aria-controls="memoria-page-visor"
+                    aria-pressed="false" aria-label="2. À beira do abismo"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/2.png"><span
+                        class="memoria-page-miniatura-numero">02</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>À beira do
+                        abismo</strong><small>2050</small></span></button><button type="button"
+                    class="memoria-page-capitulo" data-memoria-page-index="2" aria-controls="memoria-page-visor"
+                    aria-pressed="false" aria-label="3. O nascimento de A.T.H.E.N.A."><span
+                      class="memoria-page-miniatura" aria-hidden="true"><img class="memoria-page-miniatura-imagem"
+                        alt="" loading="lazy" decoding="async"
+                        src="http://127.0.0.1:5501/src/media/image/capa/3.png"><span
+                        class="memoria-page-miniatura-numero">03</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>O nascimento de
+                        A.T.H.E.N.A.</strong><small>RECONSTRUÇÃO</small></span></button><button type="button"
+                    class="memoria-page-capitulo" data-memoria-page-index="3" aria-controls="memoria-page-visor"
+                    aria-pressed="false" aria-label="4. Um paraíso sobre fantasmas"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/4.png"><span
+                        class="memoria-page-miniatura-numero">04</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Um paraíso sobre
+                        fantasmas</strong><small>2075</small></span></button><button type="button"
+                    class="memoria-page-capitulo" data-memoria-page-index="4" aria-controls="memoria-page-visor"
+                    aria-pressed="false" aria-label="5. As minhas heroínas"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/5.png"><span
+                        class="memoria-page-miniatura-numero">05</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>As minhas heroínas</strong><small>TATY /
+                        INFÂNCIA</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="5" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="6. O peso das risadas"><span class="memoria-page-miniatura" aria-hidden="true"><img
+                        class="memoria-page-miniatura-imagem" alt="" loading="lazy" decoding="async"
+                        src="http://127.0.0.1:5501/src/media/image/capa/6.png"><span
+                        class="memoria-page-miniatura-numero">06</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>O peso das risadas</strong><small>TATY /
+                        ESCOLA</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="6" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="7. Do outro lado da porta"><span class="memoria-page-miniatura" aria-hidden="true"><img
+                        class="memoria-page-miniatura-imagem" alt="" loading="lazy" decoding="async"
+                        src="http://127.0.0.1:5501/src/media/image/capa/7.png"><span
+                        class="memoria-page-miniatura-numero">07</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Do outro lado da porta</strong><small>O LABORATÓRIO DA
+                        MÃE</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="7" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="8. Eu faria o mundo lembrar"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/8.png"><span
+                        class="memoria-page-miniatura-numero">08</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Eu faria o mundo lembrar</strong><small>MÃE E
+                        FILHA</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="8" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="9. Enquanto a cidade dormia"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/9.png"><span
+                        class="memoria-page-miniatura-numero">09</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Enquanto a cidade dormia</strong><small>TATY /
+                        ADOLESCÊNCIA</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="9" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="10. Um lugar dentro do sistema"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/10.png"><span
+                        class="memoria-page-miniatura-numero">10</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Um lugar dentro do sistema</strong><small>TATY /
+                        ARQUIVISTA</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="10" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="11. Os mesmos aplausos"><span class="memoria-page-miniatura" aria-hidden="true"><img
+                        class="memoria-page-miniatura-imagem" alt="" loading="lazy" decoding="async"
+                        src="http://127.0.0.1:5501/src/media/image/capa/11.png"><span
+                        class="memoria-page-miniatura-numero">11</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Os mesmos aplausos</strong><small>GALA /
+                        2075</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="11" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="12. A fundação é uma fraude"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/12.png"><span
+                        class="memoria-page-miniatura-numero">12</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>A fundação é uma
+                        fraude</strong><small>CAM_04</small></span></button><button type="button"
+                    class="memoria-page-capitulo" data-memoria-page-index="12" aria-controls="memoria-page-visor"
+                    aria-pressed="false" aria-label="13. O silêncio da cidade"><span class="memoria-page-miniatura"
+                      aria-hidden="true"><img class="memoria-page-miniatura-imagem" alt="" loading="lazy"
+                        decoding="async" src="http://127.0.0.1:5501/src/media/image/capa/13.png"><span
+                        class="memoria-page-miniatura-numero">13</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>O silêncio da cidade</strong><small>SISTEMA EM
+                        COLAPSO</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="13" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="14. Dessa vez, não"><span class="memoria-page-miniatura" aria-hidden="true"><img
+                        class="memoria-page-miniatura-imagem" alt="" loading="lazy" decoding="async"
+                        src="http://127.0.0.1:5501/src/media/image/capa/14.png"><span
+                        class="memoria-page-miniatura-numero">14</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Dessa vez, não</strong><small>SETOR
+                        109</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="14" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="15. Do outro lado do vidro"><span class="memoria-page-miniatura" aria-hidden="true"><img
+                        class="memoria-page-miniatura-imagem" alt="" loading="lazy" decoding="async"
+                        src="http://127.0.0.1:5501/src/media/image/capa/15.png"><span
+                        class="memoria-page-miniatura-numero">15</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Do outro lado do vidro</strong><small>CONEXÃO COM O
+                        NÚCLEO</small></span></button><button type="button" class="memoria-page-capitulo"
+                    data-memoria-page-index="15" aria-controls="memoria-page-visor" aria-pressed="false"
+                    aria-label="16. Prepare a imersão"><span class="memoria-page-miniatura" aria-hidden="true"><img
+                        class="memoria-page-miniatura-imagem" alt="" loading="lazy" decoding="async"
+                        src="http://127.0.0.1:5501/src/media/image/capa/16.png"><span
+                        class="memoria-page-miniatura-numero">16</span></span><span
+                      class="memoria-page-capitulo-texto"><strong>Prepare a imersão</strong><small>INTERFACE
+                        NEURAL</small></span></button></div>
+              </div><button type="button" id="memoria-page-rolo-proximo"
+                class="memoria-page-botao memoria-page-rolo-seta" aria-label="Selecionar próxima memória"
+                aria-controls="memoria-page-trilho">↓</button>
+              <p class="memoria-page-rolo-ajuda">Registros 17–20 revelam o desfecho do jogo.</p>
+            </aside>
+          </section>
+          <section class="archive-panel" id="acervo">
+            <p class="eyebrow">03 / ACERVO</p>
+            <h2>Três arquivos recuperados</h2>
+            <!-- ================= SEÇÃO 2: ACERVO ================= -->
+            <section class="i-acervo-section">
+
+
+              <div class="i-acervo-grid">
+                <div class="i-acervo-card i-acervo-card-1">
+                  <h3 class="i-acervo-card-title">MARIE CURIE</h3>
+                  <div class="i-acervo-card-area">Física e Química</div>
+                  <p class="i-acervo-card-desc">Pioneira no estudo da radioatividade, abriu caminhos para a ciência
+                    moderna.</p>
+                </div>
+                <div class="i-acervo-card i-acervo-card-2">
+                  <h3 class="i-acervo-card-title">ROSALIND FRANKLIN</h3>
+                  <div class="i-acervo-card-area">Biologia Molecular</div>
+                  <p class="i-acervo-card-desc">Suas imagens de difração de raios X foram essenciais para revelar o DNA.
+                  </p>
+                </div>
+                <div class="i-acervo-card i-acervo-card-3">
+                  <h3 class="i-acervo-card-title">ADA LOVELACE</h3>
+                  <div class="i-acervo-card-area">Computação</div>
+                  <p class="i-acervo-card-desc">Antecipou o poder dos computadores e imaginou novas formas de criar com
+                    eles.</p>
+                </div>
+              </div>
+
+              <div class="i-acervo-footer">
+                <a href="acervo.html" class="i-acervo-btn">ABRIR ACERVO &rarr;</a>
+              </div>
+            </section>
+          </section>
+
+
+
+
+
+
+          <section class="archive-panel" id="simulacao">
+            <p class="eyebrow">04 / SIMULAÇÃO</p>
+
+            <h2>Protocolo de incursão</h2>
+
+
+
+
+
+            <!-- ================= SEÇÃO 3: SIMULAÇÃO ================= -->
+            <section class="simulacao-section">
+
+
+              <div class="simulacao-grid">
+                <div class="simulacao-step">
+                  <div class="simulacao-img-box">
+                    <div class="simulacao-step-num">01</div>
+                    <img src="src/media/image/capa/16.png" class="simulacao-img">
+                  </div>
+                  <h3 class="simulacao-step-title">Conecte o headset</h3>
+                  <p class="simulacao-step-desc">Taty assume seu avatar para atravessar a fronteira entre a cidade e o
+                    arquivo.</p>
+                </div>
+                <div class="simulacao-step">
+                  <div class="simulacao-img-box">
+                    <div class="simulacao-step-num">02</div>
+                    <img src="src/media/taty-morrendo.png" class="simulacao-img">
+                  </div>
+                  <h3 class="simulacao-step-title">Identifique a censura</h3>
+                  <p class="simulacao-step-desc">Dentro da simulação, omissões e plágios tomam a forma de inimigos.</p>
+                </div>
+                <div class="simulacao-step">
+                  <div class="simulacao-img-box">
+                    <div class="simulacao-step-num">03</div>
+                    <img src="src/media/taty-salvando.png" class="simulacao-img">
+                  </div>
+                  <h3 class="simulacao-step-title">Recupere o registro</h3>
+                  <p class="simulacao-step-desc">Combata o vírus para devolver a autoria aos arquivos das pioneiras.</p>
+                </div>
+              </div>
+
+
+              <div class="i-acervo-footer">
+                <a href="simulacao.html" class="i-acervo-btn">ENTRAR NA SIMULAÇÃO &rarr;</a>
+              </div>
+            </section>
+
+          </section>
+          <section class="archive-panel" id="investigacao">
+            <p class="eyebrow">05 / INVESTIGAÇÃO</p>
+            <h2>Quem escreveu o registro?</h2>
+             <!-- ================= SEÇÃO 4: INVESTIGAÇÃO ================= -->
+                             
+    <section class="i-investigacao-section">
+        
+
+        <div class="i-investigacao-dossier">
+            <div class="i-investigacao-images-col">
+                <img src="src/media/image/investigacao/investigacao-jocelyn-foto.png" class="i-investigacao-photo i-investigacao-photo-1">
+                <img src="src/media/image/investigacao/investigacao-lise-meitner.png" class="i-investigacao-photo i-investigacao-photo-2">
+                <img src="src/media/image/investigacao/investigacao-rosalind-picture.png" class="i-investigacao-photo i-investigacao-photo-3">
+            </div>
+            
+            <div class="i-investigacao-content-col">
+                <div class="i-investigacao-dossier-tag">DOSSIÊ / O ARQUIVO DELAS</div>
+                <h2 class="i-investigacao-title">Quem escreveu o registro?</h2>
+                <div class="i-investigacao-subtitle">Se um nome desaparece do arquivo, o que a máquina aprende?</div>
+                
+                <div class="i-investigacao-text-grid">
+                    <div>
+                        <h3 class="i-investigacao-col-title">Efeito Matilda</h3>
+                        <p class="i-investigacao-col-text">É o não reconhecimento ou a atribuição indevida do trabalho de mulheres cientistas, cujas contribuições muitas vezes foram ignoradas, minimizadas ou creditadas a homens.</p>
+                    </div>
+                    <div class="i-investigacao-col-right">
+                        <h3 class="i-investigacao-col-title">O que isso tem a ver com a IA?</h3>
+                        <p class="i-investigacao-col-text">Sistemas de IA aprendem com os dados do passado. Se os registros históricos já apagam ou distorcem a presença das mulheres, a IA pode reproduzir e ampliar essas desigualdades, reforçando o esquecimento.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <img src="src/media/athena-simbolo.png" class="i-investigacao-stamp" >
+            <img src="src/media/museu-imagem-inicio.png" class="i-investigacao-stamp" style="top: auto; bottom: 20px; right: 20px;">
+        </div>
+
+        <div class="i-acervo-footer">
+                <a href="investigacao.html" class="i-acervo-btn">ABRIR INVESTIGAÇÃO &rarr;</a>
+              </div>
+    </section>
+          </section>
+          <section class="archive-panel" id="ecossistema">
+            <p class="eyebrow">06 / ECOSSISTEMA</p>
+            <h2>Central de transmissões</h2><!-- Perfis (O restante do seu código continua normal abaixo daqui...) -->
+            <div class="ecossistema-profiles-grid">
+              <!-- Perfil 1: Taty Lutz -->
+              <div class="ecossistema-profile-card ecossistema-theme-pink">
+                <div class="ecossistema-profile-header">
+                  <img src="src/media/image/taty-logo.png" alt="Taty Lutz" class="ecossistema-avatar">
+                  <div class="ecossistema-profile-info">
+                    <h3>TATY LUTZ</h3>
+                    <span class="ecossistema-tag-profile">PERFIL NARRATIVO</span>
+                    <div class="ecossistema-profile-sub">Instagram da Protagonista</div>
+                  </div>
+                </div>
+                <p class="ecossistema-profile-desc">A voz humana da história.<br>Memórias, humor e conexões.
+                </p>
+                <div class="ecossistema-stats">
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">18</span>publicações</div>
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">141</span>seguidores</div>
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">446</span>seguindo
+                  </div>
+                </div>
+                <a href="https://www.instagram.com/tatz.lutz/" target="_blank" class="ecossistema-btn-insta">VER NO
+                  INSTAGRAM ↗</a>
+                <div class="ecossistema-thumbs">
+                  <img src="src/media/image/post-1-taty.png" class="ecossistema-thumb-img">
+                  <img src="src/media/image/post-2-taty.png" class="ecossistema-thumb-img">
+                  <img src="src/media/image/post-3-taty.png" class="ecossistema-thumb-img">
+                </div>
+              </div>
+
+              <!-- Perfil 2: E-CAT -->
+              <div class="ecossistema-profile-card ecossistema-theme-purple">
+                <div class="ecossistema-profile-header">
+                  <img src="src/media/image/e-cat-logo.png" alt="E-CAT" class="ecossistema-avatar">
+                  <div class="ecossistema-profile-info">
+                    <h3>E-CAT</h3>
+                    <span class="ecossistema-tag-profile">PERFIL OFICIAL</span>
+                    <div class="ecossistema-profile-sub">Instagram do projeto</div>
+                  </div>
+                </div>
+                <p class="ecossistema-profile-desc">O paradoxo em forma de gato.<br>anúncios oficiais,
+                  teasers.</p>
+                <div class="ecossistema-stats">
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">21</span>publicações</div>
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">218</span>seguidores</div>
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">502</span>seguindo
+                  </div>
+                </div>
+                <a href="https://www.instagram.com/elas.cat/" target="_blank" class="ecossistema-btn-insta">VER NO
+                  INSTAGRAM ↗</a>
+                <div class="ecossistema-thumbs">
+                  <img src="src/media/image/post-1-ecat.png" class="ecossistema-thumb-img">
+                  <img src="src/media/image/post-2-ecat.png" class="ecossistema-thumb-img">
+                  <img src="src/media/image/post-3-ecat.png" class="ecossistema-thumb-img">
+                </div>
+              </div>
+
+              <!-- Perfil 3: A.T.H.E.N.A. -->
+              <div class="ecossistema-profile-card ecossistema-theme-cyan">
+                <div class="ecossistema-profile-header">
+                  <img src="src/media/image/athena-logo.png" alt="A.T.H.E.N.A." class="ecossistema-avatar">
+                  <div class="ecossistema-profile-info">
+                    <h3>A.T.H.E.N.A.</h3>
+                    <span class="ecossistema-tag-profile">PERFIL NARRATIVO</span>
+                    <div class="ecossistema-profile-sub">Instagram da Inteligência Artificial</div>
+                  </div>
+                </div>
+                <p class="ecossistema-profile-desc">A voz do sistema.<br>Registros, alertas e
+                  contradições.</p>
+                <div class="ecossistema-stats">
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">20</span>publicações</div>
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">152</span>seguidores</div>
+                  <div class="ecossistema-stat-item"><span class="ecossistema-stat-val">445</span>seguindo
+                  </div>
+                </div>
+                <a href="https://www.instagram.com/athenas.ai.75/" target="_blank" class="ecossistema-btn-insta">VER NO
+                  INSTAGRAM ↗</a>
+
+                <div class="ecossistema-thumbs">
+                  <img src="src/media/image/post-1-athena.png" class="ecossistema-thumb-img">
+                  <img src="src/media/image/post-2-athena.png" class="ecossistema-thumb-img">
+                  <img src="src/media/image/post-3-athena.png" class="ecossistema-thumb-img">
+                </div>
+              </div>
+            </div>
+
+            <div class="i-acervo-footer">
+              <a href="ecossistema.html" class="i-acervo-btn">EXPLORAR ECOSSISTEMA &rarr;</a>
+            </div>
+          </section>
+
+          <section class="archive-panel" id="projeto-950">
+            <p class="eyebrow">08 / PROJETO 950</p>
+            <h2 class="projeto-section-title">Quem construiu o terminal</h2>
+            <p>Elas no Controle: Além do Tempo reúne jogo, pesquisa e narrativa transmídia para investigar o apagamento
+              das mulheres na ciência.</p>
+            <!-- 5. QUEM CONSTRUIU ESTA HISTÓRIA -->
+            <section>
+
+              <div class="projeto-team-grid-inicio">
+                <!-- Card 1 -->
+                <div class="projeto-team-card">
+                  <img src="src/media/image/matheus.png" alt="Matheus" class="projeto-team-img">
+                  <div class="projeto-team-info">
+                    <h3 class="projeto-team-name">MATHEUS</h3>
+                    <div class="projeto-team-role">DIREÇÃO DE ARTE, UI/UX E WEB</div>
+                    <ul class="projeto-team-tasks">
+                      <li>Site e interfaces</li>
+                      <li>Identidade visual</li>
+                      <li>Design</li>
+                    </ul>
+                  </div>
+                  <img src="src/media/arte-design-matheus.png" alt="" class="icone-projeto-logo">
+                </div>
+                <!-- Card 2 -->
+                <div class="projeto-team-card">
+                  <img src="src/media/image/pietro.png" alt="Pietro" class="projeto-team-img">
+                  <div class="projeto-team-info">
+                    <h3 class="projeto-team-name">PIETRO</h3>
+                    <div class="projeto-team-role">PROGRAMAÇÃO E GAME ENGINE</div>
+                    <ul class="projeto-team-tasks">
+                      <li>Sistemas do jogo</li>
+                      <li>Cenas e interações</li>
+                      <li>Vídeos e animações</li>
+                    </ul>
+                  </div>
+
+                  <img src="src/media/game-engine-pietro.png" alt="" class="icone-projeto-logo">
+                </div>
+                <!-- Card 3 -->
+                <div class="projeto-team-card">
+                  <img src="src/media/image/davi.png" alt="Davi" class="projeto-team-img">
+                  <div class="projeto-team-info">
+                    <h3 class="projeto-team-name">DAVI</h3>
+                    <div class="projeto-team-role">GAME DESIGN, HISTÓRIA E ÁUDIO</div>
+                    <ul class="projeto-team-tasks">
+                      <li>Pesquisa e roteiro</li>
+                      <li>Música e áudio</li>
+                      <li>Sprites</li>
+                    </ul>
+                  </div>
+
+                  <img src="src/media/game-design-davi.png" alt="" class="icone-projeto-logo">
+                </div>
+              </div>
+
+              <div class="i-acervo-footer">
+                <a href="projeto.html" class="i-acervo-btn">CONHEÇA O PROJETO &rarr;</a>
+              </div>
+            </section>
+          </section>
+        </main>
+
+
+
+
+
+        <footer class="footer home-footer">
+          <div class="footer-top">
+
+            <!-- Coluna 1: Logo e Título (Mais larga) -->
+            <div class="home-footer-marca">
+              <div class="home-footer-marca-logo">
+                <img src="src/media/image/E-CAT.png" alt="">
+              </div>
+              <div class="home-footer-marca-titulo">
+                <strong>ELAS NO CONTROLE:</strong>
+                <h1>Além do Tempo</h1>
+                <p>Um terminal para explorar a memória das mulheres na ciência.</p>
+              </div>
+            </div>
+
+            <!-- Coluna 2: Criadores -->
+            <nav class="home-footer-titulo" aria-label="Criadores">
+              <small>CRIADORES</small>
+              <a href="https://instagram.com">Matheus Lemes Oliveira</a>
+              <a href="https://instagram.com">Pietro Hygino Henrique</a>
+              <a href="https://instagram.com">Davi Martins Ferreira</a>
+            </nav>
+
+            <!-- Coluna 3: Transmissões -->
+            <div class="home-footer-titulo" aria-label="Redes Sociais">
+              <small>TRANSMISSÕES</small>
+              <a href="https://instagram.com">@taty.lutz_</a>
+              <a href="https://instagram.com">@athenas.ai.75</a>
+              <a href="https://instagram.com">@elas.cat</a>
+            </div>
+
+          </div>
+
+          <!-- Rodapé inferior -->
+          <div class="footer-bottom">
+            <small>Projeto 950 · MTEC 2026 · Sala 109</small>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Camada 2: filtro sobre o site, sem capturar cliques. -->
+  <div id="visualFilter" class="visual-filter" aria-hidden="true">
+    <video id="filterVideo" muted loop playsinline preload="none" hidden></video>
+    <div class="scanlines"></div>
+  </div>
+
+  <!-- Camada 3: Tela Introdução -->
+
+
+
+  <section id="intro" class="intro" aria-label="Conectar ao terminal A.T.H.E.N.A.">
+
+    <video id="introVideo" class="intro-video" playsinline preload="none"
+      aria-label="Vídeo de abertura da A.T.H.E.N.A."></video>
+
+    <div id="connectScreen" class="connect-screen">
+
+      <p class="eyebrow athena-acess">A.T.H.E.N.A. / ACESSO AO TERMINAL</p>
+
+      <label class="Blue-Inicio-switch">
+        <input id="powerSwitch" type="checkbox" aria-label="Ligar o terminal">
+        <span class="Blue-Inicio-button" aria-hidden="true">
+          <span class="Blue-Inicio-light"></span>
+          <span class="Blue-Inicio-dots"></span>
+          <span class="Blue-Inicio-characters"></span>
+          <span class="Blue-Inicio-shine"></span>
+          <span class="Blue-Inicio-shadow"></span>
+        </span>
+      </label>
+      <p class="connect-hint" id="powerHint" role="status">Ligue o interruptor para conectar.</p>
+      <button id="connectButton" class="connect-button" type="button" disabled>
+        <span class="con-label">CONECTAR</span>
+        <span class="con-clip" aria-hidden="true">
+          <i class="con-corner lt"></i><i class="con-corner rt"></i>
+          <i class="con-corner rb"></i><i class="con-corner lb"></i>
+        </span>
+        <span class="con-arrow left" aria-hidden="true"></span>
+        <span class="con-arrow right" aria-hidden="true"></span>
+      </button>
+      <button id="soundButton" class="text-button" type="button" aria-pressed="true">SOM DA INTRODUÇÃO: ATIVADO</button>
+
+    </div>
+    <div id="playbackControls" class="playback-controls" hidden>
+      <button id="pauseButton" class="icon-button" type="button">PAUSAR</button>
+      <button id="skipButton" class="icon-button" type="button">PULAR →</button>
+    </div>
+    <p id="introStatus" class="intro-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <!-- Isso é uma tag que avisa o usuário que o JavaScript precisa estar ativado para acessar o terminal. Se o JavaScript estiver desativado, essa mensagem será exibida. -->
+  <!-- Basicamente um plano B caso dê erro no JS -->
+  <noscript>
+    <div class="noscript">Ative o JavaScript para entrar no terminal. Projeto 950 — Elas no Controle: Além do Tempo.
+    </div>
+  </noscript>
+
+  <div class="cursor-orbita" aria-hidden="true">
+    <span class="cursor-orbita__anel"></span>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="src/js/efeitos.js" defer></script>
+  <script src="src/js/memorias-inicio.js" defer></script>
+  <script src="src/js/script.js" type="module"></script>
+
+  <script src="src/js/vlibras-menu.js" defer></script>
+</body>
+
+</html>

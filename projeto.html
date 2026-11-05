@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.T.H.E.N.A</title>
+
+    <link rel="icon" href="src/media/favicon/ATHENA-favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Redaction+35:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/projeto.css"> <link rel="stylesheet" href="src/css/interacoes-main.css">
+<link rel="stylesheet" href="src/css/base.css">
+</head>
+
+
+<body>
+
+    <body class="is-locked" data-bs-spy="scroll" data-bs-target="#header-links" data-bs-root-margin="0px 0px -40%">
+
+        <div class="cursor-customizado"></div>
+
+        <!-- Camada 0: Vídeo Background -->
+
+        <div class="environment" aria-hidden="true">
+
+            <video id="backgroundVideo" class="background-video" muted loop playsinline preload="none" hidden></video>
+
+            <div class="background-shade"></div>
+            <div class="grid"></div>
+        </div>
+
+        <!-- Camada 1: Site -->
+
+        <div id="site" class="site" inert aria-hidden="true">
+
+            <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+            <div class="terminal-layout">
+
+                <aside class="header-menu" aria-label="Painel A.T.H.E.N.A.">
+        <div class="header-menu-interior">
+          <button class="header-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#header-painel"
+            aria-expanded="false" aria-controls="header-painel">Menu</button>
+
+          <div class="header-marca">
+            <img src="src/media/image/ATHENA.png" alt="" width="114" height="114">
+            <strong>A.T.H.E.N.A.</strong>
+            <small>TERMINAL DE ARQUIVOS</small>
+          </div>
+
+          <div id="header-painel" class="header-painel collapse">
+            <nav class="nav header-links" id="header-links" aria-label="Seções do terminal">
+
+
+              <a class="nav-link" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-terminal preview-icon">
+                  <path d="m7 11 2-2-2-2" />
+                  <path d="M11 13h4" />
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                </svg>Terminal</a>
+
+              <a class="nav-link" href="memorias.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-folder-clock preview-icon">
+                  <path d="M16 14v2.2l1.6 1" />
+                  <path
+                    d="M7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2" />
+                  <circle cx="16" cy="16" r="6" />
+                </svg>Memórias</a>
+
+              <a class="nav-link" href="acervo.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-library preview-icon">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M7 7v10" />
+                  <path d="M11 7v10" />
+                  <path d="m15 7 2 10" />
+                </svg>Acervo</a>
+              <a class="nav-link" href="simulacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-gamepad-2 preview-icon">
+                  <line x1="6" x2="10" y1="11" y2="11" />
+                  <line x1="8" x2="8" y1="9" y2="13" />
+                  <line x1="15" x2="15.01" y1="12" y2="12" />
+                  <line x1="18" x2="18.01" y1="10" y2="10" />
+                  <path
+                    d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                </svg>Simulação</a>
+              <a class="nav-link" href="investigacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                  height="24" viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-newspaper preview-icon">
+                  <path d="M15 18h-5" />
+                  <path d="M18 14h-8" />
+                  <path
+                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+                  <rect width="8" height="4" x="10" y="6" rx="1" />
+                </svg>Investigação</a>
+              <a class="nav-link" href="ecossistema.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-globe-code preview-icon">
+                  <path d="M15.5 10 13 7.5 15.5 5" />
+                  <path d="M15.861 14A14.5 14.5 0 0112 22a14.48 14.48 0 010-20 10 10 0 109.888 11.5" />
+                  <path d="M19.5 5 22 7.5 19.5 10" />
+                  <path d="M2 12h8.5" />
+                </svg>Ecossistema</a>
+
+
+              <a class="nav-link" href="projeto.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-user-group preview-icon">
+                  <path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1" />
+                  <path d="M19 10h1a2 2 0 012 2v1" />
+                  <path d="M5 10H4a2 2 0 00-2 2v1" />
+                  <circle cx="12" cy="11" r="3" />
+                  <circle cx="18" cy="4" r="2" />
+                  <circle cx="6" cy="4" r="2" />
+                </svg>Projeto 950</a>
+
+
+            </nav>
+            <div class="header-telemetria">
+
+              <img src="src/media/video/gif/earth.gif" alt="" loading="lazy">
+              <div class="header-telemetria-text">
+                <p class="header-telemetria-text-status">
+                  SETOR 109<br><span class="status-dot"></span><b>CONEXÃO ESTÁVEL</b>
+                </p>
+                <div class="menu-preferencias">
+
+                  <div class="controles-audio">
+                    <div class="controles-audio-div">
+                      <p>MÚSICA:</p>
+
+
+                      <div class="background-sound-eff-button-container musica">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="controles-audio-div">
+
+                      <p>SONS:</p>
+
+
+                      <div class="background-sound-eff-button-container efeitos">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="button-turn-on-effect-text">
+                    <p>
+                      EFEITOS:
+                    </p>
+                  </div>
+                  <div class="turn-on-effect-toggle-cont">
+                    <!-- O input agora carrega a ID do seu botão antigo e inicia ligado -->
+                    <input class="turn-on-effect-toggle-input" id="effectsButton" name="toggle" type="checkbox"
+                      checked />
+                    <label class="turn-on-effect-toggle-label" for="effectsButton">
+                      <div class="turn-on-effect-cont-icon">
+                        <!-- Seus spans de sparkle originais -->
+                        <span style="--width: 2; --deg: 25; --duration: 11" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 100; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 280; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 200; --duration: 3" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 30; --duration: 20" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 300; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 250; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 210; --duration: 8" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 100; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 15; --duration: 13" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 75; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 6" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 50; --duration: 7" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 320; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 220; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 215; --duration: 2" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 135; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 45; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 78; --duration: 16" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 89; --duration: 19" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 14" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 97; --duration: 1" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 174; --duration: 10" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 236; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30"
+                          class="turn-on-effect-icon">
+                          <path
+                            d="M0.96233 28.61C1.36043 29.0081 1.96007 29.1255 2.47555 28.8971L10.4256 25.3552C13.2236 24.11 16.4254 24.1425 19.2107 25.4401L27.4152 29.2747C27.476 29.3044 27.5418 29.3023 27.6047 29.32C27.6563 29.3348 27.7079 29.3497 27.761 29.3574C27.843 29.3687 27.9194 29.3758 28 29.3688C28.1273 29.3617 28.2531 29.3405 28.3726 29.2945C28.4447 29.262 28.5162 29.2287 28.5749 29.1842C28.6399 29.1446 28.6993 29.0994 28.7509 29.0477L28.9008 28.8582C28.9468 28.7995 28.9793 28.7274 29.0112 28.656C29.0599 28.5322 29.0811 28.4036 29.0882 28.2734C29.0939 28.1957 29.0868 28.1207 29.0769 28.0415C29.0705 27.9955 29.0585 27.9524 29.0472 27.9072C29.0295 27.8343 29.0302 27.7601 28.9984 27.6901L25.1638 19.4855C23.8592 16.7073 23.8273 13.5048 25.0726 10.7068L28.6145 2.75679C28.8429 2.24131 28.7318 1.63531 28.3337 1.2372C27.9165 0.820011 27.271 0.721743 26.7491 0.9961L19.8357 4.59596C16.8418 6.15442 13.2879 6.18696 10.2615 4.70062L1.80308 0.520214C1.7055 0.474959 1.60722 0.441742 1.50964 0.421943C1.44459 0.409215 1.37882 0.395769 1.3074 0.402133C1.14406 0.395769 0.981436 0.428275 0.818095 0.499692C0.77284 0.519491 0.719805 0.545671 0.67455 0.578198C0.596061 0.617088 0.524653 0.675786 0.4596 0.74084C0.394546 0.805894 0.335843 0.877306 0.296245 0.956502C0.263718 1.00176 0.237561 1.05477 0.217762 1.10003C0.152708 1.24286 0.126545 1.40058 0.120181 1.54978C0.120181 1.61483 0.126527 1.6735 0.132891 1.73219C0.15269 1.85664 0.178881 1.97332 0.237571 2.08434L4.41798 10.5427C5.91139 13.5621 5.8725 17.1238 4.3204 20.1099L0.720514 27.0233C0.440499 27.5536 0.545137 28.1928 0.96233 28.61Z">
+                          </path>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="menu-libras">
+                    <p>ACESSIBILIDADE</p>
+                    <button id="menu-vlibras" type="button" disabled>Carregando VLibras…</button>
+                    <small id="menu-vlibras-status" role="status">Tradução para Libras</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+                <div class="header-conteudo">
+
+
+                    <main id="main" tabindex="-1">
+
+                        <div class="projeto-container">
+
+                            <!-- 1. HERO -->
+                            <header class="projeto-hero">
+                                <div class="projeto-hero-content">
+                                    <div class="projeto-tag-div">
+                                        <span class="projeto-tag">BASTIDORES / <strong class="destaque">PROJETO
+                                                950</strong></span>
+                                    </div>
+                                    <h1 class="projeto-title">TECNOLOGIA PARA<br>PRESERVAR<br><span
+                                            class="projeto-title-cyan">MEMÓRIAS</span></h1>
+                                    <p class="projeto-subtitle">Elas no Controle: Além do Tempo</p>
+                                    <p class="projeto-hero-desc">Um jogo, um site e uma experiência educativa sobre as
+                                        mulheres na ciência e o apagamento histórico.</p>
+                                    <div class="projeto-hero-actions">
+                                        <button class="projeto-btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#meuModal4">CONHECER O PROJETO &nbsp; &gt;</button>
+                                        <a href="src/media/documentação/E-CAT_Documentacao_Completa.pdf" download="E-CAT_Documentacao_Completa.pdf"  class="projeto-btn-outline">ACESSAR DOCUMENTAÇÃO &nbsp; &gt;</a>
+                                    </div>
+                                </div>
+                                <div class="projeto-hero-video" style="position: relative;">
+    <!-- O VÍDEO DO YOUTUBE (Fica escondido atrás da capa no início) -->
+    <iframe id="video-youtube" class="projeto-video-img" 
+            src="https://www.youtube.com/embed/OXTSS6QIHrA?si=Q5Y4Hs7EM8TSWfjQ" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media; picture-in-picture" 
+            allowfullscreen 
+            style="width: 100%; height: 100%; display: none;">
+    </iframe>
+
+    <!-- A SUA CAPA E BOTÕES PERSONALIZADOS -->
+    <div id="capa-video-container" onclick="document.getElementById('video-youtube').style.display='block'; document.getElementById('capa-video-container').style.display='none';" style="cursor: pointer;">
+        <img class="projeto-video-img" src="src/media/image/capa vídeo.png" alt="Capa" style="width: 100%; display: block;">
+        
+        
+    </div>
+</div>
+                            </header>
+
+                            <!-- 2. POR QUE ESTE PROJETO EXISTE? -->
+                            <section>
+                                <h2 class="projeto-section-title">POR QUE ESTE PROJETO EXISTE?</h2>
+                                <div class="projeto-why-grid">
+                                    <div class="projeto-why-card">
+                                        <div class="projeto-why-icon"><img src="src/media/icones/warning.svg" alt="">
+                                        </div>
+                                        <div class="projeto-why-info">
+                                            <h3>PROBLEMA</h3>
+                                            <p>Apagamento e falta de reconhecimento das mulheres na ciência.</p>
+                                        </div>
+                                    </div>
+                                    <div class="projeto-why-card">
+                                        <div class="projeto-why-icon"><img src="src/media/icones/Target.svg" alt="">
+                                        </div>
+                                        <div class="projeto-why-info">
+                                            <h3>OBJETIVO</h3>
+                                            <p>Reconhecer contribuições e aproximar história, ciência e tecnologia.</p>
+                                        </div>
+                                    </div>
+                                    <div class="projeto-why-card">
+                                        <div class="projeto-why-icon"><img src="src/media/icones/Layer.svg" alt="">
+                                        </div>
+                                        <div class="projeto-why-info">
+                                            <h3>APLICAÇÃO</h3>
+                                            <p>Aprendizagem em escolas, eventos e espaços de divulgação científica.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 3. DOCUMENTAÇÃO E PROCESSO -->
+                            <section>
+                                <h2 class="projeto-section-title">DOCUMENTAÇÃO E PROCESSO</h2>
+                                <div class="projeto-doc-layout">
+                                    <!-- Mock Kanban -->
+                                    <div class="projeto-kanban-mock">
+                                        <div class="projeto-kanban-header">
+                                            <span style="color: #ef4444;">●</span>
+                                            <span style="color: #eab308;">●</span>
+                                            <span style="color: #22c55e;">●</span>
+                                            <img src="src/media/icones/jira-sem-fundo.png" alt=""> Planejamento do
+                                            Projeto (Jira)
+                                        </div>
+                                        <div class="projeto-kanban-cols">
+                                            <div class="projeto-k-col">
+                                                <div class="projeto-k-title blue">Planejado</div>
+                                                <div class="projeto-k-card"></div>
+                                                <div class="projeto-k-card"></div>
+                                            </div>
+                                            <div class="projeto-k-col">
+                                                <div class="projeto-k-title orange">Em desenvolvimento</div>
+                                                <div class="projeto-k-card" style="border-left: 2px solid orange;">
+                                                </div>
+                                                <div class="projeto-k-card" style="border-left: 2px solid orange;">
+                                                </div>
+                                            </div>
+                                            <div class="projeto-k-col">
+                                                <div class="projeto-k-title green">Concluído</div>
+                                                <div class="projeto-k-card" style="border-left: 2px solid green;"></div>
+                                                <div class="projeto-k-card" style="border-left: 2px solid green;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="projeto-doc-links">
+                                        <p class="projeto-doc-desc">A documentação reúne o planejamento, os registros,
+                                            as fontes e as evidências do desenvolvimento.</p>
+                                        <div class="projeto-doc-grid">
+                                            <div class="projeto-doc-btn"><img src="src/media/icones/relatório.png"
+                                                    alt=""> Relatório do projeto</div>
+                                            <div class="projeto-doc-btn"><img src="src/media/icones/jira-sem-fundo.png"
+                                                    alt=""> Planejamento no Jira</div>
+                                            <div class="projeto-doc-btn"><img src="src/media/icones/fonte.png" alt="">
+                                                Fontes e créditos</div>
+                                            <div class="projeto-doc-btn"><img src="src/media/icones/registro.png"
+                                                    alt=""> Registros de desenvolvimento</div>
+                                        </div>
+                                        <div class="projeto-doc-actions">
+                                            <a href="src/media/documentação/E-CAT_Documentacao_Completa.pdf" download="E-CAT_Documentacao_Completa.pdf"  class="projeto-btn-primary">ABRIR DOCUMENTAÇÃO &gt;</a>
+                                            <a href="src/media/documentação/E-CAT_Documentacao_Completa.pdf" download="E-CAT_Documentacao_Completa.pdf" class="projeto-btn-outline">VER PLANEJAMENTO &gt;</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 4. DA IDEIA À EXPERIÊNCIA -->
+                            <section>
+                                <h2 class="projeto-section-title">DA IDEIA À EXPERIÊNCIA</h2>
+
+                                <div class="projeto-timeline">
+                                    <div class="projeto-time-step">
+                                        <div class="projeto-time-icon"><img src="src/media/icones/pesquisa.png" alt="">
+                                        </div>
+                                        <div class="projeto-time-title">Pesquisa</div>
+                                        <div class="projeto-time-desc">Levantamento histórico e referências.</div>
+                                    </div>
+                                    <div class="projeto-time-arrow">——</div>
+
+                                    <div class="projeto-time-step">
+                                        <div class="projeto-time-icon"><img src="src/media/icones/roteiro.png" alt="">
+                                        </div>
+                                        <div class="projeto-time-title">Roteiro</div>
+                                        <div class="projeto-time-desc">Estrutura da narrativa e do conteúdo.</div>
+                                    </div>
+                                    <div class="projeto-time-arrow">——</div>
+
+                                    <div class="projeto-time-step">
+                                        <div class="projeto-time-icon"><img src="src/media/icones/design.png" alt="">
+                                        </div>
+                                        <div class="projeto-time-title">Design</div>
+                                        <div class="projeto-time-desc">Identidade visual, interfaces e arte.</div>
+                                    </div>
+                                    <div class="projeto-time-arrow">——</div>
+
+                                    <div class="projeto-time-step">
+                                        <div class="projeto-time-icon"><img src="src/media/icones/desenvolvimento.png"
+                                                alt=""></div>
+                                        <div class="projeto-time-title">Codificação</div>
+                                        <div class="projeto-time-desc">Construção do site e do jogo.</div>
+                                    </div>
+                                    <div class="projeto-time-arrow">——</div>
+
+                                    <div class="projeto-time-step">
+                                        <div class="projeto-time-icon"><img src="src/media/icones/testes.png" alt="">
+                                        </div>
+                                        <div class="projeto-time-title">Testes</div>
+                                        <div class="projeto-time-desc">Verificação de funcionalidades e ajustes.</div>
+                                    </div>
+                                    <div class="projeto-time-arrow">——</div>
+
+                                    <div class="projeto-time-step">
+                                        <div class="projeto-time-icon"><img src="src/media/icones/apresentação.png"
+                                                alt=""></div>
+                                        <div class="projeto-time-title">Apresentação</div>
+                                        <div class="projeto-time-desc">Organização, demonstração e entrega final.</div>
+                                    </div>
+                                </div>
+
+                                <div class="projeto-tech-stack">
+                                    <div class="projeto-tech-title">TECNOLOGIAS UTILIZADAS</div>
+                                    <div class="projeto-tech-logos">
+                                        <div class="projeto-tech-item"><span
+                                                style="color:#e34c26; font-size: 20px;"><img
+                                                    src="src/media/icones/html.png" alt=""></span> HTML Estrutura</div>
+                                        <div class="projeto-tech-item"><span
+                                                style="color:#264de4; font-size: 20px;"><img
+                                                    src="src/media/icones/css.png" alt=""></span> CSS Interface</div>
+                                        <div class="projeto-tech-item"><span
+                                                style="color:#f0db4f; font-size: 20px;"><img
+                                                    src="src/media/icones/js.png" alt=""></span> JavaScript Interações
+                                        </div>
+                                        <div class="projeto-tech-item"><img src="src/media/icones/godot.png"
+                                                alt="">Godot Jogo</div>
+                                        <div class="projeto-tech-item"><img src="src/media/icones/capcut.png"
+                                                alt="">CapCut Edição</div>
+                                        <div class="projeto-tech-item"><span
+                                                style="color:#00c4cc; font-size: 20px;"><img
+                                                    src="src/media/icones/canva.png" alt=""></span> Canva Design</div>
+                                        <div class="projeto-tech-item"><img src="src/media/icones/jira.png" alt="">Jira
+                                            Documentação</div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 5. QUEM CONSTRUIU ESTA HISTÓRIA -->
+                            <section>
+                                <h2 class="projeto-section-title">QUEM CONSTRUIU ESTA HISTÓRIA</h2>
+                                <div class="projeto-team-grid">
+                                    <!-- Card 1 -->
+                                    <div class="projeto-team-card">
+                                        <img src="src/media/image/matheus.png" alt="Matheus" class="projeto-team-img">
+                                        <div class="projeto-team-info">
+                                            <h3 class="projeto-team-name">MATHEUS</h3>
+                                            <div class="projeto-team-role">DIREÇÃO DE ARTE, UI/UX E WEB</div>
+                                            <ul class="projeto-team-tasks">
+                                                <li>Site e interfaces</li>
+                                                <li>Identidade visual</li>
+                                                <li>Design</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 -->
+                                    <div class="projeto-team-card">
+                                        <img src="src/media/image/pietro.png" alt="Pietro" class="projeto-team-img">
+                                        <div class="projeto-team-info">
+                                            <h3 class="projeto-team-name">PIETRO</h3>
+                                            <div class="projeto-team-role">PROGRAMAÇÃO E GAME ENGINE</div>
+                                            <ul class="projeto-team-tasks">
+                                                <li>Sistemas do jogo</li>
+                                                <li>Cenas e interações</li>
+                                                <li>Vídeos e animações</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Card 3 -->
+                                    <div class="projeto-team-card">
+                                        <img src="src/media/image/davi.png" alt="Davi" class="projeto-team-img">
+                                        <div class="projeto-team-info">
+                                            <h3 class="projeto-team-name">DAVI</h3>
+                                            <div class="projeto-team-role">GAME DESIGN, HISTÓRIA E ÁUDIO</div>
+                                            <ul class="projeto-team-tasks">
+                                                <li>Pesquisa e roteiro</li>
+                                                <li>Música e áudio</li>
+                                                <li>Sprites</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 6. DESAFIOS E ESCOLHAS -->
+                            <section>
+                                <h2 class="projeto-section-title">DESAFIOS, ESCOLHAS E APRENDIZADOS</h2>
+                                <div class="projeto-challenges-layout">
+                                    <div class="projeto-chal-flow">
+                                        <div class="projeto-chal-row">
+                                            <div class="projeto-chal-label purple">PROBLEMA<br>IDENTIFICADO</div>
+                                            <div class="projeto-chal-text">Como tornar a história envolvente e acessível
+                                                ao público escolar?</div>
+                                        </div>
+                                        <div class="projeto-chal-row" style="padding-left: 70px;">↓</div>
+                                        <div class="projeto-chal-row">
+                                            <div class="projeto-chal-label yellow">DECISÃO<br>DA EQUIPE</div>
+                                            <div class="projeto-chal-text">Integrar narrativa, interatividade e recursos
+                                                de acessibilidade no site e no jogo.</div>
+                                        </div>
+                                        <div class="projeto-chal-row" style="padding-left: 70px;">↓</div>
+                                        <div class="projeto-chal-row">
+                                            <div class="projeto-chal-label cyan">EVIDÊNCIA<br>DA SOLUÇÃO</div>
+                                            <div class="projeto-chal-text">Implementação das interfaces, controles de
+                                                áudio, navegação organizada e registros no Jira e no relatório.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="projeto-usability-box">
+                                        <h3 class="projeto-usab-title">🚹 USABILIDADE E ACESSIBILIDADE</h3>
+                                        <ul class="projeto-usab-list">
+                                            <li>Navegação clara</li>
+                                            <li>Leitura e contraste</li>
+                                            <li>Controle de áudio e efeitos</li>
+                                            <li>Verificação por teclado</li>
+                                        </ul>
+                                        <div class="projeto-usab-footer">
+                                            <span>ℹ️</span> Registrar e demonstrar os recursos implementados.
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 7. AVALIAÇÃO -->
+                            <section>
+                                <h2 class="projeto-section-title">AVALIAÇÃO: ONDE ENCONTRAR AS EVIDÊNCIAS</h2>
+                                <p class="projeto-eval-subtitle">Um guia para localizar o processo e as entregas.</p>
+
+                                <div class="projeto-eval-grid">
+                                    <ul class="projeto-eval-list">
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">01</span> <span
+                                                class="projeto-eval-topic">Complexidade técnica</span> <span
+                                                class="projeto-eval-desc">Arquitetura e ferramentas</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">02</span> <span
+                                                class="projeto-eval-topic">Funcionamento</span> <span
+                                                class="projeto-eval-desc">Demonstração do site e jogo</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">03</span> <span
+                                                class="projeto-eval-topic">Objetivos</span> <span
+                                                class="projeto-eval-desc">Proposta e entregas</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">04</span> <span
+                                                class="projeto-eval-topic">Documentação</span> <span
+                                                class="projeto-eval-desc">Relatório e Jira</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">05</span> <span
+                                                class="projeto-eval-topic">Usabilidade e acessibilidade</span> <span
+                                                class="projeto-eval-desc">Recursos e verificações</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">06</span> <span
+                                                class="projeto-eval-topic">Conhecimentos do curso</span> <span
+                                                class="projeto-eval-desc">Decisões técnicas</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">07</span> <span
+                                                class="projeto-eval-topic">Resolução de problemas</span> <span
+                                                class="projeto-eval-desc">Desafios e soluções</span></li>
+                                    </ul>
+                                    <ul class="projeto-eval-list">
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">08</span> <span
+                                                class="projeto-eval-topic">Domínio da equipe</span> <span
+                                                class="projeto-eval-desc">Funções e explicações</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">09</span> <span
+                                                class="projeto-eval-topic">Clareza da apresentação</span> <span
+                                                class="projeto-eval-desc">Vídeo e roteiro</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">10</span> <span
+                                                class="projeto-eval-topic">Organização do espaço</span> <span
+                                                class="projeto-eval-desc">Identidade e ambientação</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">11</span> <span
+                                                class="projeto-eval-topic">Demonstração</span> <span
+                                                class="projeto-eval-desc">Fluxos e características</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">12</span> <span
+                                                class="projeto-eval-topic">Relevância</span> <span
+                                                class="projeto-eval-desc">Aplicação educativa</span></li>
+                                        <li class="projeto-eval-item"><span class="projeto-eval-num">13</span> <span
+                                                class="projeto-eval-topic">Resultados</span> <span
+                                                class="projeto-eval-desc">Registros e evidências</span></li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <!-- 8. DO DIGITAL AO PRESENCIAL -->
+                            <section>
+                                <div class="projeto-digital-header">
+                                    <h2 class="projeto-section-title" style="margin:0;">DO DIGITAL AO PRESENCIAL</h2>
+                                    <span class="projeto-prep-tag">📦 APRESENTAÇÃO EM PREPARAÇÃO</span>
+                                </div>
+
+                                <div class="projeto-digital-layout">
+                                    <div class="projeto-digital-photos">
+                                        <div class="projeto-photo-card">
+                                            <img src="src/media/image/origami.png" class="projeto-photo-img">
+                                            <div class="projeto-photo-label">Origamis dos personagens</div>
+                                        </div>
+                                        <div class="projeto-photo-card">
+                                            <img src="src/media/image/e-cat-design.png" class="projeto-photo-img">
+                                            <div class="projeto-photo-label">Decoração e identidade visual</div>
+                                        </div>
+                                        <div class="projeto-photo-card">
+                                            <img src="src/media/image/apresentação-athena.png"
+                                                class="projeto-photo-img">
+                                            <div class="projeto-photo-label">Demonstração ao público</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="projeto-gallery-box">
+                                        <h3 class="projeto-gallery-title">🖼️ GALERIA DO PROCESSO</h3>
+                                        <div class="projeto-gallery-list">
+                                            
+                                            <div class="projeto-g-item" data-bs-toggle="modal"
+                                                data-bs-target="#meuModal1">
+                                                <div class="projeto-g-img"><img src="src/media/image/projeto-img/foto-1.jpeg" alt=""></div> Evolução do site
+                                            </div>
+                                            <div class="projeto-g-item" data-bs-toggle="modal"
+                                                data-bs-target="#meuModal2">
+                                                <div class="projeto-g-img"><img src="src\media\image\projeto-img\capa.png" alt=""></div> Registros da equipe
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                        </div>
+                    </main>
+
+
+
+
+
+                    <footer class="footer home-footer">
+                        <div class="footer-top">
+
+                            <!-- Coluna 1: Logo e Título (Mais larga) -->
+                            <div class="home-footer-marca">
+                                <div class="home-footer-marca-logo">
+                                    <img src="src/media/image/E-CAT.png" alt="">
+                                </div>
+                                <div class="home-footer-marca-titulo">
+                                    <strong>ELAS NO CONTROLE:</strong>
+                                    <h1>Além do Tempo</h1>
+                                    <p>Um terminal para explorar a memória das mulheres na ciência.</p>
+                                </div>
+                            </div>
+
+                            <!-- Coluna 2: Criadores -->
+                            <nav class="home-footer-titulo" aria-label="Criadores">
+                                <small>CRIADORES</small>
+                                <a href="https://instagram.com">Matheus Lemes Oliveira</a>
+                                <a href="https://instagram.com">Pietro Hygino Henrique</a>
+                                <a href="https://instagram.com">Davi Martins Ferreira</a>
+                            </nav>
+
+                            <!-- Coluna 3: Transmissões -->
+                            <div class="home-footer-titulo" aria-label="Redes Sociais">
+                                <small>TRANSMISSÕES</small>
+                                <a href="https://instagram.com">@taty.lutz_</a>
+                                <a href="https://instagram.com">@athenas.ai.75</a>
+                                <a href="https://instagram.com">@elas.cat</a>
+                            </div>
+
+                        </div>
+
+                        <!-- Rodapé inferior -->
+                        <div class="footer-bottom">
+                            <small>Projeto 950 · MTEC 2026 · Sala 109</small>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+        
+
+
+
+
+
+
+
+
+
+        <div class="modal fade" id="meuModal1" data-bs-theme="dark">
+            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Evolução do Site</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+
+
+                        <div class="r-mission-container-box">
+                            <section class="r-mission-section">
+                                <div class="r-mission-container">
+                                    <button class="nav-btn prev">&#10094;</button>
+
+                                    <div class="r-mission-track" id="r-missionTrack">
+
+
+
+
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/1.jpeg">
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/2.jpeg">
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/3.jpeg">
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/4.jpeg">
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/5.jpeg">
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/6.jpeg">
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/7.jpeg">
+                                        </div>
+
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/8.jpeg">
+                                        </div>
+
+
+                                        <div class="r-missoes-card">
+                                            <img src="src/media/image/projeto-img/foto-1.jpeg">
+                                        </div>
+                                    </div>
+
+                                  <button class="nav-btn next">&#10095;</button>
+                                </div>
+                            </section>
+                        </div>
+
+                    
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="modal fade" id="meuModal2" data-bs-theme="dark">
+            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Registros de Equipe</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+
+                        <div class="r-mission-container-box">
+                            <section class="r-mission-section">
+                                <div class="r-mission-container">
+                                    <button class="nav-btn prev">&#10094;</button>
+
+                                    <div class="r-mission-track" id="r-missionTrack">
+
+
+
+
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/1.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/2.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/3.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/4.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/5.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/6.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/7.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/8.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/9.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/10.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/11.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/12.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/video-1.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/video-2.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+                                        <div class="r-missoes-card">
+                                            <video src="src/media/video/projeto-video/video-3.mp4" controls
+                                                preload="metadata"></video>
+                                        </div>
+                                    </div>
+
+                                    <button class="nav-btn next">&#10095;</button>
+                                </div>
+                            </section>
+                        </div>
+
+                       
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="modal fade" id="meuModal4" data-bs-theme="dark">
+            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Conheça o Projeto 950</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+
+
+
+
+                        <div class="projeto-hero-video">
+                            <video class="projeto-video-img" src="src/media/video/video-projeto.mp4"
+                                poster="src\media\image\capa vídeo.png" controls>
+                                <div class="projeto-video-play">▶</div>
+                                <div class="projeto-video-label">▶ VÍDEO DE APRESENTAÇÃO • EM PRODUÇÃO</div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Camada 2: filtro sobre o site, sem capturar cliques. -->
+        <div id="visualFilter" class="visual-filter" aria-hidden="true">
+            <video id="filterVideo" muted loop playsinline preload="none" hidden></video>
+            <div class="scanlines"></div>
+        </div>
+
+        <!-- Camada 3: Tela Introdução -->
+
+
+
+        <section id="intro" class="intro" aria-label="Conectar ao terminal A.T.H.E.N.A.">
+
+            <video id="introVideo" class="intro-video" playsinline preload="none"
+                aria-label="Vídeo de abertura da A.T.H.E.N.A."></video>
+
+            <div id="connectScreen" class="connect-screen">
+
+                <p class="eyebrow athena-acess">A.T.H.E.N.A. / ACESSO AO TERMINAL</p>
+
+                <label class="Blue-Inicio-switch">
+                    <input id="powerSwitch" type="checkbox" aria-label="Ligar o terminal">
+                    <span class="Blue-Inicio-button" aria-hidden="true">
+                        <span class="Blue-Inicio-light"></span>
+                        <span class="Blue-Inicio-dots"></span>
+                        <span class="Blue-Inicio-characters"></span>
+                        <span class="Blue-Inicio-shine"></span>
+                        <span class="Blue-Inicio-shadow"></span>
+                    </span>
+                </label>
+                <p class="connect-hint" id="powerHint" role="status">Ligue o interruptor para conectar.</p>
+                <button id="connectButton" class="connect-button" type="button" disabled>
+                    <span class="con-label">CONECTAR</span>
+                    <span class="con-clip" aria-hidden="true">
+                        <i class="con-corner lt"></i><i class="con-corner rt"></i>
+                        <i class="con-corner rb"></i><i class="con-corner lb"></i>
+                    </span>
+                    <span class="con-arrow left" aria-hidden="true"></span>
+                    <span class="con-arrow right" aria-hidden="true"></span>
+                </button>
+                <button id="soundButton" class="text-button" type="button" aria-pressed="true">SOM DA INTRODUÇÃO:
+                    ATIVADO</button>
+
+            </div>
+            <div id="playbackControls" class="playback-controls" hidden>
+                <button id="pauseButton" class="icon-button" type="button">PAUSAR</button>
+                <button id="skipButton" class="icon-button" type="button">PULAR →</button>
+            </div>
+            <p id="introStatus" class="intro-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Isso é uma tag que avisa o usuário que o JavaScript precisa estar ativado para acessar o terminal. Se o JavaScript estiver desativado, essa mensagem será exibida. -->
+        <!-- Basicamente um plano B caso dê erro no JS -->
+        <noscript>
+            <div class="noscript">Ative o JavaScript para entrar no terminal. Projeto 950 — Elas no Controle: Além do
+                Tempo.
+            </div>
+        </noscript>
+
+        <div class="cursor-orbita" aria-hidden="true">
+            <span class="cursor-orbita__anel"></span>
+        </div>
+
+
+
+        <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Procura todos os carrosseis de modais na página
+    const rCarousels = document.querySelectorAll('.r-mission-container');
+
+    rCarousels.forEach(container => {
+        const track = container.querySelector('.r-mission-track');
+        const btnPrev = container.querySelector('.prev');
+        const btnNext = container.querySelector('.next');
+
+        if (!track || !btnPrev || !btnNext) return;
+
+        // Função para rolar pra esquerda
+        btnPrev.addEventListener('click', () => {
+            // Pega a largura do card gigante para saber quanto tem que rolar
+            const cardWidth = track.querySelector('.r-missoes-card').clientWidth;
+            track.scrollBy({ left: -(cardWidth + 30), behavior: 'smooth' }); // +30 é o gap do CSS
+        });
+
+        // Função para rolar pra direita
+        btnNext.addEventListener('click', () => {
+            const cardWidth = track.querySelector('.r-missoes-card').clientWidth;
+            track.scrollBy({ left: (cardWidth + 30), behavior: 'smooth' });
+        });
+    });
+});
+</script>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="src/js/efeitos.js" defer></script>
+        <script src="src/js/memorias-inicio.js" defer></script>
+        <script src="src/js/script.js" type="module"></script>
+         <script src="src/js/vlibras-menu.js" defer></script>
+
+    </body>
+
+</html>

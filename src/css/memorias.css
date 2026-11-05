@@ -1,0 +1,723 @@
+
+
+/*============================== Memórias CSS ==============================*/
+
+/* 01 — BASE. Escopo isolado: não modifica o restante do seu site. */
+.memoria-page-body {
+    margin: 0;
+    background: #030b12;
+}
+
+.memoria-page {
+    --memoria-page-ciano: #72edff;
+    --memoria-page-borda: rgba(98, 220, 244, .26);
+    --memoria-page-texto: #dceef1;
+    --memoria-page-suave: #99b8c3;
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: auto;
+    padding: 48px clamp(20px, 4vw, 64px) 24px;
+    color: var(--memoria-page-texto);
+    font-family: 'Exo 2', Arial, sans-serif;
+    background: radial-gradient(ellipse at 80% 35%, #07313c80, transparent 55%);
+}
+
+.memoria-page *,
+.memoria-page *::before,
+.memoria-page *::after {
+    box-sizing: border-box;
+}
+
+.memoria-page [hidden] {
+    display: none !important;
+}
+
+.memoria-page button,
+.memoria-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.memoria-page button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.memoria-page button:focus-visible,
+.memoria-page a:focus-visible,
+.memoria-page video:focus-visible {
+    outline: 2px solid #a4f8ff;
+    outline-offset: 5px;
+}
+
+/* 02 — CABEÇALHO */
+.memoria-page-cabecalho {
+    margin-bottom: 32px;
+}
+
+.memoria-page-metadados {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid var(--memoria-page-borda);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    font: 11px/1.6 monospace;
+    letter-spacing: 2px;
+    color: var(--memoria-page-ciano);
+}
+
+.memoria-page-voltar,
+.memoria-page-link {
+    color: var(--memoria-page-ciano);
+    text-decoration: none;
+    font: 11px/1.6 monospace;
+    letter-spacing: 1px;
+}
+
+.memoria-page-voltar:hover,
+.memoria-page-link:hover {
+    color: white;
+    text-shadow: 0 0 14px #39dcff;
+}
+
+.memoria-page-etiqueta {
+    color: var(--memoria-page-ciano);
+    font: 10px/1.7 monospace;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+}
+
+.memoria-page-titulo {
+    font: 400 clamp(34px, 4.5vw, 66px)/1.06 'Redaction 35', Georgia, serif;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+}
+
+.memoria-page-titulo strong {
+    text-shadow: 0 0 14px #39dcff;
+
+}
+
+.memoria-page-subtitulo {
+    color: var(--memoria-page-suave);
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 03 — VISOR CINEMATOGRÁFICO */
+.memoria-page-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2.25fr) minmax(250px, 1fr);
+    gap: 24px;
+}
+
+.memoria-page-visor {
+    min-width: 0;
+    border: 1px solid var(--memoria-page-borda);
+    padding: 8px;
+    background: #06131ce6;
+    box-shadow: 0 0 30px #00b4dd08;
+}
+
+.memoria-page-tela {
+    aspect-ratio: 16/9;
+    background: radial-gradient(ellipse at 55% 60%, #104d5d, #02080f 75%);
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.memoria-page-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: transparent;
+
+
+}
+
+.memoria-page-hud {
+    position: absolute;
+    inset: 16px 16px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    pointer-events: none;
+    color: #b8f4ff;
+    font: 9px/1.4 monospace;
+    letter-spacing: 1.5px;
+    text-shadow: 0 1px 4px #000;
+}
+
+.memoria-page-hud span {
+    padding: 5px 8px;
+    background: #03131cb8;
+}
+
+.memoria-page-vazio {
+    position: absolute;
+    inset: 50px 16px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    color: #9adbe6;
+    font: 11px/1.6 monospace;
+    pointer-events: none;
+}
+
+.memoria-page-simbolo {
+    font: 80px/1 Georgia, serif;
+    color: #64dfee;
+    text-shadow: 0 0 25px #00bfff55;
+}
+
+.memoria-page-aviso {
+    max-width: 44ch;
+    margin: 0;
+    color: #acc0c9;
+}
+
+.memoria-page-legenda {
+    padding: 24px 18px 20px;
+    background: linear-gradient(115deg, #06243080, transparent);
+}
+
+.memoria-page-cena-titulo {
+    font: 400 clamp(26px, 3vw, 42px)/1.12 'Redaction 35', Georgia, serif;
+    margin: 0 0 10px;
+}
+
+.memoria-page-cena-resumo {
+    font-size: 15px;
+    color: #aacad3;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.memoria-page-visor.memoria-page-trocando .memoria-page-legenda {
+    animation: memoria-page-entrada 300ms ease both;
+}
+
+@keyframes memoria-page-entrada {
+    from {
+        opacity: .25;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 04 — ROLO DE MEMÓRIAS */
+.memoria-page-rolo {
+    position: relative;
+    min-width: 0;
+    padding: 14px 18px;
+    background: radial-gradient(ellipse at center, #0b33444d, transparent 75%);
+    border-inline: 1px solid #17404c;
+}
+
+.memoria-page-rolo::before,
+.memoria-page-rolo::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    top: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(to bottom, #28627366 0 6px, transparent 6px 16px);
+    pointer-events: none;
+}
+
+.memoria-page-rolo::before {
+    left: 3px;
+}
+
+.memoria-page-rolo::after {
+    right: 3px;
+}
+
+.memoria-page-rolo-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font: 9px/1.5 monospace;
+    letter-spacing: 1px;
+    color: #89b8c7;
+    margin-bottom: 14px;
+}
+
+.memoria-page-trilho {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 440px;
+    overflow: auto;
+    padding: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: #19788a #06131c;
+}
+
+.memoria-page-capitulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #17404c;
+    color: #bed3dc;
+    background: linear-gradient(125deg, #102633, #040d15);
+    transition: border-color .2s, background .2s, box-shadow .2s;
+}
+
+.memoria-page-capitulo:hover {
+    border-color: #58d5e8;
+    background: #0a2835;
+}
+
+.memoria-page-capitulo[aria-pressed="true"] {
+    border-color: #72edff;
+    box-shadow: inset 0 0 18px #25b7d21a, 0 0 12px #32d4ff24;
+    color: #f0fbff;
+}
+
+.memoria-page-miniatura {
+    width: 70px;
+    aspect-ratio: 1.12;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid #43869855;
+    color: #b6f4ff;
+    font: 20px monospace;
+    background: radial-gradient(circle at 30% 30%, #269dae80, transparent 65%), #082430;
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 1px 6px black;
+}
+
+.memoria-page-miniatura-2 {
+    background-color: #25323a;
+}
+
+.memoria-page-miniatura-3 {
+    background-color: #321c2a;
+}
+
+.memoria-page-miniatura-4 {
+    background-color: #102e4f;
+}
+
+.memoria-page-capitulo-texto {
+    display: grid;
+    gap: 8px;
+}
+
+.memoria-page-capitulo-texto strong {
+    font: 400 19px/1.2 Georgia, serif;
+}
+
+.memoria-page-capitulo-texto small {
+    font-size: 11px;
+    color: #96b7c4;
+    line-height: 1.5;
+}
+
+.memoria-page-seta {
+    margin-left: auto;
+    color: #68e2f5;
+}
+
+.memoria-page-rolo-ajuda {
+    color: #86a7b6;
+    font: 10px/1.7 monospace;
+    margin: 16px 4px 0;
+}
+
+/* 05 — NARRAÇÃO E CONTROLES */
+.memoria-page-narracao {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 22px;
+    padding: 26px;
+    border: 1px solid var(--memoria-page-borda);
+    background: linear-gradient(120deg, #0b2731ba, #040d15e8);
+    box-shadow: inset 3px 0 #7cedff;
+}
+
+.memoria-page-narracao-emblema {
+    font-size: 48px;
+    color: #7cedff;
+    text-shadow: 0 0 20px #30e3ff88;
+}
+
+.memoria-page-narracao-texto {
+    margin: 0;
+    min-height: 3.2em;
+    font: 400 clamp(16px, 1.6vw, 20px)/1.65 'Redaction 35', Georgia, serif;
+}
+
+.memoria-page-controles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 0;
+}
+
+.memoria-page-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.memoria-page-botao {
+    border: 1px solid #2c6f7e;
+    padding: 12px 16px;
+    color: #b8effa;
+    background: #061722;
+    font: 11px monospace !important;
+    letter-spacing: 1px;
+    transition: background .2s;
+}
+
+.memoria-page-botao:hover:not(:disabled) {
+    background: #123644;
+}
+
+.memoria-page-botao:disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.memoria-page-contador {
+    font: 12px monospace;
+    color: #b5d5e0;
+}
+
+.memoria-page-instrucao {
+    font: 10px/1.5 monospace;
+    color: #87a6b3;
+}
+
+/* 06 — CONTEÚDO COMPLEMENTAR E RODAPÉ */
+.memoria-page-notas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    padding: 52px 0;
+    margin-top: 24px;
+    border-top: 1px solid var(--memoria-page-borda);
+}
+
+.memoria-page-notas-titulo {
+    font: 400 30px/1.2 Georgia, serif;
+    margin: 0;
+}
+
+.memoria-page-nota {
+    padding-left: 20px;
+    border-left: 1px solid #24515d;
+}
+
+.memoria-page-nota-titulo {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 14px;
+}
+
+.memoria-page-nota p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #9cb6c2;
+}
+
+.memoria-page-rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--memoria-page-borda);
+    padding-top: 22px;
+    color: #80a8b7;
+    font: 9px/1.7 monospace;
+    letter-spacing: 1px;
+}
+
+/* 07 — RESPONSIVIDADE E MOVIMENTO REDUZIDO */
+@media(max-width:900px) {
+    .memoria-page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .memoria-page-trilho {
+        flex-direction: row;
+        scroll-snap-type: x mandatory;
+    }
+
+    .memoria-page-capitulo {
+        flex: 0 0 240px;
+        scroll-snap-align: start;
+    }
+
+    .memoria-page-notas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .memoria-page-notas>div {
+        grid-column: 1/-1;
+    }
+}
+
+@media(max-width:540px) {
+    .memoria-page {
+        padding: 28px 16px 20px;
+    }
+
+    .memoria-page-narracao {
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .memoria-page-narracao-emblema {
+        display: none;
+    }
+
+    .memoria-page-notas {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .memoria-page-instrucao {
+        width: 100%;
+        order: 3;
+        margin: 0;
+    }
+
+    .memoria-page-hud {
+        inset: 8px 8px auto;
+        font-size: 8px;
+    }
+
+    .memoria-page-simbolo {
+        font-size: 40px;
+    }
+
+    .memoria-page-vazio {
+        inset: 35px 12px;
+        font-size: 9px;
+        gap: 5px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .memoria-page *,
+    .memoria-page *::before,
+    .memoria-page *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.effects-off .memoria-page * {
+    animation: none !important;
+    transition: none !important;
+}
+
+
+/* Acrescente DEPOIS do CSS atual de Memórias. Mantém o prefixo memoria-page-. */
+/* Rolo: setas fora da máscara, conteúdo e hastes desaparecendo nas extremidades. */
+.memoria-page-rolo {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 12px 8px;
+    border-inline: 0;
+}
+
+.memoria-page-rolo::before,
+.memoria-page-rolo::after {
+    display: none;
+}
+
+.memoria-page-rolo-janela {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%);
+}
+
+.memoria-page-rolo-janela::before,
+.memoria-page-rolo-janela::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    z-index: 2;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, #55b9c64d 0 9px, transparent 9px 19px);
+    border-inline: 1px solid #245360;
+}
+
+.memoria-page-rolo-janela::before {
+    left: 0;
+}
+
+.memoria-page-rolo-janela::after {
+    right: 0;
+}
+
+.memoria-page .memoria-page-trilho {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 420px;
+    max-height: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 52px 17px;
+    scrollbar-width: none;
+    scroll-snap-type: y proximity;
+    scroll-padding-block: 52px;
+}
+
+.memoria-page-trilho::-webkit-scrollbar {
+    display: none;
+}
+
+.memoria-page .memoria-page-capitulo {
+    flex: 0 0 auto;
+    min-height: 88px;
+    width: 100%;
+    scroll-snap-align: center;
+}
+
+.memoria-page-capitulo-texto {
+    min-width: 0;
+}
+
+.memoria-page-capitulo-texto strong {
+    font-size: 17px;
+}
+
+.memoria-page-rolo-seta {
+    display: block;
+    align-self: center;
+    margin: 6px auto;
+    min-width: 48px;
+    min-height: 40px;
+    padding: 8px 14px;
+}
+
+.memoria-page-miniatura {
+    position: relative;
+    overflow: hidden;
+    width: 70px;
+    height: 64px;
+}
+
+.memoria-page-miniatura-imagem {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.memoria-page-miniatura-numero {
+    position: relative;
+    z-index: 1;
+    align-self: end;
+    justify-self: start;
+    padding: 2px 5px;
+    margin: 3px;
+    font: 11px monospace;
+    background: #03131ccc;
+    color: #caf6ff;
+}
+
+/* Cantos luminosos acima do vídeo; margem inferior libera a barra nativa. */
+.memoria-page-tela {
+    position: relative;
+}
+
+.memoria-page-enquadramento {
+    position: absolute;
+    inset: 5px 5px 5px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.memoria-page-canto {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: #a0f4ff;
+    border-style: solid;
+    border-width: 0;
+    filter: drop-shadow(0 0 4px #00cfff80);
+    opacity: .85;
+}
+
+.memoria-page-canto-superior-esquerdo {
+    left: 0;
+    top: 0;
+    border-left-width: 2px;
+    border-top-width: 2px;
+}
+
+.memoria-page-canto-superior-direito {
+    right: 0;
+    top: 0;
+    border-right-width: 2px;
+    border-top-width: 2px;
+}
+
+.memoria-page-canto-inferior-esquerdo {
+    left: 0;
+    bottom: 0;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.memoria-page-canto-inferior-direito {
+    right: 0;
+    bottom: 0;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.memoria-page-hud {
+    z-index: 4;
+}
+
+@media(max-width:900px) {
+    .memoria-page .memoria-page-trilho {
+        height: 320px;
+    }
+
+    .memoria-page-rolo {
+        max-width: 100%;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .memoria-page-trilho {
+        scroll-behavior: auto !important;
+    }
+}

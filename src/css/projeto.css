@@ -1,0 +1,1184 @@
+/* MTEC / A.T.H.E.N.A. — PROJETO
+ * Local: src/css/projeto.css. Carregado por style.css.
+ * Comentários descrevem componentes, não propriedades individuais.
+ * A ordem interna preserva as sobreposições do CSS recebido.
+ */
+
+/* ==========================================================================
+   ESTRUTURA DO PROJETO 950
+   Contêiner, títulos de seção e ações reutilizadas.
+   ========================================================================== */
+.icone-projeto-logo {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-left: 5%;
+    width: 150px;
+    height: 150px;
+}
+
+.projeto-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.projeto-container section {
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--projeto-border-color);
+}
+
+.projeto-section-title {
+    font-size: clamp(25px, 2.5vw, 32px);
+    font-weight: 800;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.projeto-section-title::before {
+    content: "/";
+    color: var(--projeto-cyan);
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.projeto-btn-primary {
+    background-color: var(--projeto-cyan);
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.projeto-btn-outline {
+    background-color: transparent;
+    color: var(--projeto-text-main);
+    padding: 10px 20px;
+    border: 1px solid var(--projeto-text-muted);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* ==========================================================================
+   APRESENTAÇÃO DO PROJETO
+   Texto de abertura, vídeo e botões de documentação.
+   ========================================================================== */
+.projeto-hero {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    border-bottom: 1px solid var(--projeto-border-color);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.projeto-hero-content {
+    flex: 1;
+}
+
+.projeto-tag-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-self: flex-start;
+    justify-items: flex-start;
+    align-self: flex-start;
+    align-content: flex-start;
+    margin-top: 15%;
+}
+
+.projeto-tag {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5%;
+    color: #ffffff;
+    letter-spacing: 2px;
+    padding: 6px 10px;
+    margin-bottom: 15px;
+    background-color: rgba(15, 8, 38, 0.6);
+    border: 1.5px solid var(--projeto-cyan);
+    box-shadow: 0 0 10px rgba(77, 38, 179, 0.3);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.projeto-tag .destaque {
+    font-weight: 900;
+    color: var(--projeto-cyan);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.projeto-title {
+    font-size: clamp(40px, 6vw, 60px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.projeto-title-cyan {
+    color: var(--projeto-cyan);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.projeto-subtitle {
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(255, 0, 234);
+    margin-bottom: 20px;
+}
+
+.projeto-hero-desc {
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 90%;
+    border-left: 3px solid var(--projeto-cyan);
+    padding-left: 15px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.projeto-hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.projeto-hero-video {
+    flex: 1.2;
+    border: 2px solid var(--projeto-cyan);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.projeto-video-img {
+    width: 100%;
+    display: block;
+}
+
+.projeto-video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.projeto-video-label {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+
+/* ==========================================================================
+   PROBLEMA, OBJETIVO E APLICAÇÃO
+   Cartões que explicam por que o projeto existe.
+   ========================================================================== */
+.projeto-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.projeto-why-card {
+    background-color: var(--projeto-card-bg);
+    border: 1px solid rgb(223, 156, 250);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.projeto-why-icon img {
+    width: auto;
+    height: 50px;
+}
+
+.projeto-why-info h3 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: #ffeb3b;
+}
+
+.projeto-why-info p {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   DOCUMENTAÇÃO E PROCESSO
+   Quadro de planejamento, documentos e links de acompanhamento.
+   ========================================================================== */
+.projeto-doc-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.projeto-kanban-mock {
+    flex: 1;
+    background-color: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.projeto-kanban-header {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.projeto-kanban-header img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.projeto-kanban-cols {
+    display: flex;
+    gap: 10px;
+}
+
+.projeto-k-col {
+    flex: 1;
+    background: #1a2639;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.projeto-k-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.projeto-k-title.blue {
+    border-bottom: 2px solid #3b82f6;
+}
+
+.projeto-k-title.orange {
+    border-bottom: 2px solid #f97316;
+}
+
+.projeto-k-title.green {
+    border-bottom: 2px solid #22c55e;
+}
+
+.projeto-k-card {
+    background: #2d3748;
+    height: 30px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.projeto-k-card::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 4px;
+    background: #4a5568;
+    border-radius: 2px;
+}
+
+.projeto-doc-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.projeto-doc-desc {
+    font-size: clamp(14px, 2vw, 16px);
+    color: white;
+}
+
+.projeto-doc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.projeto-doc-btn {
+    background: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.projeto-doc-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.projeto-doc-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+
+/* ==========================================================================
+   DA IDEIA À EXPERIÊNCIA
+   Linha de etapas e tecnologias utilizadas.
+   ========================================================================== */
+.projeto-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.projeto-time-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 180px;
+    background: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.projeto-time-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.projeto-time-title {
+    font-weight: 800;
+    font-size: clamp(14px, 2vw, 24px);
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.projeto-time-desc {
+    font-size: 11px;
+    color: var(--projeto-text-muted);
+}
+
+.projeto-time-arrow {
+    color: var(--projeto-cyan);
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    font-size: 24px;
+}
+
+.projeto-tech-stack {
+    background-color: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.projeto-tech-title {
+    color: #89edff;
+    font-weight: 800;
+    font-size: 14px;
+    width: 120px;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.993);
+}
+
+.projeto-tech-logos {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    gap: 15px;
+}
+
+.projeto-tech-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.projeto-tech-item img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* ==========================================================================
+   EQUIPE
+   Retratos, nomes, funções e responsabilidades.
+   ========================================================================== */
+.projeto-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.projeto-team-grid-inicio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-self: center;
+}
+
+.projeto-team-grid-inicio .projeto-team-card {
+    width: 70vw;
+}
+
+.projeto-team-card {
+    border: 1px solid var(--projeto-purple);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    height: 240px;
+    flex-direction: row;
+    box-shadow: 0 0 15px rgba(181, 53, 246, 0.15);
+    background: linear-gradient(180deg, rgba(74, 20, 140, 0.2) 0%, var(--projeto-card-bg) 100%);
+}
+
+.projeto-team-img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid var(--projeto-purple);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+}
+
+.projeto-team-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.projeto-team-name {
+    font-size: clamp(25px, 2.5vw, 30px);
+    margin-bottom: 25%;
+    font-weight: 900;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.projeto-team-role {
+    background-color: var(--projeto-purple-dark);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid var(--projeto-purple);
+}
+
+.projeto-team-tasks {
+    list-style: none;
+    text-align: left;
+    font-size: clamp(11px, 0.8vw, 25px);
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.projeto-team-tasks li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.projeto-team-tasks li::before {
+    content: "■";
+    color: var(--projeto-text-main);
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+
+/* ==========================================================================
+   DESAFIOS E ACESSIBILIDADE
+   Fluxo de decisões e recursos de usabilidade.
+   ========================================================================== */
+.projeto-challenges-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.projeto-chal-flow {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projeto-chal-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.projeto-chal-label {
+    width: 150px;
+    background: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.projeto-chal-label.purple {
+    color: rgb(229, 161, 247);
+    border-color: rgb(157, 48, 184);
+    text-shadow: 0 0 5px rgba(157, 48, 184, 0.3);
+}
+
+.projeto-chal-label.yellow {
+    color: #ffeb3b;
+    border-color: #ffeb3b;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.projeto-chal-label.cyan {
+    color: var(--projeto-cyan);
+    border-color: var(--projeto-cyan);
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+}
+
+.projeto-chal-text {
+    flex: 1;
+    background: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.projeto-usability-box {
+    flex: 1;
+    border: 1px solid var(--projeto-cyan);
+    border-radius: 8px;
+    padding: 20px;
+    background: rgba(0, 229, 255, 0.05);
+}
+
+.projeto-usab-title {
+    font-size: clamp(18px, 1.4vw, 23px);
+    border-bottom: 1px solid #005665;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.projeto-usab-list {
+    list-style: none;
+    font-size: clamp(14px, 1.1vw, 20px);
+    margin-bottom: 15px;
+}
+
+.projeto-usab-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.projeto-usab-list li::before {
+    content: "■";
+    color: var(--projeto-cyan);
+}
+
+.projeto-usab-footer {
+    font-size: 12px;
+    font-style: italic;
+    color: white;
+    display: flex;
+    gap: 5px;
+    border-top: 1px solid #005665;
+    padding-top: 10px;
+}
+
+
+/* ==========================================================================
+   AVALIAÇÃO
+   Critérios e localização das evidências do projeto.
+   ========================================================================== */
+.projeto-eval-subtitle {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--projeto-text-muted);
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+
+.projeto-eval-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: var(--projeto-card-bg);
+    border: 1px solid cyan;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.projeto-eval-list {
+    list-style: none;
+    font-size: 13px;
+}
+
+.projeto-eval-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #1a2639;
+    padding: 8px 0;
+}
+
+.projeto-eval-item:last-child {
+    border-bottom: none;
+}
+
+.projeto-eval-num {
+    color: var(--projeto-cyan);
+    font-weight: 900;
+    width: 30px;
+}
+
+.projeto-eval-topic {
+    font-weight: bold;
+    width: 180px;
+}
+
+.projeto-eval-desc {
+    color: var(--projeto-text-muted);
+    flex: 1;
+}
+
+.projeto-eval-desc::before {
+    content: "— ";
+}
+
+
+/* ==========================================================================
+   DO DIGITAL AO PRESENCIAL
+   Fotos, registros e galeria do processo.
+   ========================================================================== */
+.projeto-digital-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5%;
+}
+
+.projeto-prep-tag {
+    background: rgba(255, 235, 59, 0.1);
+    color: #ffeb3b;
+    border: 1px solid #ffeb3b;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.projeto-digital-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.projeto-digital-photos {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.projeto-photo-card {
+    text-align: center;
+}
+
+.projeto-photo-img {
+    width: 100%;
+    border: 5px solid var(--projeto-border-color);
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--projeto-border-color);
+    margin-bottom: 8px;
+}
+
+.projeto-photo-label {
+    font-size: clamp(13px, 1.8vw, 18px);
+    font-weight: bold;
+}
+
+.projeto-gallery-box {
+    flex: 1;
+    background: var(--projeto-card-bg);
+    border: 1px solid var(--projeto-border-color);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.projeto-gallery-title {
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.projeto-gallery-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projeto-g-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1a2639;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.projeto-g-img {
+    width: 40px;
+    height: 30px;
+    background: #000;
+    border-radius: 4px;
+}
+
+.projeto-g-img img {
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--projeto-border-color);
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgb(7, 38, 139);
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================================================
+   ENCERRAMENTO DO PROJETO
+   Créditos e informações complementares.
+   ========================================================================== */
+.projeto-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid var(--projeto-border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projeto-footer-logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.projeto-footer-info h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.projeto-footer-info p {
+    font-size: 12px;
+    color: var(--projeto-text-muted);
+}
+
+.projeto-footer-info span {
+    color: var(--projeto-cyan);
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   CARROSSEL DE REGISTROS
+   Cards, trilho e botões de navegação.
+   ========================================================================== */
+.missoes-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 1000px;
+    gap: 15px;
+    background-color: #13044446;
+    border-radius: 15px;
+    border: 1px solid rgba(118, 82, 247, 0.5);
+    color: white;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.missoes-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
+
+.missoes-card:hover {
+    filter: drop-shadow(0 0 30px var(--color2));
+    cursor: pointer !important;
+    transform: scale(1.05);
+}
+
+.mission-section {
+    padding: 40px 0;
+    background-color: #0a041a;
+    border-radius: 20px;
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.mission-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 5000px;
+    margin: 0 auto;
+    color: white;
+}
+
+.mission-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 25px;
+    padding: 20px;
+    scrollbar-width: none;
+}
+
+.mission-track::-webkit-scrollbar {
+    display: none;
+}
+
+#mission-card-bonus-event {
+    background: rgba(0, 0, 0, 0.801);
+    border: 1px solid rgba(118, 82, 247, 0.3);
+    animation: pulse 4s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+#pulse-secret {
+    animation: pulse 4s linear infinite;
+}
+
+.mission-card {
+    width: 100%;
+    background: rgba(46, 10, 161, 0.801);
+    border: 1px solid rgba(118, 82, 247, 0.3);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    gap: 15px;
+}
+
+.mission-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.mission-card:hover {
+    transform: scale(1.05);
+    border-color: #7652f7;
+    box-shadow: 0 0 30px rgba(118, 82, 247, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.badge-mission {
+    background: rgba(96, 69, 205, 0.2);
+    color: #c1aeff;
+    border: 1px solid #7652f7;
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.badge-xp {
+    background: rgba(69, 205, 80, 0.1);
+    color: #aeffbb;
+    border: 1px solid #60f752;
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.nav-btn {
+    background: rgba(118, 82, 247, 0.0001);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer !important;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(118, 82, 247, 0.5);
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+
+/* ==========================================================================
+   GALERIA AMPLIADA
+   Vídeos e imagens em modal, com enquadramento sem recorte.
+   ========================================================================== */
+.r-mission-container-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 80vh;
+}
+
+.r-mission-section {
+    width: 100%;
+    padding: 0;
+}
+
+.r-mission-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.r-mission-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 30px;
+    padding: 30px 10vw;
+    scrollbar-width: none;
+    width: 100%;
+    align-items: center;
+}
+
+.r-mission-track::-webkit-scrollbar {
+    display: none;
+}
+
+.r-missoes-card {
+    flex: 0 0 65vw;
+    max-height: 75vh;
+    scroll-snap-align: center;
+    background-color: #000;
+    border-radius: 12px;
+    border: 2px solid rgba(118, 82, 247, 0.4);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.r-missoes-card video,
+.r-missoes-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    display: block;
+}
+
+.r-missoes-card:hover {
+    filter: drop-shadow(0 0 40px rgba(118, 82, 247, 0.6));
+    transform: scale(1.02);
+    border-color: #7652f7;
+    z-index: 2;
+}
+
+.nav-btn {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #7652f7;
+    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.nav-btn.prev {
+    left: 2vw;
+}
+
+.nav-btn.next {
+    right: 2vw;
+}
+
+.nav-btn:hover {
+    background: #7652f7;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+/* ==========================================================================
+   PROJETO — CARTÕES E EVIDÊNCIAS
+   Destaque dos blocos de propósito, documentação, equipe e registros presenciais.
+   ========================================================================== */
+main :is(.projeto-why-card, .projeto-kanban-mock, .projeto-team-card, .projeto-photo-card, .projeto-g-item, .projeto-usability-box, .projeto-eval-item, .projeto-hero-video):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.projeto-why-card, .projeto-kanban-mock, .projeto-team-card, .projeto-photo-card, .projeto-g-item, .projeto-usability-box, .projeto-eval-item, .projeto-hero-video):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 12px 28px #0005, 0 0 18px var(--mtec-hover-glow, #24e5ff30);
+        translate: 0 -3px;
+    }
+}
+
+main :is(.projeto-why-card, .projeto-kanban-mock, .projeto-team-card, .projeto-photo-card, .projeto-g-item, .projeto-usability-box, .projeto-eval-item, .projeto-hero-video):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}
+
+/* ==========================================================================
+   PROJETO — PROCESSO E TECNOLOGIAS
+   Realce discreto dos marcos da produção e das ferramentas utilizadas.
+   ========================================================================== */
+main :is(.projeto-time-icon, .projeto-tech-item, .projeto-k-card):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.projeto-time-icon, .projeto-tech-item, .projeto-k-card):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 12px 28px #0005, 0 0 18px var(--mtec-hover-glow, #24e5ff30);
+        translate: 0 -3px;
+    }
+}
+
+main :is(.projeto-time-icon, .projeto-tech-item, .projeto-k-card):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}
+
+/* ==========================================================================
+   PROJETO — AÇÕES E DOCUMENTOS
+   Movimento curto nos atalhos; os controles do modal mantêm seu posicionamento.
+   ========================================================================== */
+main :is(.projeto-btn-primary, .projeto-btn-outline, .projeto-doc-btn):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.projeto-btn-primary, .projeto-btn-outline, .projeto-doc-btn):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 12px 28px #0005, 0 0 18px var(--mtec-hover-glow, #24e5ff30);
+        translate: 0 -3px;
+        scale: 1.02;
+    }
+}
+
+main :is(.projeto-btn-primary, .projeto-btn-outline, .projeto-doc-btn):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}

@@ -1,0 +1,55 @@
+/* ACERVO — INTERAÇÕES COMPLEMENTARES
+ * O acervo.css original é uma dependência e deve permanecer no projeto.
+ * Ele é citado no HTML, mas seu conteúdo não foi enviado neste pedido.
+ * Este arquivo acrescenta apenas os efeitos das classes presentes no HTML.
+ * Carregado por style.css; não requer um novo link no HTML.
+ */
+
+/* ==========================================================================
+   ACERVO — COLEÇÕES E FICHA
+   Elevação discreta dos caminhos de pesquisa e da ficha de apresentação.
+   ========================================================================== */
+main :is(.acervo-colecao, .acervo-ficha, .acervo-investigacao):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.acervo-colecao, .acervo-ficha, .acervo-investigacao):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 12px 28px #0005, 0 0 18px var(--mtec-hover-glow, #24e5ff30);
+        translate: 0 -3px;
+    }
+}
+
+main :is(.acervo-colecao, .acervo-ficha, .acervo-investigacao):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}
+
+/* ==========================================================================
+   ACERVO — FILTROS E NAVEGAÇÃO
+   Feedback nos filtros, seletores, setas e links sem modificar a pesquisa em JavaScript.
+   ========================================================================== */
+main :is(.acervo-chip, .acervo-seletor, .acervo-seta, .acervo-acao, .acervo-link-botao, .acervo-limpar, .acervo-voltar, .acervo-grade button, .acervo-grade a):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.acervo-chip, .acervo-seletor, .acervo-seta, .acervo-acao, .acervo-link-botao, .acervo-limpar, .acervo-voltar, .acervo-grade button, .acervo-grade a):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 12px 28px #0005, 0 0 18px var(--mtec-hover-glow, #24e5ff30);
+        translate: 0 -3px;
+        scale: 1.02;
+    }
+}
+
+main :is(.acervo-chip, .acervo-seletor, .acervo-seta, .acervo-acao, .acervo-link-botao, .acervo-limpar, .acervo-voltar, .acervo-grade button, .acervo-grade a):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}
+
+/* Pesquisa: o contêiner evidencia o foco sem deslocar o campo de digitação. */
+main .acervo-busca:focus-within {
+    border-color: #72f7ff;
+    box-shadow: 0 0 0 3px #24e5ff28;
+}

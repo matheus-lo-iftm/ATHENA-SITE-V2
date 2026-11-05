@@ -1,0 +1,1010 @@
+/* MTEC / A.T.H.E.N.A. — INVESTIGACAO
+ * Local: src/css/investigacao.css. Carregado por style.css.
+ * Comentários descrevem componentes, não propriedades individuais.
+ * A ordem interna preserva as sobreposições do CSS recebido.
+ */
+
+/* ==========================================================================
+   JORNAL E IDENTIDADE EDITORIAL
+   Papel, barra superior e área principal da investigação.
+   ========================================================================== */
+.investigacao-paper * {
+    color: #1a1a1a;
+}
+
+.investigacao-top-bar {
+    width: 100%;
+    background-color: var(--dark-blue);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.investigacao-top-bar-left {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.investigacao-top-bar-center {
+    opacity: 0.8;
+    word-spacing: 5px;
+}
+
+.investigacao-top-bar-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.investigacao-paper {
+    background-color: var(--bg-paper);
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-image: url("../../src/media/image/jornal-fundo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+}
+
+
+/* ==========================================================================
+   CABEÇALHO DO JORNAL
+   Título, edição, ilustrações e linhas editoriais.
+   ========================================================================== */
+.investigacao-header-section {
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.investigacao-edicao-especial {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.investigacao-edicao-especial::before,
+.investigacao-edicao-especial::after {
+    content: "";
+    flex-grow: 1;
+    height: 4px;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.investigacao-louro img {
+    width: 70px;
+    height: auto;
+}
+
+.investigacao-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.investigacao-title-wrapper::before,
+.investigacao-title-wrapper::after {
+    content: "";
+    flex-grow: 1;
+    height: 3px;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.investigacao-title-wrapper::before {
+    margin-right: 15px;
+}
+
+.investigacao-title-wrapper::after {
+    margin-left: 15px;
+}
+
+.investigacao-title-illustration {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.investigacao-main-title-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.investigacao-main-title-box h1 {
+    font-family: var(--font-title);
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    border-top: 1px solid #1a1a1a;
+    margin: 0;
+}
+
+.investigacao-main-subtitle {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #1a1a1a;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+
+/* ==========================================================================
+   MANCHETE E ABERTURA
+   Pergunta principal, texto e composição visual.
+   ========================================================================== */
+.investigacao-headline-section {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 15px;
+}
+
+.investigacao-headline-section h2 {
+    font-family: var(--font-title);
+    font-size: 50px;
+    font-weight: 900;
+    padding-top: 25px;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.investigacao-headline-section p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.investigacao-hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.investigacao-hero-text h3 {
+    font-family: var(--font-title);
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.investigacao-hero-text p {
+    font-family: var(--font-body, serif);
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/* ==========================================================================
+   COLAGEM DE DOCUMENTOS
+   Camadas de documentos, fotografias e elementos decorativos.
+   ========================================================================== */
+.investigacao-hero-collage {
+    position: relative;
+    width: 100%;
+    max-width: 660px;
+    height: 380px;
+    margin: 0 auto;
+    background: transparent;
+    border: none;
+    isolation: isolate;
+}
+
+.investigacao-hero-collage img {
+    display: block;
+    height: auto;
+    max-width: none;
+}
+
+.investigacao-collage-img {
+    position: absolute;
+    box-sizing: border-box;
+    border: 5px solid #e9e3d6;
+    border-bottom-width: 9px;
+    background: #e9e3d6;
+    box-shadow: 3px 6px 12px rgba(32, 22, 12, .35);
+    filter: grayscale(.9) sepia(.25) contrast(1.08);
+    transform-origin: center;
+}
+
+.investigacao-img-jornal {
+    position: absolute;
+    top: 12%;
+    left: -10%;
+    width: 125%;
+    height: 100% !important;
+    object-fit: cover;
+    opacity: .78;
+    z-index: 1;
+    filter: sepia(.25);
+}
+
+.investigacao-img-doc1 {
+    top: 51%;
+    left: 1%;
+    width: 31%;
+    transform: rotate(-10deg);
+    z-index: 3;
+}
+
+.investigacao-img-graph {
+    top: 59%;
+    right: 1%;
+    width: 34%;
+    transform: rotate(-3deg);
+    z-index: 3;
+}
+
+.investigacao-img-meitner {
+    top: 5%;
+    left: 8%;
+    width: 29%;
+    transform: rotate(-6deg);
+    z-index: 4;
+}
+
+.investigacao-img-bell {
+    top: 3%;
+    right: 2%;
+    width: 34%;
+    transform: rotate(7deg);
+    z-index: 5;
+}
+
+.investigacao-img-franklin {
+    top: 13%;
+    left: 28%;
+    width: 36%;
+    transform: rotate(5deg);
+    z-index: 7;
+    box-shadow: 5px 9px 17px rgba(25, 15, 8, .48);
+}
+
+.investigacao-img-dna {
+    top: 57%;
+    left: 49%;
+    width: 26%;
+    border-radius: 0;
+    transform: rotate(-5deg);
+    z-index: 8;
+}
+
+.investigacao-decor {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+    filter: drop-shadow(2px 4px 4px rgba(0,0,0,.25));
+}
+
+.decor-leaf-left {
+    width: 25%;
+    left: -4%;
+    bottom: 5%;
+    transform: rotate(-12deg);
+    z-index: 6;
+}
+
+.decor-paperclip {
+    width: 6%;
+    top: 1%;
+    left: 39%;
+    transform: rotate(14deg);
+    z-index: 10;
+}
+
+.decor-red-circle {
+    width: 26%;
+    left: 35%;
+    bottom: 2%;
+    transform: rotate(-10deg);
+    z-index: 11;
+    filter: none;
+}
+
+.decor-leaf-right {
+    width: 30%;
+    right: -3%;
+    bottom: -2%;
+    transform: rotate(8deg);
+    z-index: 9;
+}
+
+.investigacao-stamp {
+    position: absolute;
+    right: 0;
+    bottom: 4%;
+    padding: 9px 14px;
+    background: #e8ddc8;
+    color: #29251f;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-bottom: 2px solid #a62d2d;
+    box-shadow: 2px 4px 8px rgba(0,0,0,.3);
+    transform: rotate(-3deg);
+    z-index: 12;
+}
+
+
+/* ==========================================================================
+   COLAGEM RESPONSIVA
+   Reenquadramento da composição em telas menores.
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .investigacao-hero-collage {
+        max-width: 570px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .investigacao-hero-collage {
+        width: 100%;
+        max-width: 520px;
+        height: 320px;
+    }
+
+    .investigacao-stamp {
+        font-size: 10px;
+        padding: 7px 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .investigacao-hero-collage {
+        height: 260px;
+    }
+
+    .investigacao-stamp {
+        font-size: 8px;
+        padding: 5px 7px;
+        max-width: 95%;
+    }
+
+    .investigacao-collage-img {
+        border-width: 3px;
+        border-bottom-width: 5px;
+    }
+}
+
+.investigacao-hero-content {
+    display: grid;
+    grid-template-columns: 35% minmax(0, 65%);
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* ==========================================================================
+   CARIMBO E EFEITO MATILDA
+   Identificação do dossiê e explicação do reconhecimento desigual.
+   ========================================================================== */
+.investigacao-stamp {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    background-color: #f4f0e6;
+    color: #1a1a1a;
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 8px 15px;
+    transform: rotate(-3deg);
+    z-index: 10;
+    border: 1px solid #c2b8a3;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #b32222;
+    border-bottom-left-radius: 10px;
+}
+
+.investigacao-matilda-banner {
+    background: url(../../src/media/image/matilda-banner.png);
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 0;
+    margin-top: 100px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+}
+
+.investigacao-matilda-title {
+    font-family: var(--font-title);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.1;
+    border-left: 6px solid cyan;
+    padding-left: 10px;
+    padding-right: 5px;
+    border-right: 1px solid #1a1a1a;
+    width: 20%;
+}
+
+.investigacao-matilda-desc {
+    padding: 0 5px;
+    font-size: 16px;
+    font-style: italic;
+    border-right: 1px solid #1a1a1a;
+    width: 45%;
+}
+
+.investigacao-matilda-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.investigacao-icon-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.investigacao-icon-item p {
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   HISTÓRIAS DAS CIENTISTAS
+   Cards dos casos, retratos, descrições e links de leitura.
+   ========================================================================== */
+.investigacao-icon-item img {
+    width: 40px;
+    height: auto;
+}
+
+.investigacao-stories-section {
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 3px 0;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.investigacao-stories-section h2 {
+    font-family: var(--font-title);
+    font-size: 32px;
+    text-align: center;
+    border-top: 3px solid #1a1a1a;
+    border-bottom: 3px solid #1a1a1a;
+    padding: 10px 0;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.investigacao-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.investigacao-story-card {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 0 20px;
+    border-right: 1px solid #1a1a1a;
+}
+
+.investigacao-story-card:last-child {
+    border-right: none;
+}
+
+.investigacao-story-card:first-child {
+    padding-left: 0;
+}
+
+.investigacao-story-card:last-child {
+    padding-right: 0;
+}
+
+.investigacao-story-header {
+    flex-shrink: 0;
+}
+
+.investigacao-story-header img {
+    width: 105px;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #1a1a1a;
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.investigacao-story-card > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.investigacao-story-title h3 {
+    font-family: var(--font-title);
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #b32222;
+}
+
+.investigacao-story-title p {
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.investigacao-story-card > div > p:not(.investigacao-story-title p) {
+    font-family: var(--font-body, serif);
+    font-size: 13.5px;
+    line-height: 1.4;
+    text-align: left;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.investigacao-link-btn {
+    font-family: var(--font-title);
+    font-size: 13px;
+    font-weight: 900;
+    color: #12355b;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid #12355b;
+    align-self: flex-start;
+    padding-bottom: 2px;
+}
+
+.investigacao-link-btn:hover {
+    color: #b32222;
+    border-bottom-color: #b32222;
+}
+
+
+/* ==========================================================================
+   RECONHECIMENTO E LEITURA CRÍTICA
+   Linha do tempo e orientações para interpretar o arquivo.
+   ========================================================================== */
+.investigacao-bottom-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.investigacao-section-header-small {
+    font-family: var(--font-title);
+    font-size: 26px;
+    font-weight: 900;
+    border-bottom: 1px solid #1a1a1a;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.investigacao-section-header-small::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1a1a1a;
+}
+
+.investigacao-recognition-history {
+    border-right: 1px solid #1a1a1a;
+    padding-right: 30px;
+}
+
+.investigacao-timeline-wrapper {
+    position: relative;
+}
+
+.investigacao-timeline-headers {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-title);
+    font-weight: bold;
+    font-size: 17px;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.investigacao-timeline-headers::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: #1a1a1a;
+    z-index: 1;
+}
+
+.investigacao-time-step {
+    position: relative;
+    width: 33.33%;
+    text-align: center;
+    z-index: 2;
+}
+
+.investigacao-time-step::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background-color: var(--bg-paper);
+    border: 3px solid #1a1a1a;
+    border-radius: 50%;
+}
+
+.investigacao-timeline-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.investigacao-image-frame {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-right: 1px solid #1a1a1a;
+    padding-right: 10px;
+}
+
+.investigacao-timeline-images img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    display: block;
+}
+
+.investigacao-paper-snippet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-1deg);
+    padding: 0;
+}
+
+.investigacao-paper-snippet img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: none;
+    filter: none;
+}
+
+.investigacao-timeline-texts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.investigacao-timeline-texts p {
+    font-family: var(--font-body, serif);
+    font-size: 13.5px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.investigacao-how-to-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.investigacao-how-item {
+    display: flex;
+    gap: 12px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 12px;
+    align-items: flex-start;
+}
+
+.investigacao-how-icon img {
+    width: 45px;
+    height: auto;
+}
+
+.investigacao-how-text h4 {
+    font-family: var(--font-title);
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 2px;
+}
+
+.investigacao-how-text p {
+    font-family: var(--font-body, serif);
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+
+/* ==========================================================================
+   FONTES E RECURSOS
+   Referências de pesquisa e caminhos para aprofundamento.
+   ========================================================================== */
+.investigacao-footer-resources {
+    border-top: 4px double #1a1a1a;
+    border-bottom: 4px double #1a1a1a;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.investigacao-resource-img-container {
+    flex-shrink: 0;
+}
+
+.investigacao-resource-img {
+    width: 140px;
+    height: auto;
+    filter: grayscale(100%) contrast(1.2);
+}
+
+.investigacao-resource-content {
+    flex-grow: 1;
+}
+
+.investigacao-resource-content h3 {
+    font-family: var(--font-title);
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.investigacao-resource-content p {
+    font-family: var(--font-body, serif);
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.investigacao-resource-links {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.investigacao-resource-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.investigacao-resource-links a:hover {
+    color: #b32222;
+}
+
+.investigacao-link-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.investigacao-link-sep {
+    color: #1a1a1a;
+    font-weight: normal;
+}
+
+
+/* ==========================================================================
+   CONVITE AO ACERVO
+   Faixa escura de encerramento e chamada para conhecer as cientistas.
+   ========================================================================== */
+.investigacao-dark-banner-wrapper {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.investigacao-dark-cta-banner {
+    background-color: #05101a;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid cyan;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.investigacao-dark-cta-banner * {
+    color: #fff;
+}
+
+.investigacao-dark-cta-banner h2 {
+    font-family: var(--font-title);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.investigacao-cta-btn {
+    background: transparent;
+    color: #00e5ff !important;
+    border: 1px solid #00e5ff;
+    padding: 6px 25px;
+    border-radius: 20px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3), inset 0 0 5px rgba(0, 229, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.investigacao-cta-btn:hover {
+    background-color: rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6), inset 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.investigacao-final-phrase {
+    text-align: center;
+    font-family: var(--font-title);
+    font-style: italic;
+    width: fit-content;
+    display: flex;
+    padding: 15px;
+    align-self: center;
+    border-radius: 15px;
+    justify-self: center;
+    border: 1px dashed rgb(26, 24, 24);
+    background-color: rgb(219, 195, 151);
+    font-size: 22px;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-top: 15px;
+}
+
+
+/* O jornal utiliza tinta e papel; o realce respeita esse contraste editorial. */
+main.investigacao-paper, main .investigacao-paper, main .i-investigacao-section {
+    --mtec-hover-accent: #8b3425;
+    --mtec-hover-glow: #64462b30;
+    --mtec-focus: #125d79;
+}
+
+/* ==========================================================================
+   INVESTIGAÇÃO — HISTÓRIAS E ORIENTAÇÕES
+   Sombras quentes nos casos científicos e nas instruções de leitura crítica.
+   ========================================================================== */
+main :is(.investigacao-story-card, .investigacao-how-item, .investigacao-image-frame):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.investigacao-story-card, .investigacao-how-item, .investigacao-image-frame):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 8px 18px #37241330;
+        translate: 0 -3px;
+    }
+}
+
+main :is(.investigacao-story-card, .investigacao-how-item, .investigacao-image-frame):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}
+
+/* ==========================================================================
+   INVESTIGAÇÃO — FOTOGRAFIAS DO ARQUIVO
+   Realce sutil dos retratos e documentos, preservando rotações e sobreposições.
+   ========================================================================== */
+main :is(.investigacao-img-meitner, .investigacao-img-bell, .investigacao-img-franklin, .investigacao-img-dna, .investigacao-img-graph):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.investigacao-img-meitner, .investigacao-img-bell, .investigacao-img-franklin, .investigacao-img-dna, .investigacao-img-graph):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        filter: brightness(1.08) saturate(1.06);
+        scale: 1.025;
+    }
+}
+
+main :is(.investigacao-img-meitner, .investigacao-img-bell, .investigacao-img-franklin, .investigacao-img-dna, .investigacao-img-graph):not(:disabled):not([aria-disabled="true"]):focus-within {
+    filter: brightness(1.06);
+}
+
+/* ==========================================================================
+   INVESTIGAÇÃO — LEITURA E PRÓXIMOS CAMINHOS
+   Feedback dos links do jornal e do botão que conduz ao acervo.
+   ========================================================================== */
+main :is(.investigacao-link-btn, .investigacao-cta-btn):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.investigacao-link-btn, .investigacao-cta-btn):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 8px 18px #37241330;
+        translate: 0 -3px;
+        scale: 1.02;
+    }
+}
+
+main :is(.investigacao-link-btn, .investigacao-cta-btn):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}

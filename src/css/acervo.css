@@ -1,0 +1,1235 @@
+/* 01 — BASE: todos os estilos ficam no escopo acervo-. */
+.acervo-body {
+    margin: 0;
+    background: #020b12;
+}
+
+.acervo-pagina {
+    --acervo-ciano: #70e7ff;
+    --acervo-borda: #235565;
+    --acervo-texto: #ddf1f6;
+    --acervo-suave: #9cbcc9;
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: auto;
+    padding: 0 24px 24px;
+    color: var(--acervo-texto);
+    font-family: 'Exo 2', Arial, sans-serif;
+    background: radial-gradient(ellipse at 20% 50%, #0b2e3a70, transparent 60%);
+}
+
+.acervo-pagina *,
+.acervo-pagina *::before,
+.acervo-pagina *::after {
+    box-sizing: border-box;
+}
+
+.acervo-pagina [hidden] {
+    display: none !important;
+}
+
+.acervo-pagina button,
+.acervo-pagina input {
+    font: inherit;
+}
+
+.acervo-pagina button {
+    cursor: pointer;
+}
+
+.acervo-pagina a {
+    text-decoration: none;
+}
+
+.acervo-pagina :is(button, a, input):focus-visible {
+    outline: 2px solid #c1faff;
+    outline-offset: 4px;
+}
+
+/* 02 — CABEÇALHO */
+.acervo-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 64px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--acervo-borda);
+}
+
+.acervo-voltar,
+.acervo-status {
+    color: var(--acervo-ciano);
+    font: 11px/1.5 monospace;
+    letter-spacing: 2px;
+}
+
+.acervo-topo {
+    display: grid;
+    grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr);
+    gap: 32px;
+    padding: 28px 0 20px;
+}
+
+.acervo-sobretitulo {
+    color: #72acbd;
+    font: 10px/1.5 monospace;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+}
+
+.acervo-titulo {
+    font-size: clamp(36px, 4vw, 62px);
+    letter-spacing: 8px;
+    font-weight: 500;
+    margin: 0 0 8px;
+    line-height: 1.1;
+    color: #ccf6ff;
+    text-shadow: 0 0 22px #49d1ff55;
+}
+
+.acervo-introducao {
+    margin: 0;
+    color: #b4d6e4;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/* 03 — BUSCA E FILTROS */
+.acervo-busca-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+.acervo-busca {
+    width: 100%;
+    border: 1px solid #35748a;
+    border-radius: 5px;
+    padding: 12px 16px;
+    color: #e3f6fc;
+    background: #071923bb;
+}
+
+.acervo-busca::placeholder {
+    color: #98b7c6;
+}
+
+.acervo-filtros-linha {
+    display: flex;
+    gap: 20px;
+    margin-top: 14px;
+}
+
+.acervo-grupo {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.acervo-grupo-areas {
+    flex: 1;
+    border-left: 1px solid #204859;
+    padding-left: 20px;
+}
+
+.acervo-legenda {
+    font: 10px monospace;
+    letter-spacing: 1px;
+    color: #82cfdf;
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.acervo-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.acervo-chip {
+    border: 1px solid #316274;
+    border-radius: 5px;
+    color: #c4dfea;
+    background: #04121c;
+    padding: 6px 9px;
+    font-size: 11px !important;
+    transition: background .2s, box-shadow .2s;
+}
+
+.acervo-chip[aria-pressed=true] {
+    background: #0b465a;
+    border-color: #5de5ff;
+    box-shadow: 0 0 12px #1fc9ed33;
+    color: white;
+}
+
+.acervo-chip:hover {
+    background: #133848;
+}
+
+/* 04 — CENÁRIO E PERSONAGEM: CAMADAS INDEPENDENTES */
+.acervo-palco {
+    --acervo-x: 0px;
+    --acervo-y: 0px;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(340px, 1fr);
+    gap: 20px;
+    min-height: 480px;
+    padding: 16px 0;
+    overflow: hidden;
+    border-block: 1px solid #174959;
+    background: radial-gradient(ellipse at 25% 60%, #17495e, #03101b 70%);
+}
+
+.acervo-fundo {
+    position: absolute;
+    inset: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    object-fit: cover;
+    opacity: .55;
+    z-index: -3;
+    transform: translate(calc(var(--acervo-x) * -.4), calc(var(--acervo-y) * -.4));
+    transition: transform .16s ease-out;
+    pointer-events: none;
+}
+
+.acervo-sombra {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background: linear-gradient(90deg, #04111a10, #020c1470 45%, #020b12e8 75%), linear-gradient(0deg, #020b12, transparent 45%);
+}
+
+.acervo-apresentacao {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(180px, 1fr);
+    align-items: end;
+    min-width: 0;
+    min-height: 440px;
+}
+
+.acervo-holograma {
+    position: relative;
+    height: 440px;
+    perspective: 700px;
+}
+
+.acervo-personagem {
+    position: absolute;
+    inset: 0 0 22px;
+    width: 100%;
+    height: calc(100% - 22px);
+    object-fit: contain;
+    object-position: center bottom;
+    z-index: 3;
+    filter: drop-shadow(0 0 14px #46b9d43b);
+    transform: translate(var(--acervo-x), var(--acervo-y));
+    transition: transform .16s ease-out;
+}
+
+.acervo-personagem-vazia {
+    position: absolute;
+    inset: 15% 12% 12%;
+    display: grid;
+    place-items: center;
+    font: 80px Georgia, serif;
+    color: #91e7f64d;
+    border-radius: 45% 45% 10% 10%;
+    background: linear-gradient(180deg, #51ceeb18, #0e6b8640);
+    border: 1px solid #69d1e233;
+}
+
+.acervo-arco {
+    position: absolute;
+    inset: 5% 5% 15%;
+    border: 1px solid #47d7ff45;
+    border-radius: 50%;
+    box-shadow: inset 0 0 25px #15b1df15;
+    transform: rotate(-15deg);
+}
+
+.acervo-arco-secundario {
+    inset: 10% 0 10%;
+    border-style: dashed;
+    transform: rotate(15deg);
+    animation: acervo-anel 32s linear infinite;
+}
+
+@keyframes acervo-anel {
+    to {
+        transform: rotate(375deg);
+    }
+}
+
+.acervo-base {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    height: 65px;
+    border: 1px solid #63e9ff;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #53dbff32, transparent 65%);
+    box-shadow: 0 0 18px #1ac4f444, inset 0 0 15px #5ee9ff30;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.acervo-base span {
+    position: absolute;
+    inset: 7px 10px;
+    border: 1px solid #6becff9c;
+    border-radius: 50%;
+}
+
+.acervo-base span:nth-child(2) {
+    inset: 15px 26px;
+    border-style: dashed;
+}
+
+.acervo-base span:nth-child(3) {
+    inset: 23px 45px;
+}
+
+.acervo-credito {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #75cbde;
+    z-index: 5;
+    font: 8px monospace;
+    letter-spacing: 1px;
+}
+
+.acervo-ficha {
+    padding: 20px 10px 30px;
+    z-index: 5;
+}
+
+.acervo-indice {
+    font: 9px monospace;
+    color: #7dadbf;
+    letter-spacing: 2px;
+}
+
+.acervo-nome {
+    margin: 12px 0;
+    font-size: clamp(26px, 2.8vw, 40px);
+    line-height: 1.1;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow-wrap: anywhere;
+    text-shadow: 0 0 15px #55cbee44;
+}
+
+.acervo-area {
+    font: 10px/1.6 monospace;
+    text-transform: uppercase;
+    color: #80e7ff;
+    letter-spacing: 1px;
+}
+
+.acervo-resumo {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #c1dbe5;
+}
+
+.acervo-acao {
+    display: inline-flex;
+    padding: 13px 16px;
+    color: #001b24;
+    background: #70e7ff;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 0 20px #30d6ff35;
+}
+
+.acervo-pendente {
+    display: inline-block;
+    padding: 12px 0;
+    font: 10px/1.5 monospace;
+    color: #8baebb;
+}
+
+/* 05 — GRADE E PAGINAÇÃO */
+.acervo-grade-painel {
+    align-self: center;
+    padding: 16px;
+    margin-right: 4px;
+    border: 1px solid #235565;
+    border-radius: 6px;
+    background: #02101bd9;
+    backdrop-filter: blur(12px);
+    min-width: 0;
+}
+
+.acervo-grade-cabecalho,
+.acervo-grade-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.acervo-grade-titulo {
+    font: 11px/1.5 monospace;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #a0eafb;
+}
+
+.acervo-setas {
+    display: flex;
+    gap: 8px;
+}
+
+.acervo-seta {
+    border: 1px solid #387b90;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    color: #94edff;
+}
+
+.acervo-seta:disabled {
+    opacity: .3;
+    cursor: default;
+}
+
+.acervo-grade {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.acervo-cartao {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid #245970;
+    border-radius: 5px;
+    background: #09202b;
+    color: #d8edf4;
+    min-width: 0;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.acervo-cartao[aria-pressed=true] {
+    border-color: #80edff;
+    box-shadow: 0 0 12px #47dbff66, inset 0 0 0 1px #80edff;
+}
+
+.acervo-cartao:hover {
+    border-color: #91efff;
+}
+
+.acervo-retrato {
+    position: relative;
+    aspect-ratio: 4/4.4;
+    display: grid;
+    place-items: center;
+    color: #5aa3b7;
+    background: radial-gradient(ellipse at 50% 20%, #224d5e, #04131d);
+    font: 24px Georgia, serif;
+    overflow: hidden;
+}
+
+.acervo-retrato img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.acervo-cartao-nome {
+    display: block;
+    padding: 8px 6px;
+    font-size: 10px;
+    line-height: 1.4;
+    min-height: 44px;
+}
+
+.acervo-grade-rodape {
+    font: 10px/1.5 monospace;
+    color: #8db5c7;
+}
+
+.acervo-limpar {
+    background: transparent;
+    border: 0;
+    padding: 5px;
+    color: #87deef;
+    font-size: 10px !important;
+    text-decoration: underline;
+}
+
+.acervo-vazio {
+    padding: 30px 5px;
+    color: #acc9d6;
+    line-height: 1.6;
+}
+
+/* 06 — COLEÇÕES E INVESTIGAÇÃO */
+.acervo-colecoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 18px 0;
+}
+
+.acervo-colecao {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid #22556a;
+    border-radius: 5px;
+    padding: 22px;
+    min-height: 230px;
+    background: linear-gradient(130deg, #092332, #020c14);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.acervo-colecao-numero {
+    font: 9px monospace;
+    letter-spacing: 2px;
+    color: #669eaf;
+}
+
+.acervo-colecao h2 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #c0f4ff;
+    margin: 14px 0;
+    text-transform: uppercase;
+}
+
+.acervo-colecao p {
+    max-width: 28ch;
+    line-height: 1.6;
+    font-size: 14px;
+    margin: 0 0 20px;
+    color: #adcad7;
+}
+
+.acervo-link-botao {
+    display: inline-flex;
+    padding: 9px 12px;
+    color: #8eeaff;
+    border: 1px solid #408a9c;
+    border-radius: 4px;
+    background: #04131dcc;
+    font: 10px/1.5 monospace !important;
+    letter-spacing: 1px;
+    margin-top: auto;
+}
+
+.acervo-link-botao:hover {
+    background: #123c4c;
+    color: white;
+}
+
+.acervo-arte {
+    position: absolute;
+    right: -5px;
+    bottom: 20px;
+    z-index: -1;
+    font: 130px Georgia, serif;
+    color: #2695ae22;
+    transform: rotate(-10deg);
+}
+
+.acervo-colecao-conexoes {
+    background: radial-gradient(ellipse at right, #14365a, #030f19 80%);
+}
+
+.acervo-colecao-percursos {
+    background: linear-gradient(120deg, #061b28, #243031);
+}
+
+.acervo-investigacao {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 24px;
+    border: 1px solid #245d71;
+    border-radius: 5px;
+    background: #061923aa;
+}
+
+.acervo-investigacao-icone {
+    font-size: 34px;
+    color: #8bebff;
+    text-shadow: 0 0 14px #37bdff;
+}
+
+.acervo-investigacao p {
+    flex: 1;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.acervo-investigacao .acervo-link-botao {
+    margin: 0;
+}
+
+.acervo-rodape {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    color: #6d9aaa;
+    font: 9px/1.5 monospace;
+    letter-spacing: 1px;
+}
+
+/* 07 — RESPONSIVIDADE */
+@media(max-width:1150px) {
+    .acervo-topo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .acervo-palco {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .acervo-apresentacao {
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+
+    .acervo-holograma {
+        height: 460px;
+    }
+
+    .acervo-ficha {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(0deg, #03101bf5, transparent);
+        padding: 80px 20px 22px;
+        pointer-events: none;
+    }
+
+    .acervo-ficha a {
+        pointer-events: auto;
+    }
+
+    .acervo-nome {
+        max-width: 16ch;
+    }
+
+    .acervo-grade {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:760px) {
+    .acervo-pagina {
+        padding-inline: 16px;
+    }
+
+    .acervo-palco {
+        grid-template-columns: 1fr;
+    }
+
+    .acervo-apresentacao {
+        min-height: 430px;
+    }
+
+    .acervo-holograma {
+        width: min(100%, 420px);
+        margin: auto;
+        height: 430px;
+    }
+
+    .acervo-ficha {
+        padding-top: 70px;
+    }
+
+    .acervo-ficha .acervo-resumo {
+        max-width: 40ch;
+    }
+
+    .acervo-grade-painel {
+        margin: 0 4px;
+    }
+
+    .acervo-grade {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .acervo-colecoes {
+        grid-template-columns: 1fr;
+    }
+
+    .acervo-colecao {
+        min-height: 190px;
+    }
+
+    .acervo-investigacao {
+        flex-wrap: wrap;
+    }
+
+    .acervo-investigacao p {
+        font-size: 16px;
+    }
+
+    .acervo-filtros-linha {
+        flex-direction: column;
+    }
+
+    .acervo-grupo-areas {
+        border: 0;
+        padding: 0;
+    }
+}
+
+@media(max-width:380px) {
+    .acervo-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .acervo-pagina *,
+    .acervo-pagina *::before,
+    .acervo-pagina *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .acervo-personagem,
+    .acervo-fundo {
+        transform: none !important;
+    }
+}
+
+.effects-off .acervo-arco {
+    animation: none;
+}
+
+.effects-off .acervo-personagem,
+.effects-off .acervo-fundo {
+    transform: none;
+}
+
+
+
+/* Parte da Biografia de Cada Cientista Fofa */
+
+
+
+
+#biografia-descobertas .biografia-card{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 01 — BASE. Os estilos ficam restritos ao prefixo biografia-. */
+.biografia-body {
+    margin: 0;
+    background: #020c12
+}
+
+.biografia-page {
+    --biografia-ciano: #71e7ff;
+    --biografia-borda: #245463;
+    --biografia-texto: #d7eaf0;
+    max-width: 1600px;
+    margin: auto;
+    color: var(--biografia-texto);
+    font: 16px/1.65 'Exo 2', Arial, sans-serif;
+    background: radial-gradient(ellipse at 0 30%, #0b344555, transparent 55%)
+}
+
+.biografia-page * {
+    box-sizing: border-box
+}
+
+.biografia-page [hidden] {
+    display: none !important
+}
+
+.biografia-page a {
+    color: var(--biografia-ciano);
+    text-decoration: none
+}
+
+.biografia-page a:hover {
+    text-decoration: underline
+}
+
+.biografia-page a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 5px
+}
+
+.biografia-page h1,
+.biografia-page h2,
+.biografia-page h3,
+.biografia-page p {
+    margin: 0
+}
+
+/* 02 — CABEÇALHO */
+.biografia-header,
+.biografia-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--biografia-borda);
+    font: 11px/1.6 monospace;
+    letter-spacing: 1.5px
+}
+
+/* 03 — HERO: cenário e personagem independentes */
+.biografia-hero {
+    min-height: 460px;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    overflow: hidden;
+    background: linear-gradient(110deg, #04111b, #12323c55), repeating-linear-gradient(90deg, transparent 0 79px, #70e7ff0a 80px)
+}
+
+.biografia-fundo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3
+}
+
+.biografia-hero-sombra {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #020d16f2 0%, #020d16bc 40%, #020d1620 75%), linear-gradient(0deg, #020c12, transparent 40%);
+    z-index: -2;
+    pointer-events: none
+}
+
+.biografia-hero-texto {
+    padding: 42px 28px;
+    align-self: center;
+    z-index: 2
+}
+
+.biografia-eyebrow {
+    font: 10px/1.6 monospace;
+    letter-spacing: 2px;
+    color: #68a7b9
+}
+
+.biografia-hero h1 {
+    font-size: clamp(32px, 4.5vw, 64px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 14px 0 8px;
+    text-shadow: 0 0 18px #47cde766
+}
+
+.biografia-subtitulo {
+    font-size: 20px;
+    color: #add5e4
+}
+
+.biografia-tags {
+    display: flex;
+    gap: 9px;
+    margin: 16px 0
+}
+
+.biografia-tag {
+    border: 1px solid var(--biografia-borda);
+    border-radius: 30px;
+    padding: 3px 15px;
+    font: 11px/1.6 monospace;
+    color: var(--biografia-ciano);
+    text-transform: uppercase
+}
+
+.biografia-ficha {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 9px 15px;
+    padding: 20px;
+    margin: 20px 0 0;
+    background: #00121ddd;
+    border: 1px solid var(--biografia-borda);
+    border-radius: 5px;
+    max-width: 530px;
+    font-size: 14px
+}
+
+.biografia-ficha dt {
+    color: var(--biografia-ciano)
+}
+
+.biografia-ficha dd {
+    margin: 0
+}
+
+.biografia-personagem-area {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-width: 0
+}
+
+.biografia-personagem {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow(0 0 22px #61dcf522)
+}
+
+.biografia-placeholder {
+    display: grid;
+    place-items: center;
+    width: 240px;
+    aspect-ratio: 1;
+    border: 1px solid #4dcde555;
+    border-radius: 50%;
+    font: 72px monospace;
+    color: #5ddbf3;
+    box-shadow: 0 0 90px #1e94b02b, inset 0 0 50px #1e94b022
+}
+
+.biografia-credito {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font: 9px monospace;
+    letter-spacing: 1px;
+    color: #9ee8f6;
+    background: #00131b99;
+    padding: 5px
+}
+
+/* 04 — NAVEGAÇÃO DAS SETE SEÇÕES */
+.biografia-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    background: #02121bf5;
+    border-block: 1px solid var(--biografia-borda);
+    padding: 0 20px;
+    scrollbar-width: thin
+}
+
+.biografia-nav-link {
+    flex-shrink: 0;
+    padding: 15px 18px;
+    font-size: 13px;
+    border-bottom: 3px solid transparent
+}
+
+.biografia-nav-link[aria-current] {
+    border-color: var(--biografia-ciano);
+    background: linear-gradient(0deg, #36d5f51c, transparent);
+    color: white
+}
+
+/* 05 — SEÇÕES E CARTÕES */
+.biografia-conteudo {
+    padding: 24px 28px;
+    display: grid;
+    gap: 24px
+}
+
+.biografia-secao {
+    scroll-margin-top: 85px;
+    border: 1px solid var(--biografia-borda);
+    border-radius: 6px;
+    padding: 24px;
+    background: linear-gradient(120deg, #041b26e8, #020d15e8);
+    position: relative
+}
+
+.biografia-secao:before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 16px;
+    height: 36px;
+    width: 2px;
+    background: var(--biografia-ciano);
+    box-shadow: 0 0 12px var(--biografia-ciano)
+}
+
+.biografia-secao-topo {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    column-gap: 10px;
+    margin-bottom: 24px;
+    align-items: center
+}
+
+.biografia-numero {
+    grid-row: span 2;
+    color: #5599ab;
+    font: 18px monospace
+}
+
+.biografia-secao h2 {
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #b0edfa
+}
+
+.biografia-secao-topo p {
+    font-size: 14px;
+    color: #84afbf
+}
+
+.biografia-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px
+}
+
+.biografia-card {
+    padding: 22px;
+    border: 1px solid #1c404c;
+    border-radius: 5px;
+    background: #00111aaa
+}
+
+.biografia-marca {
+    display: block;
+    font: 11px/1.5 monospace;
+    letter-spacing: 2px;
+    color: var(--biografia-ciano);
+    margin-bottom: 12px
+}
+
+.biografia-card h3 {
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #e0f5ff
+}
+
+.biografia-card p {
+    color: #a7c5d0;
+    font-size: 15px;
+    max-width: 75ch
+}
+
+.biografia-citacao {
+    display: inline-block;
+    font: 11px monospace;
+    margin-top: 14px
+}
+
+/* 06 — LAYOUTS ESPECÍFICOS */
+.biografia-secao-linha .biografia-lista {
+    display: block;
+    border-left: 1px solid #4ac9e4;
+    margin-left: 12px;
+    padding-left: 28px
+}
+
+.biografia-secao-linha .biografia-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 15px;
+    padding: 12px 0 24px;
+    border: 0;
+    background: none
+}
+
+.biografia-secao-linha .biografia-card:before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 11px;
+    height: 11px;
+    background: #8ceaff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #43d2f3
+}
+
+.biografia-secao-linha .biografia-marca {
+    font-size: 19px
+}
+
+.biografia-secao-elementos .biografia-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 24px;
+    align-items: start
+}
+
+.biografia-secao-elementos .biografia-marca {
+    border: 1px solid #58c6e2;
+    padding: 14px;
+    font-size: 40px;
+    text-align: center;
+    box-shadow: inset 0 0 25px #3eafcf22
+}
+
+.biografia-secao-premios .biografia-card {
+    background: radial-gradient(ellipse at top left, #8a682226, transparent 75%), #061218;
+    border-color: #6f592b
+}
+
+.biografia-secao-premios .biografia-marca {
+    font-size: 35px;
+    color: #edc77d
+}
+
+.biografia-fontes-lista {
+    padding-left: 22px;
+    display: grid;
+    gap: 20px;
+    margin-bottom: 0
+}
+
+.biografia-fonte {
+    scroll-margin-top: 90px;
+    padding: 10px;
+    border-bottom: 1px solid #17323c
+}
+
+.biografia-fonte p {
+    font-size: 13px;
+    color: #91adba
+}
+
+.biografia-footer {
+    border-top: 1px solid var(--biografia-borda);
+    border-bottom: 0;
+    color: #74a7ba
+}
+
+/* 07 — RESPONSIVIDADE */
+@media(max-width:750px) {
+    .biografia-hero {
+        grid-template-columns: 1fr
+    }
+
+    .biografia-personagem-area {
+        grid-row: 1;
+        height: 300px
+    }
+
+    .biografia-hero-texto {
+        padding: 24px
+    }
+
+    .biografia-hero-sombra {
+        background: linear-gradient(0deg, #020d16 0%, #020d1630 90%)
+    }
+
+    .biografia-lista {
+        grid-template-columns: 1fr
+    }
+
+    .biografia-conteudo {
+        padding: 18px 12px
+    }
+
+    .biografia-secao {
+        padding: 18px
+    }
+
+    .biografia-header {
+        padding: 14px
+    }
+
+    .biografia-secao-elementos .biografia-card {
+        grid-template-columns: 70px 1fr;
+        gap: 16px
+    }
+
+    .biografia-secao-elementos .biografia-marca {
+        font-size: 30px
+    }
+
+    .biografia-secao-linha .biografia-card {
+        grid-template-columns: 1fr;
+        gap: 0
+    }
+
+    .biografia-nav {
+        padding: 0 8px
+    }
+
+    .biografia-nav-link {
+        padding: 13px 12px
+    }
+
+    .biografia-ficha {
+        font-size: 13px
+    }
+
+    .biografia-secao h2 {
+        font-size: 20px
+    }
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .biografia-personagem {
+        animation: biografia-entrada .7s ease-out both
+    }
+
+    @keyframes biografia-entrada {
+        from {
+            opacity: 0;
+            transform: translateY(12px)
+        }
+
+        to {
+            opacity: 1;
+            transform: none
+        }
+    }
+}
+
+.effects-off .biografia-personagem {
+    animation: none
+}

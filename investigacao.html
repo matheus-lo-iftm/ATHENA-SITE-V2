@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A.T.H.E.N.A</title>
+
+  <link rel="icon" href="src/media/favicon/ATHENA-favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Redaction+35:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/style.css"> <link rel="stylesheet" href="src/css/interacoes-main.css"><link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/investigacao.css">
+
+</head>
+
+<body class="is-locked" data-bs-spy="scroll" data-bs-target="#header-links" data-bs-root-margin="0px 0px -40%">
+
+  <div class="cursor-customizado"></div>
+
+  <!-- Camada 0: Vídeo Background -->
+
+  <div class="environment" aria-hidden="true">
+
+    <video id="backgroundVideo" class="background-video" muted loop playsinline preload="none" hidden></video>
+
+    <div class="background-shade"></div>
+    <div class="grid"></div>
+  </div>
+
+  <!-- Camada 1: Site -->
+
+  <div id="site" class="site" inert aria-hidden="true">
+
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <div class="terminal-layout">
+
+      <aside class="header-menu" aria-label="Painel A.T.H.E.N.A.">
+        <div class="header-menu-interior">
+          <button class="header-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#header-painel"
+            aria-expanded="false" aria-controls="header-painel">Menu</button>
+
+          <div class="header-marca">
+            <img src="src/media/image/ATHENA.png" alt="" width="114" height="114">
+            <strong>A.T.H.E.N.A.</strong>
+            <small>TERMINAL DE ARQUIVOS</small>
+          </div>
+
+          <div id="header-painel" class="header-painel collapse">
+            <nav class="nav header-links" id="header-links" aria-label="Seções do terminal">
+
+
+              <a class="nav-link" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-terminal preview-icon">
+                  <path d="m7 11 2-2-2-2" />
+                  <path d="M11 13h4" />
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                </svg>Terminal</a>
+
+              <a class="nav-link" href="memorias.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-folder-clock preview-icon">
+                  <path d="M16 14v2.2l1.6 1" />
+                  <path
+                    d="M7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2" />
+                  <circle cx="16" cy="16" r="6" />
+                </svg>Memórias</a>
+
+              <a class="nav-link" href="acervo.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-library preview-icon">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M7 7v10" />
+                  <path d="M11 7v10" />
+                  <path d="m15 7 2 10" />
+                </svg>Acervo</a>
+              <a class="nav-link" href="simulacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-gamepad-2 preview-icon">
+                  <line x1="6" x2="10" y1="11" y2="11" />
+                  <line x1="8" x2="8" y1="9" y2="13" />
+                  <line x1="15" x2="15.01" y1="12" y2="12" />
+                  <line x1="18" x2="18.01" y1="10" y2="10" />
+                  <path
+                    d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                </svg>Simulação</a>
+              <a class="nav-link" href="investigacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                  height="24" viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-newspaper preview-icon">
+                  <path d="M15 18h-5" />
+                  <path d="M18 14h-8" />
+                  <path
+                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+                  <rect width="8" height="4" x="10" y="6" rx="1" />
+                </svg>Investigação</a>
+              <a class="nav-link" href="ecossistema.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-globe-code preview-icon">
+                  <path d="M15.5 10 13 7.5 15.5 5" />
+                  <path d="M15.861 14A14.5 14.5 0 0112 22a14.48 14.48 0 010-20 10 10 0 109.888 11.5" />
+                  <path d="M19.5 5 22 7.5 19.5 10" />
+                  <path d="M2 12h8.5" />
+                </svg>Ecossistema</a>
+
+
+              <a class="nav-link" href="projeto.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-user-group preview-icon">
+                  <path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1" />
+                  <path d="M19 10h1a2 2 0 012 2v1" />
+                  <path d="M5 10H4a2 2 0 00-2 2v1" />
+                  <circle cx="12" cy="11" r="3" />
+                  <circle cx="18" cy="4" r="2" />
+                  <circle cx="6" cy="4" r="2" />
+                </svg>Projeto 950</a>
+
+
+            </nav>
+            <div class="header-telemetria">
+
+              <img src="src/media/video/gif/earth.gif" alt="" loading="lazy">
+              <div class="header-telemetria-text">
+                <p class="header-telemetria-text-status">
+                  SETOR 109<br><span class="status-dot"></span><b>CONEXÃO ESTÁVEL</b>
+                </p>
+                <div class="menu-preferencias">
+
+                  <div class="controles-audio">
+                    <div class="controles-audio-div">
+                      <p>MÚSICA:</p>
+
+
+                      <div class="background-sound-eff-button-container musica">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="controles-audio-div">
+
+                      <p>SONS:</p>
+
+
+                      <div class="background-sound-eff-button-container efeitos">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="button-turn-on-effect-text">
+                    <p>
+                      EFEITOS:
+                    </p>
+                  </div>
+                  <div class="turn-on-effect-toggle-cont">
+                    <!-- O input agora carrega a ID do seu botão antigo e inicia ligado -->
+                    <input class="turn-on-effect-toggle-input" id="effectsButton" name="toggle" type="checkbox"
+                      checked />
+                    <label class="turn-on-effect-toggle-label" for="effectsButton">
+                      <div class="turn-on-effect-cont-icon">
+                        <!-- Seus spans de sparkle originais -->
+                        <span style="--width: 2; --deg: 25; --duration: 11" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 100; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 280; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 200; --duration: 3" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 30; --duration: 20" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 300; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 250; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 210; --duration: 8" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 100; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 15; --duration: 13" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 75; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 6" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 50; --duration: 7" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 320; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 220; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 215; --duration: 2" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 135; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 45; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 78; --duration: 16" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 89; --duration: 19" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 14" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 97; --duration: 1" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 174; --duration: 10" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 236; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30"
+                          class="turn-on-effect-icon">
+                          <path
+                            d="M0.96233 28.61C1.36043 29.0081 1.96007 29.1255 2.47555 28.8971L10.4256 25.3552C13.2236 24.11 16.4254 24.1425 19.2107 25.4401L27.4152 29.2747C27.476 29.3044 27.5418 29.3023 27.6047 29.32C27.6563 29.3348 27.7079 29.3497 27.761 29.3574C27.843 29.3687 27.9194 29.3758 28 29.3688C28.1273 29.3617 28.2531 29.3405 28.3726 29.2945C28.4447 29.262 28.5162 29.2287 28.5749 29.1842C28.6399 29.1446 28.6993 29.0994 28.7509 29.0477L28.9008 28.8582C28.9468 28.7995 28.9793 28.7274 29.0112 28.656C29.0599 28.5322 29.0811 28.4036 29.0882 28.2734C29.0939 28.1957 29.0868 28.1207 29.0769 28.0415C29.0705 27.9955 29.0585 27.9524 29.0472 27.9072C29.0295 27.8343 29.0302 27.7601 28.9984 27.6901L25.1638 19.4855C23.8592 16.7073 23.8273 13.5048 25.0726 10.7068L28.6145 2.75679C28.8429 2.24131 28.7318 1.63531 28.3337 1.2372C27.9165 0.820011 27.271 0.721743 26.7491 0.9961L19.8357 4.59596C16.8418 6.15442 13.2879 6.18696 10.2615 4.70062L1.80308 0.520214C1.7055 0.474959 1.60722 0.441742 1.50964 0.421943C1.44459 0.409215 1.37882 0.395769 1.3074 0.402133C1.14406 0.395769 0.981436 0.428275 0.818095 0.499692C0.77284 0.519491 0.719805 0.545671 0.67455 0.578198C0.596061 0.617088 0.524653 0.675786 0.4596 0.74084C0.394546 0.805894 0.335843 0.877306 0.296245 0.956502C0.263718 1.00176 0.237561 1.05477 0.217762 1.10003C0.152708 1.24286 0.126545 1.40058 0.120181 1.54978C0.120181 1.61483 0.126527 1.6735 0.132891 1.73219C0.15269 1.85664 0.178881 1.97332 0.237571 2.08434L4.41798 10.5427C5.91139 13.5621 5.8725 17.1238 4.3204 20.1099L0.720514 27.0233C0.440499 27.5536 0.545137 28.1928 0.96233 28.61Z">
+                          </path>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="menu-libras">
+                    <p>ACESSIBILIDADE</p>
+                    <button id="menu-vlibras" type="button" disabled>Carregando VLibras…</button>
+                    <small id="menu-vlibras-status" role="status">Tradução para Libras</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="header-conteudo">
+
+
+        <main id="main" tabindex="-1">
+
+
+          <!-- Estrutura do Papel do Jornal -->
+          <main class="investigacao-paper">
+
+            <!-- Cabeçalho do Jornal -->
+            <header class="investigacao-header-section">
+              <div class="investigacao-edicao-especial">ARQUIVO INVESTIGATIVO / EDIÇÃO ESPECIAL</div>
+              <div class="investigacao-title-wrapper">
+                <!-- Imagem placeholder simulando a ilustração da esquerda (Microscópio) -->
+
+                <div class="microscopio-investigacao">
+                  <img src="src/media/image/investigacao/investigacao-microscopio.png" alt="Ilustração"
+                    class="investigacao-title-illustration">
+                </div>
+
+                <div class="investigacao-louro">
+                  <img src="src/media/image/investigacao/investigacao-louro-esquerdo.png" alt="">
+                </div>
+
+                <div class="investigacao-main-title-box">
+                  <h1>O ARQUIVO DELAS</h1>
+                  <div class="investigacao-main-subtitle">CIÊNCIA • AUTORIA • MEMÓRIA</div>
+                </div>
+
+                <!-- Imagem placeholder simulando a ilustração da direita (Globo) -->
+
+                <div class="investigacao-louro">
+
+                  <img src="src/media/image/investigacao/investigacao-louro-direita.png" alt="">
+                </div>
+
+                <div class="microscopio-investigacao">
+                  <img src="src/media/image/investigacao/investigacao-terra.png" alt="Ilustração"
+                    class="investigacao-title-illustration">
+                </div>
+
+              </div>
+
+            </header>
+
+            <!-- Manchete -->
+            <section class="investigacao-headline-section">
+              <h2>QUEM FICOU FORA DA HISTÓRIA?</h2>
+              <p>Uma investigação sobre as mulheres que fizeram ciência — e nem sempre receberam o reconhecimento.</p>
+            </section>
+
+           <!-- Seção Hero: Apagamento & Colagem -->
+            <section class="investigacao-hero-layout">
+              <div class="investigacao-hero-text">
+                <h3>O apagamento também deixa provas</h3>
+                <p>A história da ciência não é feita apenas de grandes descobertas, mas também de escolhas sobre quem é
+                  lembrado, quem assina os resultados e quem permanece nas margens. Nesta edição, investigamos
+                  evidências, documentos e contextos que mostram como contribuições de mulheres foram frequentemente
+                  invisibilizadas, atribuídas a outros nomes ou esquecidas ao longo do tempo.</p>
+              </div>
+
+              <!-- Colagem complexa -->
+              <div class="investigacao-hero-collage">
+                
+                <!-- DECORAÇÕES (FUNDO) -->
+                <!-- Coloque a imagem das folhinhas da esquerda aqui -->
+                <img src="src/media/image/investigacao/folha-esquerda.png" class="investigacao-decor decor-leaf-left" alt="">
+                <!-- Coloque a imagem do clipe de papel aqui -->
+                <img src="src/media/image/seu-clipe.png" class="investigacao-decor decor-paperclip" alt="">
+
+                <!-- FOTOS (FUNDO E MEIO) -->
+                <img
+  src="src/media/image/investigacao/background-foto-mural.png"
+  class="investigacao-img-jornal"
+  alt=""
+>
+                <img src="src/media/image/investigacao/dna-investigacao-foto.png" class="investigacao-collage-img investigacao-img-doc1">
+                <img src="src/media/image/investigacao/lise-meitner-photo-mural.png" class="investigacao-collage-img investigacao-img-meitner">
+                <img src="src/media/image/investigacao/pulsar-grafico-foto-mural.png" class="investigacao-collage-img investigacao-img-graph">
+                <img src="src/media/image/investigacao/cientista-photo-mural.png" class="investigacao-collage-img investigacao-img-bell">
+                <img src="src/media/image/investigacao/foto-51-foto-mural.png" class="investigacao-collage-img investigacao-img-dna">
+                
+                <!-- FOTO PRINCIPAL (FRENTE) -->
+                <img src="src/media/image/investigacao/rosalind-franklin-photo-mural.png" class="investigacao-collage-img investigacao-img-franklin">
+
+                <!-- DECORAÇÕES (FRENTE) -->
+                <!-- Coloque a imagem do circulo/rabisco vermelho aqui -->
+                <img src="src/media/image/seu-circulo-vermelho.png" class="investigacao-decor decor-red-circle" alt="">
+                <!-- Coloque a imagem das folhinhas da direita aqui -->
+                <img src="src/media/image/investigacao/folha-direita.png" class="investigacao-decor decor-leaf-right" alt="">
+
+                <!-- CARIMBO / ETIQUETA -->
+                <div class="investigacao-stamp">DOCUMENTOS, NOMES E CONTEXTO</div>
+              </div>
+            </section>
+
+            <!-- Efeito Matilda -->
+            <section class="investigacao-matilda-banner">
+              <div class="investigacao-matilda-title">EFEITO<br>MATILDA</div>
+              <div class="investigacao-matilda-desc">Quando a contribuição de uma mulher é ignorada ou atribuída a um
+                homem.</div>
+              <div class="investigacao-matilda-icons">
+                <div class="investigacao-icon-item"><img
+                    src="src/media/image/investigacao/caneta-icon-investigação.png"></img>
+                  <p>Autoria</p>
+                </div>
+                <div class="investigacao-icon-item"><img
+                    src="src/media/image/investigacao/prêmio-icon-investigação.png"></img>
+                  <p>Reconhecimento</p>
+                </div>
+                <div class="investigacao-icon-item"><img
+                    src="src/media/image/investigacao/chave-icon-investigação.png"></img>
+                  <p>Acesso</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Três Histórias -->
+            <section class="investigacao-stories-section">
+              <h2>TRÊS HISTÓRIAS, UMA PERGUNTA: QUEM RECEBE O CRÉDITO?</h2>
+
+              <div class="investigacao-stories-grid">
+                <!-- História 1 -->
+                <article class="investigacao-story-card">
+                  <div class="investigacao-story-header">
+                    <img src="src/media/image/investigacao/investigacao-rosalind-picture.png" alt="Rosalind Franklin">
+
+                  </div>
+                  <div>
+                  <div class="investigacao-story-title">
+                    <h3>ROSALIND<br>FRANKLIN</h3>
+                    <p>As evidências por trás da estrutura do DNA</p>
+                  </div>
+                  <p>Suas imagens de difração de raios X foram fundamentais para compreender a estrutura do DNA, mas seu
+                    papel no processo foi, por muito tempo, minimizado nos relatos oficiais.</p>
+                  <a href="https://revistaquestaodeciencia.com.br/artigo/2025/11/14/rosalind-franklin-e-estrutura-do-dna" class="investigacao-link-btn">LER O CASO &rarr;</a>
+                  </div>
+                </article>
+
+                <!-- História 2 -->
+                <article class="investigacao-story-card">
+                  <div class="investigacao-story-header">
+                    <img src="src/media/image/investigacao/investigacao-lise-meitner.png" alt="Lise Meitner">
+
+                  </div>
+                  <div>
+                    <div class="investigacao-story-title">
+                      <h3>LISE<br>MEITNER</h3>
+                      <p>A interpretação da fissão nuclear e os limites do reconhecimento</p>
+                    </div>
+                    <p>Com Otto Hahn, investigou reações nucleares que levaram à fissão do núcleo atômico. Sua
+                      interpretação teórica foi essencial, mas o reconhecimento institucional não acompanhou sua
+                      contribuição.</p>
+                    <a href="https://www.fisicaquantica.com.br/post/lisemeitner-a-mulher-que-desvendou-a-fissão-nuclear-e-enfrentou-a-história" class="investigacao-link-btn">LER O CASO &rarr;</a>
+                  </div>
+                </article>
+
+                <!-- História 3 -->
+                <article class="investigacao-story-card">
+                  <div class="investigacao-story-header">
+                    <img src="src/media/image/investigacao/investigacao-jocelyn-foto.png" alt="Jocelyn Bell Burnell">
+                    
+                  </div>
+                  <div>
+                  <div class="investigacao-story-title">
+                      <h3>JOCELYN<br>BELL BURNELL</h3>
+                      <p>O sinal dos pulsares e o debate sobre o Nobel</p>
+                    </div>
+                  <p>Identificou, ainda na graduação, sinais regulares vindos do espaço que se revelaram pulsares, um
+                    dos mais importantes achados da radioastronomia. O prêmio Nobel pela descoberta, no entanto, não
+                    contemplou seu nome.</p>
+                  <a href="https://ienci.if.ufrgs.br/index.php/ienci/article/view/2517" class="investigacao-link-btn">LER O CASO &rarr;</a>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- Seção Inferior -->
+            <section class="investigacao-bottom-layout">
+
+              <!-- Esquerda: Linha do Tempo -->
+              <div class="investigacao-recognition-history">
+                <h3 class="investigacao-section-header-small">O RECONHECIMENTO TEM HISTÓRIA</h3>
+
+                <div class="investigacao-timeline-wrapper">
+                  <div class="investigacao-timeline-headers">
+                    <div class="investigacao-time-step">A descoberta</div>
+                    <div class="investigacao-time-step">A disputa pela autoria</div>
+                    <div class="investigacao-time-step">A memória recuperada</div>
+                  </div>
+
+                  <div class="investigacao-timeline-images">
+                    <div class="investigacao-image-frame">
+                      <img src="src/media/image/investigacao/foto-51-investigacao-section.png" alt="Descoberta">
+                    </div>
+                    <div class="investigacao-image-frame">
+                      <img src="src/media/image/investigacao/dna-investigacao-foto.png" alt="Disputa">
+                    </div>
+                    <div class="investigacao-paper-snippet">
+                      <img src="src/media/image/investigacao/cientista-manchete-investigacao.png" alt="Recorte de jornal">
+                    </div>
+                  </div>
+
+                  <div class="investigacao-timeline-texts">
+                    <p>Resultados e evidências que ampliam o conhecimento científico, muitas vezes com participação decisiva de mulheres.</p>
+                    <p>Decisões, publicações e prêmios que nem sempre refletem de forma justa todas as contribuições envolvidas.</p>
+                    <p>Releituras históricas, novos estudos e a abertura de acervos que recolocam essas cientistas no centro da história da ciência.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Direita: Como Ler -->
+              <div class="investigacao-how-to-read">
+                <h3 class="investigacao-section-header-small">COMO LER UMA HISTÓRIA DA CIÊNCIA</h3>
+                <div class="investigacao-how-to-list">
+                  <div class="investigacao-how-item">
+                    <div class="investigacao-how-icon">
+                      <img src="src/media/image/investigacao/roteiro-icon-investigação.png" alt="Documento">
+                    </div>
+                    <div class="investigacao-how-text">
+                      <h4>Quem assina?</h4>
+                      <p>Observe quem aparece como autor(a) nos artigos, relatórios e prêmios.</p>
+                    </div>
+                  </div>
+                  <div class="investigacao-how-item">
+                    <div class="investigacao-how-icon">
+                      <img src="src/media/image/investigacao/pessoa-icon-investigação.png" alt="Pessoas">
+                    </div>
+                    <div class="investigacao-how-text">
+                      <h4>Quem aparece nas fontes?</h4>
+                      <p>Analise quem é citado(a), mencionado(a) ou reconhecido(a) nos registros da época.</p>
+                    </div>
+                  </div>
+                  <div class="investigacao-how-item">
+                    <div class="investigacao-how-icon">
+                      <img src="src/media/image/investigacao/lupa-icon-investigação.png" alt="Lupa">
+                    </div>
+                    <div class="investigacao-how-text">
+                      <h4>Quem ficou de fora?</h4>
+                      <p>Reflita sobre ausências, silêncios e contribuições que só foram reconhecidas mais tarde.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Rodapé: Fontes Abertas -->
+            <section class="investigacao-footer-resources">
+              <div class="investigacao-resource-img-container">
+                <!-- Coloque aqui a imagem dos livros com a lupa -->
+                <img src="src/media/image/investigacao/livro-lupa-investigacao.png" alt="Livros e Lupa" class="investigacao-resource-img">
+              </div>
+              <div class="investigacao-resource-content">
+                <h3>FONTES ABERTAS. MEMÓRIA EM CONSTRUÇÃO.</h3>
+                <p>Explore documentos, artigos, acervos e biografias de referência sobre as cientistas desta edição e muitas outras. Investigue, compare fontes e aprofunde sua compreensão sobre autoria e reconhecimento na ciência.</p>
+                <div class="investigacao-resource-links">
+                  <a href="https://www.nobelprize.org">
+                    <img src="src/media/image/investigacao/investigacao-terra.png" class="investigacao-link-icon" alt=""> NobelPrize.org &rarr;
+                  </a>
+                  <span class="investigacao-link-sep">|</span>
+                  <a href="https://royalsociety.org">
+                    <img src="src/media/image/investigacao/museu-icon-investigação.png" class="investigacao-link-icon" alt=""> Royal Society &rarr;
+                  </a>
+                  <span class="investigacao-link-sep">|</span>
+                  <a href="https://basearch.coc.fiocruz.br/arquivos-mulheres">
+                    <img src="src/media/image/investigacao/pasta-icon-investigação.png" class="investigacao-link-icon" alt=""> Arquivos científicos &rarr;
+                  </a>
+                  <span class="investigacao-link-sep">|</span>
+                  <a href="https://www.ebiografia.com/mulheres_na_ciencia/">
+                    <img src="src/media/image/investigacao/livro-icon-investigação.png" class="investigacao-link-icon" alt=""> Biografias e documentos &rarr;
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <!-- Banner Final Escuro (Agora DENTRO do jornal) -->
+            <div class="investigacao-dark-banner-wrapper">
+              <section class="investigacao-dark-cta-banner">
+                <!-- Se tiver imagem de fundo para o banner, defina via CSS -->
+                <h2>CONHEÇA AS CIENTISTAS POR TRÁS DAS DESCOBERTAS</h2>
+                <a href="acervo.html" class="investigacao-cta-btn">EXPLORAR ACERVO &rarr;</a>
+              </section>
+              <div class="investigacao-final-phrase">
+                Memória é justiça.
+              </div>
+            </div>
+
+          </main> <!-- FIM DO PAPEL DO JORNAL -->
+
+
+
+
+
+        <footer class="footer home-footer">
+          <div class="footer-top">
+
+            <!-- Coluna 1: Logo e Título (Mais larga) -->
+            <div class="home-footer-marca">
+              <div class="home-footer-marca-logo">
+                <img src="src/media/image/E-CAT.png" alt="">
+              </div>
+              <div class="home-footer-marca-titulo">
+                <strong>ELAS NO CONTROLE:</strong>
+                <h1>Além do Tempo</h1>
+                <p>Um terminal para explorar a memória das mulheres na ciência.</p>
+              </div>
+            </div>
+
+            <!-- Coluna 2: Criadores -->
+            <nav class="home-footer-titulo" aria-label="Criadores">
+              <small>CRIADORES</small>
+              <a href="https://instagram.com">Matheus Lemes Oliveira</a>
+              <a href="https://instagram.com">Pietro Hygino Henrique</a>
+              <a href="https://instagram.com">Davi Martins Ferreira</a>
+            </nav>
+
+            <!-- Coluna 3: Transmissões -->
+            <div class="home-footer-titulo" aria-label="Redes Sociais">
+              <small>TRANSMISSÕES</small>
+              <a href="https://instagram.com">@taty.lutz_</a>
+              <a href="https://instagram.com">@athenas.ai.75</a>
+              <a href="https://instagram.com">@elas.cat</a>
+            </div>
+
+          </div>
+
+          <!-- Rodapé inferior -->
+          <div class="footer-bottom">
+            <small>Projeto 950 · MTEC 2026 · Sala 109</small>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Camada 2: filtro sobre o site, sem capturar cliques. -->
+  <div id="visualFilter" class="visual-filter" aria-hidden="true">
+    <video id="filterVideo" muted loop playsinline preload="none" hidden></video>
+    <div class="scanlines"></div>
+  </div>
+
+  <!-- Camada 3: Tela Introdução -->
+
+
+
+  <section id="intro" class="intro" aria-label="Conectar ao terminal A.T.H.E.N.A.">
+
+    <video id="introVideo" class="intro-video" playsinline preload="none"
+      aria-label="Vídeo de abertura da A.T.H.E.N.A."></video>
+
+    <div id="connectScreen" class="connect-screen">
+
+      <p class="eyebrow athena-acess">A.T.H.E.N.A. / ACESSO AO TERMINAL</p>
+
+      <label class="Blue-Inicio-switch">
+        <input id="powerSwitch" type="checkbox" aria-label="Ligar o terminal">
+        <span class="Blue-Inicio-button" aria-hidden="true">
+          <span class="Blue-Inicio-light"></span>
+          <span class="Blue-Inicio-dots"></span>
+          <span class="Blue-Inicio-characters"></span>
+          <span class="Blue-Inicio-shine"></span>
+          <span class="Blue-Inicio-shadow"></span>
+        </span>
+      </label>
+      <p class="connect-hint" id="powerHint" role="status">Ligue o interruptor para conectar.</p>
+      <button id="connectButton" class="connect-button" type="button" disabled>
+        <span class="con-label">CONECTAR</span>
+        <span class="con-clip" aria-hidden="true">
+          <i class="con-corner lt"></i><i class="con-corner rt"></i>
+          <i class="con-corner rb"></i><i class="con-corner lb"></i>
+        </span>
+        <span class="con-arrow left" aria-hidden="true"></span>
+        <span class="con-arrow right" aria-hidden="true"></span>
+      </button>
+      <button id="soundButton" class="text-button" type="button" aria-pressed="true">SOM DA INTRODUÇÃO: ATIVADO</button>
+
+    </div>
+    <div id="playbackControls" class="playback-controls" hidden>
+      <button id="pauseButton" class="icon-button" type="button">PAUSAR</button>
+      <button id="skipButton" class="icon-button" type="button">PULAR →</button>
+    </div>
+    <p id="introStatus" class="intro-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <!-- Isso é uma tag que avisa o usuário que o JavaScript precisa estar ativado para acessar o terminal. Se o JavaScript estiver desativado, essa mensagem será exibida. -->
+  <!-- Basicamente um plano B caso dê erro no JS -->
+  <noscript>
+    <div class="noscript">Ative o JavaScript para entrar no terminal. Projeto 950 — Elas no Controle: Além do Tempo.
+    </div>
+  </noscript>
+
+  <div class="cursor-orbita" aria-hidden="true">
+    <span class="cursor-orbita__anel"></span>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="src/js/efeitos.js" defer></script>
+  <script src="src/js/memorias-inicio.js" defer></script>
+  <script src="src/js/script.js" type="module"></script>
+  <script src="src/js/vlibras-menu.js" defer></script>
+
+</body>
+
+</html>

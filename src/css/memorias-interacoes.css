@@ -1,0 +1,49 @@
+/* MEMÓRIAS — INTERAÇÕES COMPLEMENTARES
+ * O memorias.css original é uma dependência e deve permanecer no projeto.
+ * Ele é citado no HTML, mas seu conteúdo não foi enviado neste pedido.
+ * O escopo .memoria-page mantém o carrossel da página inicial independente.
+ * Carregado por style.css; não requer um novo link no HTML.
+ */
+
+/* ==========================================================================
+   MEMÓRIAS — CAPÍTULOS DO ROLO
+   Destaque das lembranças disponíveis sem mudar o tamanho do trilho.
+   ========================================================================== */
+main :is(.memoria-page .memoria-page-capitulo, .memoria-page .memoria-page-nota):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.memoria-page .memoria-page-capitulo, .memoria-page .memoria-page-nota):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 12px 28px #0005, 0 0 18px var(--mtec-hover-glow, #24e5ff30);
+        translate: 0 -3px;
+    }
+}
+
+main :is(.memoria-page .memoria-page-capitulo, .memoria-page .memoria-page-nota):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}
+
+/* ==========================================================================
+   MEMÓRIAS — REPRODUÇÃO E NAVEGAÇÃO
+   Feedback dos controles existentes; a reprodução continua a cargo do JavaScript.
+   ========================================================================== */
+main :is(.memoria-page .memoria-page-botao, .memoria-page .memoria-page-seta, .memoria-page .memoria-page-link, .memoria-page .memoria-page-voltar):not(:disabled):not([aria-disabled="true"]) {
+    transition: translate 220ms ease, scale 220ms ease, box-shadow 220ms ease,
+        border-color 220ms ease, filter 220ms ease, background-color 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    main :is(.memoria-page .memoria-page-botao, .memoria-page .memoria-page-seta, .memoria-page .memoria-page-link, .memoria-page .memoria-page-voltar):not(:disabled):not([aria-disabled="true"]):not(.effects-off *):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+        box-shadow: 0 12px 28px #0005, 0 0 18px var(--mtec-hover-glow, #24e5ff30);
+        translate: 0 -3px;
+        scale: 1.02;
+    }
+}
+
+main :is(.memoria-page .memoria-page-botao, .memoria-page .memoria-page-seta, .memoria-page .memoria-page-link, .memoria-page .memoria-page-voltar):not(:disabled):not([aria-disabled="true"]):focus-within {
+    border-color: var(--mtec-hover-accent, #72f7ff);
+}

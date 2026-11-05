@@ -1,0 +1,46 @@
+/* ========================================================================== 
+   MTEC / A.T.H.E.N.A. — ÍNDICE DOS ESTILOS
+
+   INSTALAÇÃO SEM ALTERAR O HTML
+   1. Faça uma cópia do seu style.css atual.
+   2. Copie TODOS os CSS deste pacote para src/css, juntos neste mesmo nível.
+   3. Substitua somente o style.css antigo pelo índice deste pacote.
+   4. Mantenha acervo.css, memorias.css, memorias-inicio.css e
+      inicio-correcoes.css que já existem no projeto e são citados nos HTMLs.
+      Eles não vieram neste envio; este pacote não os substitui.
+   5. Atualize o navegador com Ctrl+F5.
+
+   MAPA DE MANUTENÇÃO
+   base.css                 Reset, paletas, estrutura, menu, abertura e rodapé.
+   inicio.css               Terminal orbital e seções da página inicial.
+   projeto.css              Projeto 950, equipe, documentação e galerias.
+   ecossistema.css          Perfis, transmissões, publicações e galeria.
+   investigacao.css         Jornal, documentos, cientistas e referências.
+   simulacao.css            Missão, controles e objetivo do jogo.
+   acervo-interacoes.css    Complementa o acervo.css já existente.
+   memorias-interacoes.css  Complementa o memorias.css já existente.
+   interacoes-main.css      Foco, estados desabilitados e movimento reduzido.
+
+   Os perfis do ecossistema e os cards da equipe também aparecem no início;
+   por isso seus componentes continuam disponíveis para todas as páginas.
+   Os imports mantêm os links atuais do HTML funcionando. Todos os módulos
+   são baixados: carregar apenas o CSS da página exigiria mudar esses links.
+   Não coloque regras antes dos imports: isso invalidaria os imports seguintes.
+   Caminhos de imagens foram preservados e continuam relativos a src/css.
+
+   VERIFICAÇÃO
+   As regras reorganizadas foram comparadas nos sete HTMLs enviados antes
+   da inclusão dos novos efeitos. Foram removidas duas declarações já inválidas
+   (background vazio e top sem unidade) e corrigido transition: *background*.
+   HTML e JavaScript não foram alterados. O pacote contém somente CSS.
+   ========================================================================== */
+
+@import url("./base.css");
+@import url("./inicio.css");
+@import url("./projeto.css");
+@import url("./ecossistema.css");
+@import url("./investigacao.css");
+@import url("./simulacao.css");
+@import url("./acervo-interacoes.css");
+@import url("./memorias-interacoes.css");
+@import url("./interacoes-main.css");

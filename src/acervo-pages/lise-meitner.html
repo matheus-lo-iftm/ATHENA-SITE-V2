@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.T.H.E.N.A</title>
+
+    <link rel="icon" href="../../src/media/favicon/ATHENA-favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Redaction+35:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/acervo.css">
+
+    <link rel="stylesheet" href="../src/css/acervo.css">
+     <link rel="stylesheet" href="../src/css/interacoes-main.css"><link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/acervo-interacoes.css">
+    <link rel="stylesheet" href="../src/css/interacoes-main.css">
+    <link rel="stylesheet" href="../src/css/base.css">
+
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-links" data-bs-root-margin="0px 0px -40%">
+
+    <div class="cursor-customizado"></div>
+
+    <!-- Camada 0: Vídeo Background -->
+
+    <div class="environment" aria-hidden="true">
+
+        <video id="backgroundVideo" class="background-video" muted loop playsinline preload="none"></video>
+
+        <div class="background-shade"></div>
+        <div class="grid"></div>
+    </div>
+
+    <!-- Camada 1: Site -->
+
+<div id="site" class="site is-visible">
+
+        <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+        <div class="terminal-layout">
+
+      <aside class="header-menu" aria-label="Painel A.T.H.E.N.A.">
+        <div class="header-menu-interior">
+          <button class="header-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#header-painel"
+            aria-expanded="false" aria-controls="header-painel">Menu</button>
+
+          <div class="header-marca">
+            <img src="../../src/media/image/ATHENA.png" alt="" width="114" height="114">
+            <strong>A.T.H.E.N.A.</strong>
+            <small>TERMINAL DE ARQUIVOS</small>
+          </div>
+
+          <div id="header-painel" class="header-painel collapse">
+            <nav class="nav header-links" id="header-links" aria-label="Seções do terminal">
+
+
+              <a class="nav-link" href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-terminal preview-icon">
+                  <path d="m7 11 2-2-2-2" />
+                  <path d="M11 13h4" />
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                </svg>Terminal</a>
+
+              <a class="nav-link" href="../memorias.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-folder-clock preview-icon">
+                  <path d="M16 14v2.2l1.6 1" />
+                  <path
+                    d="M7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2" />
+                  <circle cx="16" cy="16" r="6" />
+                </svg>Memórias</a>
+
+              <a class="nav-link" href="../acervo.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-square-library preview-icon">
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M7 7v10" />
+                  <path d="M11 7v10" />
+                  <path d="m15 7 2 10" />
+                </svg>Acervo</a>
+              <a class="nav-link" href="../../simulacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-gamepad-2 preview-icon">
+                  <line x1="6" x2="10" y1="11" y2="11" />
+                  <line x1="8" x2="8" y1="9" y2="13" />
+                  <line x1="15" x2="15.01" y1="12" y2="12" />
+                  <line x1="18" x2="18.01" y1="10" y2="10" />
+                  <path
+                    d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                </svg>Simulação</a>
+              <a class="nav-link" href="../investigacao.html"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                  height="24" viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-newspaper preview-icon">
+                  <path d="M15 18h-5" />
+                  <path d="M18 14h-8" />
+                  <path
+                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+                  <rect width="8" height="4" x="10" y="6" rx="1" />
+                </svg>Investigação</a>
+              <a class="nav-link" href="../ecossistema.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-globe-code preview-icon">
+                  <path d="M15.5 10 13 7.5 15.5 5" />
+                  <path d="M15.861 14A14.5 14.5 0 0112 22a14.48 14.48 0 010-20 10 10 0 109.888 11.5" />
+                  <path d="M19.5 5 22 7.5 19.5 10" />
+                  <path d="M2 12h8.5" />
+                </svg>Ecossistema</a>
+
+
+              <a class="nav-link" href="../projeto.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="#24e5ff" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-user-group preview-icon">
+                  <path d="M17 21v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1" />
+                  <path d="M19 10h1a2 2 0 012 2v1" />
+                  <path d="M5 10H4a2 2 0 00-2 2v1" />
+                  <circle cx="12" cy="11" r="3" />
+                  <circle cx="18" cy="4" r="2" />
+                  <circle cx="6" cy="4" r="2" />
+                </svg>Projeto 950</a>
+
+
+            </nav>
+            <div class="header-telemetria">
+
+              <img src="../../src/media/video/gif/earth.gif" alt="" loading="lazy">
+              <div class="header-telemetria-text">
+                <p class="header-telemetria-text-status">
+                  SETOR 109<br><span class="status-dot"></span><b>CONEXÃO ESTÁVEL</b>
+                </p>
+                <div class="menu-preferencias">
+
+                  <div class="controles-audio">
+                    <div class="controles-audio-div">
+                      <p>MÚSICA:</p>
+
+
+                      <div class="background-sound-eff-button-container musica">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="controles-audio-div">
+
+                      <p>SONS:</p>
+
+
+                      <div class="background-sound-eff-button-container efeitos">
+                        <label class="background-sound-eff-button">
+                          <input class="background-sound-eff-button-play-btn" type="checkbox" checked>
+                          <div class="background-sound-eff-button-play-icon"></div>
+                          <div class="background-sound-eff-button-pause-icon"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="button-turn-on-effect-text">
+                    <p>
+                      EFEITOS:
+                    </p>
+                  </div>
+                  <div class="turn-on-effect-toggle-cont">
+                    <!-- O input agora carrega a ID do seu botão antigo e inicia ligado -->
+                    <input class="turn-on-effect-toggle-input" id="effectsButton" name="toggle" type="checkbox"
+                      checked />
+                    <label class="turn-on-effect-toggle-label" for="effectsButton">
+                      <div class="turn-on-effect-cont-icon">
+                        <!-- Seus spans de sparkle originais -->
+                        <span style="--width: 2; --deg: 25; --duration: 11" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 100; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 280; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 200; --duration: 3" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 30; --duration: 20" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 300; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 250; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 210; --duration: 8" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 100; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 15; --duration: 13" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 75; --duration: 18" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 6" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 50; --duration: 7" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 320; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 220; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 215; --duration: 2" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 135; --duration: 9" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 45; --duration: 4" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 78; --duration: 16" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 89; --duration: 19" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 65; --duration: 14" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 2; --deg: 97; --duration: 1" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 174; --duration: 10" class="turn-on-effect-sparkle"></span>
+                        <span style="--width: 1; --deg: 236; --duration: 5" class="turn-on-effect-sparkle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30"
+                          class="turn-on-effect-icon">
+                          <path
+                            d="M0.96233 28.61C1.36043 29.0081 1.96007 29.1255 2.47555 28.8971L10.4256 25.3552C13.2236 24.11 16.4254 24.1425 19.2107 25.4401L27.4152 29.2747C27.476 29.3044 27.5418 29.3023 27.6047 29.32C27.6563 29.3348 27.7079 29.3497 27.761 29.3574C27.843 29.3687 27.9194 29.3758 28 29.3688C28.1273 29.3617 28.2531 29.3405 28.3726 29.2945C28.4447 29.262 28.5162 29.2287 28.5749 29.1842C28.6399 29.1446 28.6993 29.0994 28.7509 29.0477L28.9008 28.8582C28.9468 28.7995 28.9793 28.7274 29.0112 28.656C29.0599 28.5322 29.0811 28.4036 29.0882 28.2734C29.0939 28.1957 29.0868 28.1207 29.0769 28.0415C29.0705 27.9955 29.0585 27.9524 29.0472 27.9072C29.0295 27.8343 29.0302 27.7601 28.9984 27.6901L25.1638 19.4855C23.8592 16.7073 23.8273 13.5048 25.0726 10.7068L28.6145 2.75679C28.8429 2.24131 28.7318 1.63531 28.3337 1.2372C27.9165 0.820011 27.271 0.721743 26.7491 0.9961L19.8357 4.59596C16.8418 6.15442 13.2879 6.18696 10.2615 4.70062L1.80308 0.520214C1.7055 0.474959 1.60722 0.441742 1.50964 0.421943C1.44459 0.409215 1.37882 0.395769 1.3074 0.402133C1.14406 0.395769 0.981436 0.428275 0.818095 0.499692C0.77284 0.519491 0.719805 0.545671 0.67455 0.578198C0.596061 0.617088 0.524653 0.675786 0.4596 0.74084C0.394546 0.805894 0.335843 0.877306 0.296245 0.956502C0.263718 1.00176 0.237561 1.05477 0.217762 1.10003C0.152708 1.24286 0.126545 1.40058 0.120181 1.54978C0.120181 1.61483 0.126527 1.6735 0.132891 1.73219C0.15269 1.85664 0.178881 1.97332 0.237571 2.08434L4.41798 10.5427C5.91139 13.5621 5.8725 17.1238 4.3204 20.1099L0.720514 27.0233C0.440499 27.5536 0.545137 28.1928 0.96233 28.61Z">
+                          </path>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="menu-libras">
+                    <p>ACESSIBILIDADE</p>
+                    <button id="menu-vlibras" type="button" disabled>Carregando VLibras…</button>
+                    <small id="menu-vlibras-status" role="status">Tradução para Libras</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+            <div class="header-conteudo">
+
+
+                <main id="main" class="biografia-page" tabindex="-1">
+                    <header class="biografia-header"><a href="../../acervo.html">← VOLTAR AO ACERVO</a><span>A.T.H.E.N.A. /
+                            ARQUIVO BIOGRÁFICO</span></header>
+                    <section class="biografia-hero" aria-labelledby="biografia-nome"><img class="biografia-fundo"
+                            id="biografia-fundo" alt="" hidden>
+                        <div class="biografia-hero-sombra"></div>
+                        <div class="biografia-hero-texto">
+                            <p class="biografia-eyebrow">CONHECIMENTO / REPRESENTAÇÃO / POSSIBILIDADES</p>
+                            <h1 id="biografia-nome"></h1>
+                            <p class="biografia-subtitulo" id="biografia-subtitulo"></p>
+                            <div class="biografia-tags" id="biografia-tags"></div>
+                            <dl class="biografia-ficha" id="biografia-ficha"></dl>
+                        </div>
+                        <div class="biografia-personagem-area"><span class="biografia-placeholder"
+                                id="biografia-placeholder" aria-hidden="true">MC</span><img class="biografia-personagem"
+                                id="biografia-personagem" alt="" hidden><span class="biografia-credito"
+                                id="biografia-credito" hidden>RECONSTITUIÇÃO ARTÍSTICA</span></div>
+                    </section>
+                    <nav class="biografia-nav" id="biografia-nav" aria-label="Seções da biografia"></nav>
+                    <div class="biografia-conteudo" id="biografia-conteudo"></div>
+
+
+                    <footer class="biografia-footer"><a href="acervo.html">← EXPLORAR OUTRAS CIENTISTAS</a><span>PROJETO
+                            950 • MEMÓRIA É JUSTIÇA</span></footer>
+
+
+                    <footer class="footer home-footer">
+                        <div class="footer-top">
+
+                            <!-- Coluna 1: Logo e Título (Mais larga) -->
+                            <div class="home-footer-marca">
+                                <div class="home-footer-marca-logo">
+                                    <img src="../../src/media/image/E-CAT.png" alt="">
+                                </div>
+                                <div class="home-footer-marca-titulo">
+                                    <strong>ELAS NO CONTROLE:</strong>
+                                    <h1>Além do Tempo</h1>
+                                    <p>Um terminal para explorar a memória das mulheres na ciência.</p>
+                                </div>
+                            </div>
+
+                            <!-- Coluna 2: Criadores -->
+                            <nav class="home-footer-titulo" aria-label="Criadores">
+                                <small>CRIADORES</small>
+                                <a href="https://instagram.com">Matheus Lemes Oliveira</a>
+                                <a href="https://instagram.com">Pietro Hygino Henrique</a>
+                                <a href="https://instagram.com">Davi Martins Ferreira</a>
+                            </nav>
+
+                            <!-- Coluna 3: Transmissões -->
+                            <div class="home-footer-titulo" aria-label="Redes Sociais">
+                                <small>TRANSMISSÕES</small>
+                                <a href="https://instagram.com">@taty.lutz_</a>
+                                <a href="https://instagram.com">@athenas.ai.75</a>
+                                <a href="https://instagram.com">@elas.cat</a>
+                            </div>
+
+                        </div>
+
+
+                    </footer>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <!-- Camada 2: filtro sobre o site, sem capturar cliques. -->
+    <div id="visualFilter" class="visual-filter" aria-hidden="true">
+        <video id="filterVideo" muted loop playsinline preload="none"></video>
+        <div class="scanlines"></div>
+    </div>
+
+    
+
+    <!-- Isso é uma tag que avisa o usuário que o JavaScript precisa estar ativado para acessar o terminal. Se o JavaScript estiver desativado, essa mensagem será exibida. -->
+    <!-- Basicamente um plano B caso dê erro no JS -->
+    <noscript>
+        <div class="noscript">Ative o JavaScript para entrar no terminal. Projeto 950 — Elas no Controle: Além do Tempo.
+        </div>
+    </noscript>
+
+    <div class="cursor-orbita" aria-hidden="true">
+        <span class="cursor-orbita__anel"></span>
+    </div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../js/acervo/lise-meitner.js" defer></script>
+<script src="../js/acervo/efeitos-acervo.js" defer></script>
+<script src="../js/biografia.js" defer></script>
+
+<script src="../js/script.js" defer></script>
+<script src="../js/vlibras-menu.js" defer></script>
+
+   
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+/* ========================================================================== 
+   INTERAÇÕES COMPARTILHADAS DO MAIN
+   Somente o conteúdo principal recebe estes aprimoramentos. Menu, introdução
+   e rodapé externo mantêm os estilos originais. Os efeitos específicos de
+   cada página estão no fim de seu respectivo arquivo.
+   ========================================================================== */
+
+/* Foco: teclado tem indicação própria, sem depender do hover. */
+main :is(a[href], button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--mtec-focus, #72f7ff);
+    outline-offset: 4px;
+}
+
+/* Links de leitura: cor e sublinhado; sem mover textos ou ampliar parágrafos. */
+main a[href] {
+    text-underline-offset: 0.22em;
+    transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    main a[href]:not([aria-disabled="true"]):hover {
+        text-decoration-thickness: 2px;
+        text-shadow: 0 0 12px var(--mtec-hover-glow, #24e5ff38);
+    }
+
+    main :is(button, summary, [role="button"]):not(:disabled):not([aria-disabled="true"]):hover {
+        border-color: var(--mtec-hover-accent, #72f7ff);
+    }
+}
+
+/* Estados indisponíveis: não sugerem uma ação ou movimento que não existe. */
+main :is(button:disabled, [aria-disabled="true"]) {
+    cursor: not-allowed;
+    scale: none;
+    translate: none;
+}
+
+/* Movimento reduzido e chave de efeitos: preservam o foco e a leitura.
+   scale/translate independentes não apagam rotações das fotos ou a posição
+   dos nós orbitais. A pausa atinge somente as animações dentro do main. */
+@media (prefers-reduced-motion: reduce) {
+    main, main *, main *::before, main *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+        scale: none !important;
+        translate: none !important;
+    }
+    main :is(.core-logo, .mission-card, .missoes-card, .r-missoes-card, .nav-btn):hover,
+    main .ecossistema-pubs-grid-a:hover img {
+        transform: none !important;
+    }
+}
+
+.effects-off main *, .effects-off main *::before, .effects-off main *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+    scale: none !important;
+    translate: none !important;
+}
+.effects-off main :is(.core-logo, .mission-card, .missoes-card, .r-missoes-card, .nav-btn):hover,
+.effects-off main .ecossistema-pubs-grid-a:hover img {
+    transform: none !important;
+}
