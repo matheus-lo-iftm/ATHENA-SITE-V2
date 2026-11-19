@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Agronomia", "Microbiologia do solo"],
   "subtitulo": "Microrganismos que transformaram perguntas sobre a agricultura.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/johanna-dobereiner/background.png",
-    "personagem": "/src/media/image/cientistas/johanna-dobereiner/cientista.png"
+    "fundo": "src/media/image/cientistas/johanna-dobereiner/background.png",
+    "personagem": "src/media/image/cientistas/johanna-dobereiner/cientista.png"
   },
   "secoes": [
     {

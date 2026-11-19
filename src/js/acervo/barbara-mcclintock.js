@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Genética", "Citogenética"],
   "subtitulo": "Os genes não estavam tão imóveis quanto se imaginava.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/barbara-mcclintock/background.png",
-    "personagem": "/src/media/image/cientistas/barbara-mcclintock/cientista.png"
+    "fundo": "src/media/image/cientistas/barbara-mcclintock/background.png",
+    "personagem": "src/media/image/cientistas/barbara-mcclintock/cientista.png"
   },
   "secoes": [
     {

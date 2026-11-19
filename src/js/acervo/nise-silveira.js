@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Psiquiatria", "Saúde mental"],
   "subtitulo": "Escutar pessoas onde muitas vezes só se enxergavam diagnósticos.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/nise-silveira/background.png",
-    "personagem": "/src/media/image/cientistas/nise-silveira/cientista.png"
+    "fundo": "src/media/image/cientistas/nise-silveira/background.png",
+    "personagem": "src/media/image/cientistas/nise-silveira/cientista.png"
   },
   "secoes": [
     {

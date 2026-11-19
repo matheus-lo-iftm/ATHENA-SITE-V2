@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Física nuclear", "Física experimental"],
   "subtitulo": "Um experimento capaz de desafiar uma simetria fundamental.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/chien-shiung-wu/background.png",
-    "personagem": "/src/media/image/cientistas/chien-shiung-wu/cientista.png"
+    "fundo": "src/media/image/cientistas/chien-shiung-wu/background.png",
+    "personagem": "src/media/image/cientistas/chien-shiung-wu/cientista.png"
   },
   "secoes": [
     {

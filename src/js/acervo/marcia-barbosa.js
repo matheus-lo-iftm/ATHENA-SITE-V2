@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Física", "Mecânica estatística"],
   "subtitulo": "Investigar a água e ampliar o espaço das mulheres na física.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/marcia-barbosa/background.png",
-    "personagem": "/src/media/image/cientistas/marcia-barbosa/cientista.png"
+    "fundo": "src/media/image/cientistas/marcia-barbosa/background.png",
+    "personagem": "src/media/image/cientistas/marcia-barbosa/cientista.png"
   },
   "secoes": [
     {

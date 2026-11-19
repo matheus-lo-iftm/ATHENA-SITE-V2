@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Física experimental", "Física de partículas"],
   "subtitulo": "Ler os rastros das partículas e construir a física brasileira.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/elisa-frota/background.png",
-    "personagem": "/src/media/image/cientistas/elisa-frota/cientista.png"
+    "fundo": "src/media/image/cientistas/elisa-frota/background.png",
+    "personagem": "src/media/image/cientistas/elisa-frota/cientista.png"
   },
   "secoes": [
     {

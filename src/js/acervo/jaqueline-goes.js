@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Biomedicina", "Genômica", "Virologia"],
   "subtitulo": "Ler genomas para compreender a circulação dos vírus.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/jaqueline-goes/background.png",
-    "personagem": "/src/media/image/cientistas/jaqueline-goes/cientista.png"
+    "fundo": "src/media/image/cientistas/jaqueline-goes/background.png",
+    "personagem": "src/media/image/cientistas/jaqueline-goes/cientista.png"
   },
   "secoes": [
     {

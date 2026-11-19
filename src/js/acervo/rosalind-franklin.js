@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Química", "Cristalografia", "Biologia estrutural"],
   "subtitulo": "Produzir evidências sobre estruturas que não podemos enxergar.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/rosalind-franklin/background.png",
-    "personagem": "/src/media/image/cientistas/rosalind-franklin/cientista.png"
+    "fundo": "src/media/image/cientistas/rosalind-franklin/background.png",
+    "personagem": "src/media/image/cientistas/rosalind-franklin/cientista.png"
   },
   "secoes": [
     {

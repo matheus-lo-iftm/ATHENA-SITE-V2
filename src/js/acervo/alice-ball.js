@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Química", "Química farmacêutica"],
   "subtitulo": "Uma solução química e uma autoria que precisou ser recuperada.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/alice-ball/background.png",
-    "personagem": "/src/media/image/cientistas/alice-ball/cientista.png"
+    "fundo": "src/media/image/cientistas/alice-ball/background.png",
+    "personagem": "src/media/image/cientistas/alice-ball/cientista.png"
   },
   "secoes": [
     {

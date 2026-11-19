@@ -10,8 +10,8 @@ window.BIOGRAFIA_DADOS = {
   ],
   "subtitulo": "Uma vida dedicada à radioatividade.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/marie-curie/background.png",
-    "personagem": "/src/media/image/cientistas/marie-curie/cientista.png"
+    "fundo": "src/media/image/cientistas/marie-curie/background.png",
+    "personagem": "src/media/image/cientistas/marie-curie/cientista.png"
   },
   "secoes": [
     {

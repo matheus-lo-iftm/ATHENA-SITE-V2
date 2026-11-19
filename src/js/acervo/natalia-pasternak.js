@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Microbiologia", "Divulgação científica"],
   "subtitulo": "Aproximar a pesquisa do debate público.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/natalia-pasternak/background.png",
-    "personagem": "/src/media/image/cientistas/natalia-pasternak/cientista.png"
+    "fundo": "src/media/image/cientistas/natalia-pasternak/background.png",
+    "personagem": "src/media/image/cientistas/natalia-pasternak/cientista.png"
   },
   "secoes": [
     {

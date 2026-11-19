@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Matemática", "Ciência da computação"],
   "subtitulo": "Aproximar a linguagem humana das instruções de uma máquina.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/grace-hopper/background.png",
-    "personagem": "/src/media/image/cientistas/grace-hopper/cientista.png"
+    "fundo": "src/media/image/cientistas/grace-hopper/background.png",
+    "personagem": "src/media/image/cientistas/grace-hopper/cientista.png"
   },
   "secoes": [
     {

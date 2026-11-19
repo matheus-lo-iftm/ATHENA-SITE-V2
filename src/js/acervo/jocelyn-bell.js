@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Astrofísica", "Radioastronomia"],
   "subtitulo": "Reconhecer um sinal extraordinário entre muitos registros.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/jocelyn-bell/background.png",
-    "personagem": "/src/media/image/cientistas/jocelyn-bell/cientista.png"
+    "fundo": "src/media/image/cientistas/jocelyn-bell/background.png",
+    "personagem": "src/media/image/cientistas/jocelyn-bell/cientista.png"
   },
   "secoes": [
     {

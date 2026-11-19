@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Química", "Cristalografia"],
   "subtitulo": "Revelar a arquitetura de moléculas essenciais à vida.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/dorothy-hodgkin/background.png",
-    "personagem": "/src/media/image/cientistas/dorothy-hodgkin/cientista.png"
+    "fundo": "src/media/image/cientistas/dorothy-hodgkin/background.png",
+    "personagem": "src/media/image/cientistas/dorothy-hodgkin/cientista.png"
   },
   "secoes": [
     {

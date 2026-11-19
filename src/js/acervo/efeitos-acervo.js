@@ -2,9 +2,9 @@
   "use strict";
 
   // ===== ARQUIVOS E VOLUMES =====
-  const musica = new Audio("/src/audio/Half-Life-Music.m4a");
-  const somHover = new Audio("/src/audio/hover-pointer.m4a");
-  const somClique = new Audio("/src/audio/active-click.wav");
+  const musica = new Audio("src/audio/Half-Life-Music.m4a");
+  const somHover = new Audio("src/audio/hover-pointer.m4a");
+  const somClique = new Audio("src/audio/active-click.wav");
 
   musica.loop = true;
   musica.volume = 0.38;
@@ -17,7 +17,7 @@
   const backgroundVideo = document.getElementById("backgroundVideo");
   if (backgroundVideo) {
     // ⚠️ Confirme se o nome e extensão do arquivo são exatamente estes na sua pasta src/media/video/
-    backgroundVideo.src = "/src/media/video/background.m4v"; 
+    backgroundVideo.src = "src/media/video/background.m4v"; 
     backgroundVideo.removeAttribute("hidden");
     backgroundVideo.play().catch(() => {});
   }
@@ -25,7 +25,7 @@
   const filterVideo = document.getElementById("filterVideo");
   if (filterVideo) {
     // ⚠️ Confirme se o arquivo VHS.mp4 existe na pasta src/media/video/
-    filterVideo.src = "/src/media/video/VHS.mp4"; 
+    filterVideo.src = "src/media/video/VHS.mp4"; 
     filterVideo.removeAttribute("hidden");
     filterVideo.play().catch(() => {});
   }

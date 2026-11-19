@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Engenharia civil", "Recursos hídricos"],
   "subtitulo": "Projetar caminhos onde também existiam barreiras.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/enedina-marques/background.png",
-    "personagem": "/src/media/image/cientistas/enedina-marques/cientista.png"
+    "fundo": "src/media/image/cientistas/enedina-marques/background.png",
+    "personagem": "src/media/image/cientistas/enedina-marques/cientista.png"
   },
   "secoes": [
     {

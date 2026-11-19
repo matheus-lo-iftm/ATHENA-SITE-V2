@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Invenção", "Comunicações"],
   "subtitulo": "Uma inventora além da imagem que o cinema tornou famosa.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/hedy-lamarr/background.png",
-    "personagem": "/src/media/image/cientistas/hedy-lamarr/cientista.png"
+    "fundo": "src/media/image/cientistas/hedy-lamarr/background.png",
+    "personagem": "src/media/image/cientistas/hedy-lamarr/cientista.png"
   },
   "secoes": [
     {

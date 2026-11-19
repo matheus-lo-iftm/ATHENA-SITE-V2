@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Física nuclear", "Radioatividade"],
   "subtitulo": "Compreender a divisão do núcleo e disputar o lugar da autoria.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/lise-meitner/background.png",
-    "personagem": "/src/media/image/cientistas/lise-meitner/cientista.png"
+    "fundo": "src/media/image/cientistas/lise-meitner/background.png",
+    "personagem": "src/media/image/cientistas/lise-meitner/cientista.png"
   },
   "secoes": [
     {

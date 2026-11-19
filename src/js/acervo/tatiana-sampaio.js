@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Biologia celular", "Bioquímica", "Neurociências"],
   "subtitulo": "Investigar como o ambiente das células participa da regeneração.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/tatiana-sampaio/background.png",
-    "personagem": "/src/media/image/cientistas/tatiana-sampaio/cientista.png"
+    "fundo": "src/media/image/cientistas/tatiana-sampaio/background.png",
+    "personagem": "src/media/image/cientistas/tatiana-sampaio/cientista.png"
   },
   "secoes": [
     {

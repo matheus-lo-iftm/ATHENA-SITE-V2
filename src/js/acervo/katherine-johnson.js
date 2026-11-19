@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Matemática", "Mecânica orbital"],
   "subtitulo": "Cálculos que ajudaram a encontrar caminhos no espaço.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/katherine-johnson/background.png",
-    "personagem": "/src/media/image/cientistas/katherine-johnson/cientista.png"
+    "fundo": "src/media/image/cientistas/katherine-johnson/background.png",
+    "personagem": "src/media/image/cientistas/katherine-johnson/cientista.png"
   },
   "secoes": [
     {

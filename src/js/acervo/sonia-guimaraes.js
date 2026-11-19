@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Física aplicada", "Materiais semicondutores"],
   "subtitulo": "Investigar materiais e enfrentar barreiras na física.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/sonia-guimaraes/background.png",
-    "personagem": "/src/media/image/cientistas/sonia-guimaraes/cientista.png"
+    "fundo": "src/media/image/cientistas/sonia-guimaraes/background.png",
+    "personagem": "src/media/image/cientistas/sonia-guimaraes/cientista.png"
   },
   "secoes": [
     {

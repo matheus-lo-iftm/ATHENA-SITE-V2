@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Psicologia", "Educação"],
   "subtitulo": "Construir a psicologia e defender a ciência brasileira.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/carolina-bori/background.png",
-    "personagem": "/src/media/image/cientistas/carolina-bori/cientista.png"
+    "fundo": "src/media/image/cientistas/carolina-bori/background.png",
+    "personagem": "src/media/image/cientistas/carolina-bori/cientista.png"
   },
   "secoes": [
     {

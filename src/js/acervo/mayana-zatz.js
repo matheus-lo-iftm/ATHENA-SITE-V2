@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Genética humana", "Biologia molecular"],
   "subtitulo": "Investigar os genes sem perder de vista as pessoas.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/mayana-zatz/background.png",
-    "personagem": "/src/media/image/cientistas/mayana-zatz/cientista.png"
+    "fundo": "src/media/image/cientistas/mayana-zatz/background.png",
+    "personagem": "src/media/image/cientistas/mayana-zatz/cientista.png"
   },
   "secoes": [
     {

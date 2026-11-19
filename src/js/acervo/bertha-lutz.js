@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Zoologia", "Botânica", "Direitos das mulheres"],
   "subtitulo": "Investigar a natureza e disputar o direito de participar.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/bertha-lutz/background.png",
-    "personagem": "/src/media/image/cientistas/bertha-lutz/cientista.png"
+    "fundo": "src/media/image/cientistas/bertha-lutz/background.png",
+    "personagem": "src/media/image/cientistas/bertha-lutz/cientista.png"
   },
   "secoes": [
     {

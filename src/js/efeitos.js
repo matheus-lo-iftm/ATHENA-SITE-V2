@@ -2,9 +2,9 @@
   "use strict";
 
   // ===== ARQUIVOS E VOLUMES =====
-  const musica = new Audio("../src/audio/Half-Life-Music.m4a");
-  const somHover = new Audio("../src/audio/hover-pointer.m4a");
-  const somClique = new Audio("../src/audio/active-click.wav");
+  const musica = new Audio("..src/audio/Half-Life-Music.m4a");
+  const somHover = new Audio("..src/audio/hover-pointer.m4a");
+  const somClique = new Audio("..src/audio/active-click.wav");
 
   musica.loop = true;
   musica.volume = 0.38;

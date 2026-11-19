@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Farmacologia", "Química de produtos naturais"],
   "subtitulo": "Transformar uma pista histórica em investigação experimental.",
   "imagens": {
-    "fundo": "/src/media/image/cientistas/tu-youyou/background.png",
-    "personagem": "/src/media/image/cientistas/tu-youyou/cientista.png"
+    "fundo": "src/media/image/cientistas/tu-youyou/background.png",
+    "personagem": "src/media/image/cientistas/tu-youyou/cientista.png"
   },
   "secoes": [
     {
