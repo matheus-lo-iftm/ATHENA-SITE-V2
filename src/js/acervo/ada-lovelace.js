@@ -6,8 +6,8 @@ window.BIOGRAFIA_DADOS = {
   "areas": ["Matemática", "Computação"],
   "subtitulo": "Imaginar o que uma máquina ainda poderia fazer.",
   "imagens": {
-    "fundo": "src/media/image/cientistas/ada-lovelace/background.png",
-    "personagem": "src/media/image/cientistas/ada-lovelace/cientista.png"
+    "fundo": "../src/media/image/cientistas/ada-lovelace/background.png",
+    "personagem": "../src/media/image/cientistas/ada-lovelace/cientista.png"
   },
   "secoes": [
     {
